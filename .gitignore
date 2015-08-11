@@ -15,3 +15,4 @@ testem.*
 
 local
 coverage
+dist

@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - 0.10
+  - 0.12
+
+sudo: false
+
+branches:
+  only:
+    - master
+
+script:
+  - npm run test
+
+  # Prune deps to just production and ensure we can still build
+  - npm prune --production
+  - npm install --production
+  - npm run build

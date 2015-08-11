@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "lint": "echo TODO",
-    "build": "webpack"
+    "build": "webpack",
+    "lint-node": "eslint -c .eslintrc-node webpack.*.js",
+    "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react *.jsx presentation",
+    "lint": "npm run lint-node && npm run lint-react",
+    "test": "npm run lint"
   },
   "author": "",
   "license": "",
@@ -35,6 +38,11 @@
     "yeticss": "^7.0.3"
   },
   "devDependencies": {
+    "babel-eslint": "^4.0.5",
+    "eslint": "^1.1.0",
+    "eslint-config-defaults": "^4.0.1",
+    "eslint-plugin-filenames": "^0.1.2",
+    "eslint-plugin-react": "^3.2.2",
     "webpack-dev-server": "^1.10.1"
   }
 }

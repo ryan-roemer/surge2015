@@ -6,7 +6,6 @@ import context from "spectacle/src/utils/context";
 import {Router, Route} from "react-router";
 import HashHistory from "react-router/lib/HashHistory";
 
-import Alt from "alt";
 import Flux from "spectacle/src/flux/alt";
 
 import Deck from "./presentation/deck";
@@ -30,7 +29,7 @@ Presentation.contextTypes = {
   router: React.PropTypes.object
 };
 
-Presentation = context(Presentation, {
+const PresContext = context(Presentation, {
   styles: config.theme,
   print: config.print,
   flux
@@ -39,8 +38,8 @@ Presentation = context(Presentation, {
 // Router
 React.render(
   <Router history={new HashHistory()}>
-    <Route path="/" component={Presentation} />
-    <Route path="/:slide" component={Presentation} />
+    <Route path="/" component={PresContext} />
+    <Route path="/:slide" component={PresContext} />
   </Router>
 , document.body);
 

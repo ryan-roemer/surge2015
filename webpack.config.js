@@ -1,5 +1,7 @@
+"use strict";
+
 var path = require("path");
-var getConfig = require("hjs-webpack")
+var getConfig = require("hjs-webpack");
 var config = require("spectacle/presentation/config");
 
 var webpackConfig = getConfig({
@@ -14,16 +16,19 @@ webpackConfig.module.loaders[0] = {
   include: [
     path.join(__dirname, "index.jsx"),
     path.join(__dirname, "presentation"),
+
+    // Have to build spectacle as well.
     path.join(__dirname, "node_modules/spectacle/src"),
     path.join(__dirname, "node_modules/spectacle/presentation")
   ],
   loaders: [
     "babel-loader?stage=1"
   ]
-}
+};
 
+// Hack in hot loader.
 if (process.argv[1].indexOf("webpack-dev-server") !== -1) {
-  webpackConfig.module.loaders[0].loaders.unshift("react-hot")
+  webpackConfig.module.loaders[0].loaders.unshift("react-hot");
 }
 
 module.exports = webpackConfig;
