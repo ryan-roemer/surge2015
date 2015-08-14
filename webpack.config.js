@@ -35,5 +35,9 @@ if (process.env.WEBPACK_ENV === "hot") {
   webpackConfig.entry = webpackConfig.entry.filter(function (entry) {
     return !/^webpack\/hot\//.test(entry);
   });
-  webpackConfig.devServer.hot = false;
+
+  // Only available with NPM devDependencies.
+  if (webpackConfig.devServer) {
+    webpackConfig.devServer.hot = false;
+  }
 }
