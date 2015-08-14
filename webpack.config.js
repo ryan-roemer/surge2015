@@ -4,7 +4,7 @@ var path = require("path");
 var getConfig = require("hjs-webpack");
 var config = require("spectacle/presentation/config");
 
-var webpackConfig = getConfig({
+var webpackConfig = module.exports = getConfig({
   in: "./index.jsx",
   out: "dist",
   clearBeforeBuild: true,
@@ -32,7 +32,8 @@ webpackConfig.module.loaders[0] = {
 if (process.env.WEBPACK_ENV === "hot") {
   webpackConfig.module.loaders[0].loaders.unshift("react-hot");
 } else {
+  webpackConfig.entry = webpackConfig.entry.filter(function (entry) {
+    return !/^webpack\/hot\//.test(entry);
+  });
   webpackConfig.devServer.hot = false;
 }
-
-module.exports = webpackConfig;
