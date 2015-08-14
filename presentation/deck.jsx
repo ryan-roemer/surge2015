@@ -13,6 +13,7 @@ import {
 import preloader from "spectacle/src/utils/preloader";
 
 const images = {
+  city: require("spectacle/presentation/city.jpg"),
   logo: require("spectacle/presentation/formidable-logo.svg")
 };
 
@@ -34,7 +35,7 @@ export default class extends React.Component {
           <Heading size={1} fit caps margin="-20px 0px">
             Frontend Web Applications
           </Heading>
-          <div style={{display: "inline-block", "margin-top": "2.5em"}}>
+          <div style={{display: "inline-block", marginTop: "2.5em"}}>
             <Link href="https://twitter.com/ryan_roemer">
               <Text bold style={{display: "inline-block"}}>
                 @ryan_roemer

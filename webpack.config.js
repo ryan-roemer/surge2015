@@ -11,6 +11,8 @@ var webpackConfig = getConfig({
   html: config.html
 });
 
+webpackConfig.devtool = "source-map";
+
 webpackConfig.module.loaders[0] = {
   test: /\.jsx?$/,
   include: [
@@ -26,9 +28,11 @@ webpackConfig.module.loaders[0] = {
   ]
 };
 
-// Hack in hot loader.
-if (process.argv[1].indexOf("webpack-dev-server") !== -1) {
+// Remove hot loader unless _actually_ hot.
+if (process.env.WEBPACK_ENV === "hot") {
   webpackConfig.module.loaders[0].loaders.unshift("react-hot");
+} else {
+  webpackConfig.devServer.hot = false;
 }
 
 module.exports = webpackConfig;

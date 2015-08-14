@@ -4,7 +4,8 @@
   "description": "Surge 2015 Talk - Wrangling Large Scale Frontend Web Applications",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "WEBPACK_ENV=dev webpack-dev-server",
+    "hot": "WEBPACK_ENV=hot webpack-dev-server",
     "build": "webpack",
     "lint-node": "eslint -c .eslintrc-node webpack.*.js",
     "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react *.jsx presentation",
