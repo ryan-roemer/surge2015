@@ -31,6 +31,10 @@ Some of the topics we will cover include:
 * Automating checks, tests, and code introspection to protect your code in production.
 * Creating an effective, fast, and engineer-friendly development-test-deployment frontend pipeline.
 
+## Development
+
+This presentation uses the awesome
+[Spectacle](https://github.com/FormidableLabs/spectacle) framework.
 
 [trav_img]: https://api.travis-ci.org/ryan-roemer/surge2015.svg
 [trav_site]: https://travis-ci.org/ryan-roemer/surge2015
