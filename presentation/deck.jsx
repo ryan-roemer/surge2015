@@ -15,6 +15,7 @@ import preloader from "spectacle/src/utils/preloader";
 const images = {
   polygons: require("../assets/img/polygons.svg"),
   polygonsGray: require("../assets/img/polygons-gray.svg"),
+  polygonsLight: require("../assets/img/polygons-light.svg"),
   city: require("spectacle/presentation/city.jpg"),
   logo: require("spectacle/presentation/formidable-logo.svg")
 };
@@ -84,7 +85,7 @@ export default class extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide transition={["spin", "slide"]} bgColor="tertiary">
+        <Slide transition={["spin", "slide"]} bgColor="tertiary" bgImage={images.polygonsLight}>
           <Heading size={1} caps fit textColor="primary">
             Thanks!
           </Heading>
