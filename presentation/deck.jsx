@@ -13,19 +13,20 @@ import {
 import preloader from "spectacle/src/utils/preloader";
 
 const images = {
+  polygon: require("../assets/img/polygons.svg"),
   city: require("spectacle/presentation/city.jpg"),
   logo: require("spectacle/presentation/formidable-logo.svg")
 };
 
-preloader([]);
+preloader([images.city]);
 
 // Presentation
 // ------------
 export default class extends React.Component {
   render() {
     return (
-      <Deck progress="bar" transition={["slide"]} transitionDuration={800}>
-        <Slide transition={["zoom"]} bgColor="primary">
+      <Deck progress="bar" transition={["slide"]}>
+        <Slide transition={["slide"]} bgImage={images.polygon}>
           <Heading size={1} fit caps margin="-20px 0px">
             Wrangling
           </Heading>

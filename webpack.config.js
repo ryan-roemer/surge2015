@@ -11,9 +11,10 @@ var webpackConfig = module.exports = getConfig({
   html: html
 });
 
-// Source maps mess up CSS in dev.
-// See:
-//webpackConfig.devtool = "source-map";
+// Source maps mess up CSS in dev and the `data.css` thing is generally borked.
+// See: https://github.com/FormidableLabs/spectacle/issues/50
+webpackConfig.output.cssFilename = null;
+webpackConfig.devtool = "eval-source-map";
 
 webpackConfig.module.loaders[0] = {
   test: /\.jsx?$/,
