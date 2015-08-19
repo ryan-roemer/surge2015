@@ -5,7 +5,7 @@ import React from "react/addons";
 // Appear, BlockQuote, Cite, CodePane, Deck, Fill,
 // Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
 import {
-  Appear, Deck, Heading, Image, Link, Slide, Text
+  Appear, Deck, Heading, Image, Link, Slide, Text, List, ListItem
 } from "spectacle/src/spectacle";
 
 // Images
@@ -39,7 +39,10 @@ export default class extends React.Component {
   render() {
     return (
       <Deck progress="bar" transition={["slide"]}>
-        <Slide transition={["slide"]} bgImage={images.polygons}>
+        {/* ---------------------------------------------------------------
+          * Title
+          * --------------------------------------------------------------- */}
+        <Slide bgImage={images.polygons}>
           <Heading size={1} fit caps margin="-20px 0px">
             Wrangling
           </Heading>
@@ -67,7 +70,57 @@ export default class extends React.Component {
           </div>
         </Slide>
 
-        <Slide transition={["slide"]} bgImage={images.city} bgDarken={0.75}>
+        {/* ---------------------------------------------------------------
+          * Motivation / Introduction
+          * --------------------------------------------------------------- */}
+        <Slide>
+          <Heading size={1} caps fit>
+            Why are we here?
+          </Heading>
+          <Heading size={4} textColor={styles.title.secondary}><Appear fid="1">
+            (<em>Executive summary</em>)
+          </Appear></Heading>
+          <List>
+            <ListItem><Appear fid="2">
+              Web applications are <strong>growing</strong> in <em>size</em> and <em>function</em>.
+            </Appear></ListItem>
+            <ListItem><Appear fid="3">
+              Developed by larger <strong>frontend teams</strong>.
+            </Appear></ListItem>
+            <ListItem><Appear fid="4">
+              Harder to build, deploy, maintain, and monitor.
+            </Appear></ListItem>
+            <ListItem><Appear fid="4">
+              ... and now <strong>critical</strong> to the business.
+            </Appear></ListItem>
+          </List>
+        </Slide>
+
+        {/*eslint-disable no-multiple-empty-lines*/
+         /* TODO HERE
+
+            - Dive into each of the bullet points above.
+            - INTRO: Introduction to Ryan / Formidable
+                - Help teams from startups to Fortune 500 companies.
+                - Talk about experiences with top 5 e-commerce website redesign.
+                - With large team
+                - Enormous code base.
+                - Widespread reach and traffic.
+                - Enormous array of supported browsers.
+            - THE POINT: Hone this down.
+            - ROADMAP / OUTLINE: Hone this down.
+
+
+
+
+
+
+
+
+
+         *//*eslint-enable no-multiple-empty-lines*/}
+
+        <Slide bgImage={images.city} bgDarken={0.75}>
           <Appear fid="1">
             <Heading size={1} caps fit textColor="primary">
               TODO
@@ -85,7 +138,10 @@ export default class extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide transition={["spin", "slide"]} bgColor="tertiary" bgImage={images.polygonsLight}>
+        {/* ---------------------------------------------------------------
+          * Thanks
+          * --------------------------------------------------------------- */}
+        <Slide bgColor="tertiary" bgImage={images.polygonsLight}>
           <Heading size={1} caps fit textColor="primary">
             Thanks!
           </Heading>
