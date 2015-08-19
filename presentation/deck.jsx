@@ -25,7 +25,7 @@ preloader([images.city]);
 const styles = {
   textShadowBlackOutline: ((s, c) => {
     return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
-  }("0.025em", "#777"))
+  }("0.025em", "#ccc"))
 };
 
 // Presentation

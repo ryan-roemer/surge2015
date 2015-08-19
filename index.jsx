@@ -20,6 +20,11 @@ import "normalize.css";
 import "./themes/formidable/index.css";
 import "highlight.js/styles/monokai_sublime.css";
 
+// Hack the favicon into the build directory.
+// This _places_ it in build output.
+// See: https://github.com/HenrikJoreteg/hjs-webpack/issues/24
+import "file?name=favicon.ico!./assets/img/favicon.ico";
+
 // Flux
 const flux = new Flux();
 
