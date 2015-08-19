@@ -20,6 +20,14 @@ const images = {
 
 preloader([images.city]);
 
+// Styles
+// ------
+const styles = {
+  textShadowBlackOutline: ((s, c) => {
+    return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
+  }("0.025em", "#777"))
+};
+
 // Presentation
 // ------------
 export default class extends React.Component {
@@ -30,13 +38,15 @@ export default class extends React.Component {
           <Heading size={1} fit caps margin="-20px 0px">
             Wrangling
           </Heading>
-          <Heading size={1} fit caps margin="-20px 0px" textColor="black">
+          <Heading size={1} fit caps margin="-20px 0px" textColor="black"
+                   style={{textShadow: styles.textShadowBlackOutline}}>
             Large Scale
           </Heading>
           <Heading size={1} fit caps margin="-20px 0px">
             Frontend Web Applications
           </Heading>
-          <div style={{display: "inline-block", marginTop: "2.5em"}}>
+          <div style={{display: "inline-block", marginTop: "2.5em",
+                       textShadow: styles.textShadowBlackOutline}}>
             <Link href="https://twitter.com/ryan_roemer">
               <Text bold style={{display: "inline-block"}}>
                 @ryan_roemer
