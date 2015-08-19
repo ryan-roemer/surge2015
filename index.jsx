@@ -7,13 +7,18 @@ import {Router, Route} from "react-router";
 import HashHistory from "react-router/lib/HashHistory";
 
 import Flux from "spectacle/src/flux/alt";
-
 import Deck from "./presentation/deck";
-import config from "spectacle/presentation/config";
 
-require("normalize.css");
-require("spectacle/themes/default/index.css");
-require("highlight.js/styles/monokai_sublime.css");
+// Configuration
+import config from "spectacle/presentation/config";
+config.theme = require("./themes/formidable/index");
+config.print = require("./themes/formidable/print");
+config.html = require("./themes/formidable/html");
+
+// Styling
+import "normalize.css";
+import "./themes/formidable/index.css";
+import "highlight.js/styles/monokai_sublime.css";
 
 // Flux
 const flux = new Flux();

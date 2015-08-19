@@ -24,7 +24,7 @@ preloader([]);
 export default class extends React.Component {
   render() {
     return (
-      <Deck progress="bar" transition={["zoom", "slide"]} transitionDuration={800}>
+      <Deck progress="bar" transition={["slide"]} transitionDuration={800}>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps margin="-20px 0px">
             Wrangling
@@ -50,7 +50,7 @@ export default class extends React.Component {
           </div>
         </Slide>
 
-        <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+        <Slide transition={["slide"]} bgImage={images.city} bgDarken={0.75}>
           <Appear fid="1">
             <Heading size={1} caps fit textColor="primary">
               TODO
