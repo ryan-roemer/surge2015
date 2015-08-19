@@ -8,7 +8,7 @@
     "hot": "WEBPACK_ENV=hot webpack-dev-server",
     "build": "webpack",
     "lint-node": "eslint -c .eslintrc-node webpack.*.js",
-    "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react *.jsx presentation",
+    "lint-react": "eslint --ext .js,.jsx -c .eslintrc-react *.jsx presentation themes",
     "lint": "npm run lint-node && npm run lint-react",
     "test": "npm run lint"
   },
@@ -31,7 +31,7 @@
     "react": "^0.13.3",
     "react-hot-loader": "^1.2.8",
     "react-router": "^1.0.0-beta2",
-    "spectacle": "git+https://git@github.com/FormidableLabs/spectacle.git#v0.0.5",
+    "spectacle": "0.0.5",
     "style-loader": "^0.12.3",
     "stylus-loader": "^1.2.1",
     "url-loader": "^0.5.6",

@@ -13,23 +13,36 @@ import {
 import preloader from "spectacle/src/utils/preloader";
 
 const images = {
+  polygons: require("../assets/img/polygons.svg"),
+  polygonsGray: require("../assets/img/polygons-gray.svg"),
   city: require("spectacle/presentation/city.jpg"),
   logo: require("spectacle/presentation/formidable-logo.svg")
 };
 
-preloader([]);
+preloader([images.city]);
+
+// Styles
+// ------
+const styles = {
+  title: {
+    secondary: "#dcb"
+  },
+  textShadowBlackOutline: ((s, c) => {
+    return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
+  }("0.025em", "#ccc"))
+};
 
 // Presentation
 // ------------
 export default class extends React.Component {
   render() {
     return (
-      <Deck progress="bar" transition={["zoom", "slide"]} transitionDuration={800}>
-        <Slide transition={["zoom"]} bgColor="primary">
+      <Deck progress="bar" transition={["slide"]}>
+        <Slide transition={["slide"]} bgImage={images.polygons}>
           <Heading size={1} fit caps margin="-20px 0px">
             Wrangling
           </Heading>
-          <Heading size={1} fit caps margin="-20px 0px" textColor="black">
+          <Heading size={1} fit caps margin="-20px 0px" textColor={styles.title.secondary}>
             Large Scale
           </Heading>
           <Heading size={1} fit caps margin="-20px 0px">
@@ -37,20 +50,23 @@ export default class extends React.Component {
           </Heading>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
             <Link href="https://twitter.com/ryan_roemer">
-              <Text bold style={{display: "inline-block"}}>
+              <Text bold style={{display: "inline-block"}} textColor={styles.title.secondary}>
                 @ryan_roemer
               </Text>
             </Link>
-            <Text style={{display: "inline-block", "margin": "0px 0.35em"}}>|</Text>
+            <Text style={{display: "inline-block", "margin": "0px 0.35em"}}
+                  textColor={styles.title.secondary}>
+              |
+            </Text>
             <Link href="https://surge2015.formidablelabs.com">
-              <Text bold style={{display: "inline-block"}}>
+              <Text bold style={{display: "inline-block"}} textColor={styles.title.secondary}>
                 surge2015.formidablelabs.com
               </Text>
             </Link>
           </div>
         </Slide>
 
-        <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+        <Slide transition={["slide"]} bgImage={images.city} bgDarken={0.75}>
           <Appear fid="1">
             <Heading size={1} caps fit textColor="primary">
               TODO
