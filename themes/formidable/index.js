@@ -1,7 +1,7 @@
 import theme from "spectacle/themes/default/index";
 
 const colors = {
-  primary: "rgb(229, 44, 63)",
+  primary: "#d71920", // Lighter: "rgb(229, 44, 63)",
   secondary: "black",
   tertiary: "white"
 };

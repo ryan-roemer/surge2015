@@ -13,7 +13,8 @@ import {
 import preloader from "spectacle/src/utils/preloader";
 
 const images = {
-  polygon: require("../assets/img/polygons.svg"),
+  polygons: require("../assets/img/polygons.svg"),
+  polygonsGray: require("../assets/img/polygons-gray.svg"),
   city: require("spectacle/presentation/city.jpg"),
   logo: require("spectacle/presentation/formidable-logo.svg")
 };
@@ -23,6 +24,9 @@ preloader([images.city]);
 // Styles
 // ------
 const styles = {
+  title: {
+    secondary: "#dcb"
+  },
   textShadowBlackOutline: ((s, c) => {
     return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
   }("0.025em", "#ccc"))
@@ -34,27 +38,28 @@ export default class extends React.Component {
   render() {
     return (
       <Deck progress="bar" transition={["slide"]}>
-        <Slide transition={["slide"]} bgImage={images.polygon}>
+        <Slide transition={["slide"]} bgImage={images.polygons}>
           <Heading size={1} fit caps margin="-20px 0px">
             Wrangling
           </Heading>
-          <Heading size={1} fit caps margin="-20px 0px" textColor="black"
-                   style={{textShadow: styles.textShadowBlackOutline}}>
+          <Heading size={1} fit caps margin="-20px 0px" textColor={styles.title.secondary}>
             Large Scale
           </Heading>
           <Heading size={1} fit caps margin="-20px 0px">
             Frontend Web Applications
           </Heading>
-          <div style={{display: "inline-block", marginTop: "2.5em",
-                       textShadow: styles.textShadowBlackOutline}}>
+          <div style={{display: "inline-block", marginTop: "2.5em"}}>
             <Link href="https://twitter.com/ryan_roemer">
-              <Text bold style={{display: "inline-block"}}>
+              <Text bold style={{display: "inline-block"}} textColor={styles.title.secondary}>
                 @ryan_roemer
               </Text>
             </Link>
-            <Text style={{display: "inline-block", "margin": "0px 0.35em"}}>|</Text>
+            <Text style={{display: "inline-block", "margin": "0px 0.35em"}}
+                  textColor={styles.title.secondary}>
+              |
+            </Text>
             <Link href="https://surge2015.formidablelabs.com">
-              <Text bold style={{display: "inline-block"}}>
+              <Text bold style={{display: "inline-block"}} textColor={styles.title.secondary}>
                 surge2015.formidablelabs.com
               </Text>
             </Link>
