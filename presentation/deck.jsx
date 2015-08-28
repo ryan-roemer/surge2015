@@ -5,7 +5,7 @@ import React from "react/addons";
 // Appear, BlockQuote, Cite, CodePane, Deck, Fill,
 // Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
 import {
-  Appear, Deck, Heading, Image, Link, Slide, Text, List, ListItem
+  Deck, Heading, Image, Link, Slide, Text, List, ListItem
 } from "spectacle/src/spectacle";
 
 // Images
@@ -46,13 +46,13 @@ export default class extends React.Component {
           * Title
           * --------------------------------------------------------------- */}
         <Slide bgImage={images.polygons}>
-          <Heading size={1} fit caps margin="-20px 0px" textColor="primary">
+          <Heading size={1} fit caps textColor="primary">
             Wrangling
           </Heading>
-          <Heading size={1} fit caps margin="-20px 0px" style={{...styles.title.secondary}}>
+          <Heading size={1} fit caps style={{...styles.title.secondary}}>
             Large Scale
           </Heading>
-          <Heading size={1} fit caps margin="-20px 0px" textColor="primary">
+          <Heading size={1} fit caps textColor="primary">
             Frontend Web Applications
           </Heading>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
@@ -61,7 +61,7 @@ export default class extends React.Component {
                 @ryan_roemer
               </Text>
             </Link>
-            <Text style={{display: "inline-block", margin: "0px 0.35em",
+            <Text style={{display: "inline-block", margin: "0 0.35em",
                           ...styles.title.secondary}}>
               |
             </Text>
@@ -80,28 +80,32 @@ export default class extends React.Component {
           <Heading size={1} caps fit>
             Why are we here?
           </Heading>
-          <Heading size={4} textColor="secondary"><Appear fid="1">
+          <Heading size={4} textColor="secondary">
             (Executive summary)
-          </Appear></Heading>
+          </Heading>
           <List>
-            <ListItem><Appear fid="2">
+            <ListItem>
               Web applications are <strong>growing</strong> in <em>size</em> and
               <em>function</em>.
-            </Appear></ListItem>
-            <ListItem><Appear fid="3">
+            </ListItem>
+            <ListItem>
               Developed by larger <strong>frontend teams</strong>.
-            </Appear></ListItem>
-            <ListItem><Appear fid="4">
+            </ListItem>
+            <ListItem>
               Harder to build, deploy, maintain, and monitor.
-            </Appear></ListItem>
-            <ListItem><Appear fid="4">
+            </ListItem>
+            <ListItem>
               ... and now <strong>critical</strong> to the business.
-            </Appear></ListItem>
+            </ListItem>
           </List>
         </Slide>
 
         {/*eslint-disable no-multiple-empty-lines*/
          /* TODO HERE
+
+            - INTRODUCTION
+                - Need something fast, quick and to the point.
+                - Maybe stats about a web app / dev team? (team size, code size, transactions, etc.)
 
             - OVERALL THEME - Wild West, "Large"
 
@@ -153,21 +157,18 @@ export default class extends React.Component {
          *//*eslint-enable no-multiple-empty-lines*/}
 
         <Slide bgImage={images.city} bgDarken={0.75}>
-          <Appear fid="1">
-            <Heading size={1} caps fit textColor="primary">
-              TODO
-            </Heading>
-          </Appear>
-          <Appear fid="2">
-            <Heading size={1} caps fit textColor="tertiary">
-              ADD SOME SECTIONS
-            </Heading>
-          </Appear>
-          <Appear fid="3">
-            <Heading size={1} caps fit textColor="primary">
-              AND IMAGES
-            </Heading>
-          </Appear>
+          <Heading size={1} caps fit textColor="primary">
+            TODO
+          </Heading>
+
+          <Heading size={1} caps fit textColor="tertiary">
+            ADD SOME SECTIONS
+          </Heading>
+
+          <Heading size={1} caps fit textColor="primary">
+            AND IMAGES
+          </Heading>
+
         </Slide>
 
         {/* ---------------------------------------------------------------
