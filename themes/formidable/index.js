@@ -1,9 +1,9 @@
 import theme from "spectacle/themes/default/index";
 
 const colors = {
-  primary: "#d71920", // Lighter: "rgb(229, 44, 63)",
+  primary: "white",
   secondary: "black",
-  tertiary: "white"
+  tertiary: "#d71920" // Lighter: "rgb(229, 44, 63)"
 };
 
 // Overrides

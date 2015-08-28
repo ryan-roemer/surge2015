@@ -26,11 +26,14 @@ preloader([images.city]);
 // ------
 const styles = {
   title: {
-    secondary: "#dcb"
-  },
-  textShadowBlackOutline: ((s, c) => {
-    return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
-  }("0.025em", "#ccc"))
+    // Expand this style object as a splat in `styles`.
+    secondary: {
+      color: "#C5C3C6",
+      textShadow: ((s, c) => {
+        return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
+      }("0.025em", "#444"))
+    }
+  }
 };
 
 // Presentation
@@ -43,27 +46,27 @@ export default class extends React.Component {
           * Title
           * --------------------------------------------------------------- */}
         <Slide bgImage={images.polygons}>
-          <Heading size={1} fit caps margin="-20px 0px">
+          <Heading size={1} fit caps margin="-20px 0px" textColor="primary">
             Wrangling
           </Heading>
-          <Heading size={1} fit caps margin="-20px 0px" textColor={styles.title.secondary}>
+          <Heading size={1} fit caps margin="-20px 0px" style={{...styles.title.secondary}}>
             Large Scale
           </Heading>
-          <Heading size={1} fit caps margin="-20px 0px">
+          <Heading size={1} fit caps margin="-20px 0px" textColor="primary">
             Frontend Web Applications
           </Heading>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
             <Link href="https://twitter.com/ryan_roemer">
-              <Text bold style={{display: "inline-block"}} textColor={styles.title.secondary}>
+              <Text bold style={{display: "inline-block", ...styles.title.secondary}}>
                 @ryan_roemer
               </Text>
             </Link>
-            <Text style={{display: "inline-block", "margin": "0px 0.35em"}}
-                  textColor={styles.title.secondary}>
+            <Text style={{display: "inline-block", margin: "0px 0.35em",
+                          ...styles.title.secondary}}>
               |
             </Text>
             <Link href="https://surge2015.formidablelabs.com">
-              <Text bold style={{display: "inline-block"}} textColor={styles.title.secondary}>
+              <Text bold style={{display: "inline-block", ...styles.title.secondary}}>
                 surge2015.formidablelabs.com
               </Text>
             </Link>
@@ -77,12 +80,13 @@ export default class extends React.Component {
           <Heading size={1} caps fit>
             Why are we here?
           </Heading>
-          <Heading size={4} textColor={styles.title.secondary}><Appear fid="1">
-            (<em>Executive summary</em>)
+          <Heading size={4} textColor="secondary"><Appear fid="1">
+            (Executive summary)
           </Appear></Heading>
           <List>
             <ListItem><Appear fid="2">
-              Web applications are <strong>growing</strong> in <em>size</em> and <em>function</em>.
+              Web applications are <strong>growing</strong> in <em>size</em> and
+              <em>function</em>.
             </Appear></ListItem>
             <ListItem><Appear fid="3">
               Developed by larger <strong>frontend teams</strong>.
@@ -104,7 +108,8 @@ export default class extends React.Component {
             - Dive into each of the bullet points above.
                 - Larger Apps
                     - We want fast, responsive apps.
-                    - Have enormous possibilities: e.g., React with serevr-side render, bootstrap, into SPA
+                    - Have enormous possibilities: e.g., React with serevr-side render, bootstrap,
+                      into SPA
                     - ... but the code bases are getting much, much larger.
                 - Larger Teams
                     - With varying levels of experience.
@@ -169,7 +174,7 @@ export default class extends React.Component {
           * Thanks
           * --------------------------------------------------------------- */}
         <Slide bgColor="tertiary" bgImage={images.polygonsLight}>
-          <Heading size={1} caps fit textColor="primary">
+          <Heading size={1} caps fit textColor="tertiary">
             Thanks!
           </Heading>
           <Link href="http://formidablelabs.com">
