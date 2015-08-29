@@ -19,7 +19,10 @@ const images = {
   polygonsLight: require("../assets/img/bg/formidable/polygons-light.svg"),
   logoSquare: require("../assets/img/logo/formidable-square.png"),
   logoText: require("../assets/img/logo/formidable-text.svg"),
-  wmHomepage: require("../assets/img/wml/homepage-table-phone.png")
+  wmHomepage: require("../assets/img/wml/screen-homepage.png"),
+  wmItem: require("../assets/img/wml/screen-item-ipad.png"),
+  wmReport: require("../assets/img/wml/report-homepage.png"),
+  wmScripts: require("../assets/img/wml/scripts-homepage.png")
 };
 
 preloader([images.city]);
@@ -182,11 +185,14 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Link href="http://walmart.com">
-            <Image src={images.wmHomepage} width="80%"/>
+            <Image src={images.wmItem} width="80%"/>
           </Link>
+          {/*
+            - walmart.com
+            */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading size={1} caps fit textColor="secondary">
             The Numbers
           </Heading>
           <List>
@@ -222,7 +228,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            The Team
+            The Dev Team
           </Heading>
           <List>
             <ListItem>A <Point>2+</Point> year website rewrite</ListItem>
@@ -234,7 +240,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            The Web Apps
+            The App / Code
           </Heading>
           <List>
             <ListItem>
@@ -273,10 +279,66 @@ export default class extends React.Component {
               298431   1312631  builds/tracks/lib.min.js
             */}
         </Slide>
+        {/* TODO - MOVE?: Consider moving "the homepage" down to a case study or point below. */}
         <Slide>
-          <Heading size={3}>
-            TODO: INSERT SLIDE - JS breakdown of homepage from atlas-reports.
+          <Link href="http://walmart.com">
+            <Image src={images.wmHomepage} width="80%"/>
+          </Link>
+          {/*
+            - This is the homepage.
+            - Let's look at what goes into it.
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit textColor="secondary">
+            Homepage - Entry Points
           </Heading>
+          <Image src={images.wmReport} width="90%"/>
+          {/*
+            - 6 entry points (2 deferred).
+            - 1 shared library
+            - Caching analysis (for portion of shared library used)
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit textColor="secondary">
+            Homepage - Scripts
+          </Heading>
+          <Image src={images.wmScripts} width="90%"/>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            Homepage - Scripts
+          </Heading>
+          <Layout>
+            <Fill>
+              <List>
+                <ListItem><Point>2</Point> actual <em>application</em> code</ListItem>
+                <ListItem><Point>2</Point> CDN infrastructure</ListItem>
+                <ListItem><Point>2</Point> internal ads</ListItem>
+                <ListItem><Point>2</Point> Google ads</ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <List>
+                <ListItem><Point>1</Point> fonts</ListItem>
+                <ListItem><Point>1</Point> IE-conditional polyfill</ListItem>
+                <ListItem><Point>18</Point> inline scripts</ListItem>
+              </List>
+            </Fill>
+          </Layout>
+
+          {/*
+            - 28 various scripts on the page in HTML
+            - More can be loaded by JS
+            - 2 website core: config-map, core-bundle.
+            - 2 from CDN infrastructure
+            - 2 internal ads integration
+            - 2 Google ads
+            - 1 fonts
+            - 1 polyfill
+            - 18 inline script tags.
+            */}
         </Slide>
 
         {/* ---------------------------------------------------------------
