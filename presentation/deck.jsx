@@ -6,7 +6,7 @@ import React from "react/addons";
 // Appear, BlockQuote, Cite, CodePane, Deck, Fill,
 // Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
 import {
-  Deck, Heading, Image, Link, Slide, Text, List, ListItem
+  Deck, Heading, Image, Link, Slide, Text, Layout, List, ListItem, Fill
 } from "spectacle/src/spectacle";
 
 // Images
@@ -49,6 +49,10 @@ class Point extends React.Component {
     );
   }
 }
+
+Point.propTypes = {
+  children: React.PropTypes.node
+};
 
 // Presentation
 // ------------
@@ -301,7 +305,7 @@ export default class extends React.Component {
               to keeping our large scale applications up and running.
             */}
           <Heading size={3}>
-            A few battle-tested tips from the field...
+            <em>A few battle-tested tips from the field...</em>
           </Heading>
         </Slide>
 
@@ -318,7 +322,7 @@ export default class extends React.Component {
             - OVERVIEW - Survival Tactics:
                 (Wrangling)
                 - Meta Leadership
-                - Educate developers
+                - Educate
                 - Review everything
                 - Automate quality
                 (Infrastructure)
@@ -422,6 +426,98 @@ export default class extends React.Component {
                 - TIP: Minimize exposure to things you can't control.
                     - iFrames
           */}
+        <Slide bgColor="secondary">
+          <Heading size={4} fit caps textColor="primary">
+            Challenges
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={4} fit caps textColor="tertiary">
+            Challenges
+          </Heading>
+          <Layout>
+            <Fill>
+              <List>
+                <ListItem>
+                  JavaScript
+                </ListItem>
+                <ListItem>
+                  Development
+                </ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <List>
+                <ListItem>
+                  Production
+                </ListItem>
+                <ListItem>
+                  Organizations
+                </ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide bgColor="secondary">
+          <Heading size={4} fit caps textColor="primary">
+            Survival
+          </Heading>
+          <Heading size={4} fit caps textColor="primary">
+            Tactics
+          </Heading>
+        </Slide>
+        <Slide>
+          <Layout>
+            <Fill>
+              <Heading size={5} caps textColor="tertiary">
+                Wrangling
+              </Heading>
+              <List>
+                <ListItem>
+                  Meta Leadership
+                </ListItem>
+                <ListItem>
+                  Educate
+                </ListItem>
+                <ListItem>
+                  Review everything
+                </ListItem>
+                <ListItem>
+                  Automate quality
+                </ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <Heading size={5} caps textColor="tertiary">
+                Infrastructure
+              </Heading>
+              <List>
+                <ListItem>
+                  Build
+                </ListItem>
+                <ListItem>
+                  Log, Monitor
+                </ListItem>
+                <ListItem>
+                  Debugging "life lines"
+                </ListItem>
+                <ListItem>
+                  Anticipate failures
+                </ListItem>
+                <ListItem>
+                  Minimize exposure
+                </ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+
+
+
+
+        {/* TODO HERE: Keep writing the slides... */}
+
 
 
 
