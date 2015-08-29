@@ -18,24 +18,15 @@ const images = {
   polygonsGray: require("../assets/img/bg/formidable/polygons-gray.svg"),
   polygonsLight: require("../assets/img/bg/formidable/polygons-light.svg"),
   logoSquare: require("../assets/img/logo/formidable-square.png"),
-  logoText: require("../assets/img/logo/formidable-text.svg")
+  logoText: require("../assets/img/logo/formidable-text.svg"),
+  wmHomepage: require("../assets/img/wml/homepage-table-phone.png")
 };
 
 preloader([images.city]);
 
-// Styles
+// Themes
 // ------
-const styles = {
-  title: {
-    // Expand this style object as a splat in `styles`.
-    secondary: {
-      color: "#ccc",
-      // textShadow: ((s, c) => {
-      //   return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
-      // }("0.025em", "#444"))
-    }
-  }
-};
+import theme from "../themes/formidable/index";
 
 // Components
 // ----------
@@ -63,11 +54,11 @@ export default class extends React.Component {
         {/* ---------------------------------------------------------------
           * Title
           * --------------------------------------------------------------- */}
-        <Slide bgImage={images.polygons}>
+        <Slide bgImage={images.polygons} bgDarken={0.25}>
           <Heading size={1} fit caps textColor="primary">
             Wrangling
           </Heading>
-          <Heading size={1} fit caps style={{...styles.title.secondary}}>
+          <Heading size={1} fit caps textColor={theme.colors.light}>
             Large Scale
           </Heading>
           <Heading size={1} fit caps textColor="primary">
@@ -75,16 +66,16 @@ export default class extends React.Component {
           </Heading>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
             <Link href="https://twitter.com/ryan_roemer">
-              <Text bold style={{display: "inline-block", ...styles.title.secondary}}>
+              <Text bold style={{display: "inline-block"}} textColor={theme.colors.light}>
                 @ryan_roemer
               </Text>
             </Link>
-            <Text style={{display: "inline-block", margin: "0 0.35em",
-                          ...styles.title.secondary}}>
+            <Text style={{display: "inline-block", margin: "0 0.35em"}}
+                  textColor={theme.colors.light}>
               |
             </Text>
             <Link href="https://surge2015.formidablelabs.com">
-              <Text bold style={{display: "inline-block", ...styles.title.secondary}}>
+              <Text bold style={{display: "inline-block"}} textColor={theme.colors.light}>
                 surge2015.formidablelabs.com
               </Text>
             </Link>
@@ -173,11 +164,16 @@ export default class extends React.Component {
                 - Large frontend development teams
           */}
         <Slide>
-          <Heading size={4}>
-            Let{"'"}s examine large web applications at a <em>highly-trafficked
-            </em>, <em>top-five</em> e-commerce website.
+          <Heading size={4} textColor="secondary">
+            Let{"'"}s dig into some large apps at a <em>high-traffic
+            </em>, <em>top-five</em> e-commerce site
           </Heading>
           {/**/}
+        </Slide>
+        <Slide>
+          <Link href="http://walmart.com">
+            <Image src={images.wmHomepage} width="80%"/>
+          </Link>
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -244,11 +240,6 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            TODO: INSERT SLIDE - Demo or picture of homepage.
-          </Heading>
-        </Slide>
-        <Slide>
-          <Heading size={3}>
             TODO: INSERT SLIDE - JS breakdown of homepage from atlas-reports.
           </Heading>
         </Slide>
@@ -280,11 +271,11 @@ export default class extends React.Component {
             <Image src={images.logoSquare}/>
           </Link>
         </Slide>
-        <Slide>
-          <Heading size={1} caps fit>
+        <Slide bgColor="secondary">
+          <Heading size={1} caps fit textColor={theme.colors.light}>
             Wrangling Adventures
           </Heading>
-          <List>
+          <List textColor="primary">
             <ListItem><Point>JavaScript lead</Point> for site / development teams</ListItem>
             <ListItem>Lead <Point>"Meta JS"</Point> team of 5-8 developers</ListItem>
             <ListItem>Part of new core web team</ListItem>

@@ -11,3 +11,7 @@ _:-moz-tree-row(hover), .spectacle-deck {
 _:-moz-tree-row(hover), ul .appear {
   display: inline;
 }
+
+.spectacle-slide em {
+  color: #546A76; /* Dark Blue */
+}
