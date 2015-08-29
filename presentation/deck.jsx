@@ -37,6 +37,19 @@ const styles = {
   }
 };
 
+// Components
+// ----------
+// A meaningful "point" in text.
+class Point extends React.Component {
+  render() {
+    return (
+      <span style={{fontWeight: "bold"}}>
+        {this.props.children}
+      </span>
+    );
+  }
+}
+
 // Presentation
 // ------------
 export default class extends React.Component {
@@ -78,6 +91,8 @@ export default class extends React.Component {
           * Large Scale Web Applications
           * ---------------------------------------------------------------
 
+            - TODO: This outline is out-of-date with content.
+
             - Start with a BANG! Big numbers, big stakes.
                 - Let's talk about: LARGE. SCALE. WEB APPS.
                 - This is everyone's future.
@@ -98,26 +113,49 @@ export default class extends React.Component {
           <Heading size={2}>
             The web is <em>massively</em> moving to the <em>frontend</em>
           </Heading>
+          {/*
+            - Browsers are getting faster and better all the time.
+            - Standards and technologies are exploding everywhere.
+            */}
         </Slide>
         <Slide>
           <Heading size={2}>
             Users want <em>rich</em> and <em>seamless</em> experiences
           </Heading>
+          {/*
+            - Waiting for page refreshes are a thing of the past.
+            - Single Page Applications deliver quick, slick experiences.
+            */}
         </Slide>
         <Slide>
           <Heading size={2}>
             Product owners want <em>fast</em> and <em>nimble</em> apps
           </Heading>
+          {/*
+            - JavaScript is easy to iterate and meld to requirements.
+            */}
         </Slide>
         <Slide>
           <Heading size={2}>
-            Frontend apps are now <em>business critical</em>
+            Browser apps are now <em>business critical</em>.
           </Heading>
+          {/*
+            - The number of websites anywhere that you can turn off JS is decreasing rapidly.
+            */}
         </Slide>
         <Slide>
           <Heading size={2}>
             And, yes, even for the <em>enterprise</em>
           </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={2}>
+            ... which means
+          </Heading>
+          {/*
+            - JavaScript has won.
+            - And we are destined for a web application world of...
+            */}
         </Slide>
         <Slide bgColor="tertiary">
           <Heading size={4} fit caps textColor="primary">
@@ -132,9 +170,83 @@ export default class extends React.Component {
         </Slide>
 
         {/* Quantifying, Examining Large Scale Apps */}
+        <Slide>
+          <Heading size={4}>
+            Let{"'"}s examine large web applications at a <em>highly-trafficked
+            </em>, <em>top-five</em> e-commerce website.
+          </Heading>
+          {/**/}
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            TODO: INSERT SLIDE - Website usage and impact.
+          </Heading>
+          {/*
+            - Traffic numbers
+            - Revenue numbers
+            - Black Friday, CyberMonday numbers
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            The Web Apps
+            {/**/}
+          </Heading>
+          <List>
+            <ListItem>A <Point>2+</Point> year website rewrite</ListItem>
+            <ListItem>
+              <Point>50+</Point> JS "entry points", ranging
+              from <Point>1K - 145K</Point>
+            </ListItem>
+            <ListItem>Shared <Point>300K</Point> common library</ListItem>
+            <ListItem>Additional external and internal JS apps</ListItem>
+            <ListItem>
+              <Point>650K</Point> lines, <Point>2500</Point> files of JavaScript source
+            </ListItem>
+            <ListItem>
+              <Point>More JavaScript</Point> lines and files than <Point>Java</Point>
+            </ListItem>
+          </List>
+          {/*
+            - Sizes are minified and gzipped.
+            - Source Code
+              Files   Lines     Category
+              1900    189382    Java All
+              2517    631653    JS All
+              1138    129467    JS App (no vendor)
+                      290524    JS Vendor
+                      161057    JS App + Vendor
+              1315    341129    JS Test
 
+            - 58 entry points:
 
+              2189     4834     builds/tracks/footer/footer.min.js
+              20242    70211    builds/tracks/header/header.min.js
 
+              8363     26276    builds/tracks/homepage/homepage.min.js
+              69110    389482   builds/tracks/product/product.min.js
+              144400   696033   builds/tracks/checkout/checkout/checkout.min.js
+
+              298431   1312631  builds/tracks/lib.min.js
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            TODO: INSERT SLIDE - Demo or picture of website.
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            The Team
+            {/**/}
+          </Heading>
+          <List>
+            <ListItem>50+ core frontend engineers</ListItem>
+            <ListItem>14 vertical teams / "tracks"</ListItem>
+            <ListItem>Multiple higher-level organizations</ListItem>
+            <ListItem>Meta <code>(JS,CSS,Java)</code> teams</ListItem>
+          </List>
+        </Slide>
 
 
 
