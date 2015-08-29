@@ -29,10 +29,10 @@ const styles = {
   title: {
     // Expand this style object as a splat in `styles`.
     secondary: {
-      color: "#C5C3C6",
-      textShadow: ((s, c) => {
-        return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
-      }("0.025em", "#444"))
+      color: "#ccc",
+      // textShadow: ((s, c) => {
+      //   return `-${s} 0 ${c}, 0 ${s} ${c}, ${s} 0 ${c}, 0 -${s} ${c}`;
+      // }("0.025em", "#444"))
     }
   }
 };

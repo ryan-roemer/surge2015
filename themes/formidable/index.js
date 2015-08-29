@@ -6,6 +6,9 @@ const colors = {
   tertiary: "#d71920" // Lighter: "rgb(229, 44, 63)"
 };
 
+// Light Blue: 88A0A8
+// Dark Blue: 546A76
+
 // Overrides
 // TODO: Have overrides of `colors` and `fonts` to pass in to a function in
 // spectacle itself.
