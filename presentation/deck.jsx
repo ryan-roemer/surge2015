@@ -87,13 +87,17 @@ export default class extends React.Component {
                 - walmart.com e-commerce site. Traffic, orders, spikes, etc.
                 - Large amounts of JavaScript. Trend to frontend.
 
-            - Challenges
+            - Challenges: How are we surviving / thriving?
+                - Development
+                - Production
+                - Organizations
+
+            - Surviving Development
+                - JS (esp. on frontend) is the Wild West.
                 - Big applications
                 - Big teams
                     - Backend dev's learning the frontend.
                     - Frontend dev's unfamiliar with large apps, code quality, etc.
-
-            - Surviving development
                 - Code and infrastructure
                     - One unified build.
                     - Multiple track repos: shared JavaScript + JS
@@ -102,44 +106,80 @@ export default class extends React.Component {
                     - Unit tests: 70% code coverage.
                     - Functional tests
 
-            - Surviving production
-                - Logging: On the frontend.
+            - Surviving Production
+                - Logging: On the frontend. To a service.
                 - Deployment: The build, CDN
                 - Debugging: Source maps
+
+            - Surviving the Organization
+                - Cross-organization initiatives.
+                    - Injected HTML/JS/CSS
+                -
           */}
 
         {/* Large. Scale. Web Apps. */}
         {/* TODO SLIDE IDEA: "Welcome to THE PRESENT" */}
         <Slide>
           <Heading size={2}>
-            The web is <em>massively</em> moving to the <em>frontend</em>.
+            The web is <em>massively</em> moving to the <em>frontend</em>
           </Heading>
         </Slide>
         <Slide>
           <Heading size={2}>
-            Users want <em>rich</em> and <em>seamless</em> experiences.
+            Users want <em>rich</em> and <em>seamless</em> experiences
           </Heading>
         </Slide>
         <Slide>
           <Heading size={2}>
-            Product owners want <em>fast</em> and <em>nimble</em> applications.
+            Product owners want <em>fast</em> and <em>nimble</em> apps
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={2}>
+            Frontend apps are now <em>business critical</em>
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={2}>
+            And, yes, even for the <em>enterprise</em>
+          </Heading>
+        </Slide>        <Slide bgColor="tertiary">
+          <Heading size={4} fit caps textColor="primary">
+            Lots of JavaScript
+          </Heading>
+          <Heading size={4} fit caps textColor="secondary">
+            In the browser
+          </Heading>
+          <Heading size={4} fit caps textColor="primary">
+            Written by large teams
           </Heading>
         </Slide>
 
         {/* Quantifying, Examining Large Scale Apps */}
 
 
+
+        {/* Challenges */}
+
+
         {/* ---------------------------------------------------------------
           * Past
           * ---------------------------------------------------------------
 
-            - Starting point: A redesign of the site.
+            - Starting point:
+                - A redesign of the site.
+                - A 2+ year effort.
+
             - Getting to production
                 - Performance: Not a "from the start" mandate. And tough ever
                   since.
                     - Get into place ASAP, which actual architecture support.
                     - Hat tip to other perf talk.
                     - Maybe a demo.
+
+            - Infrastructure
+                - Monolith -> individual repos.
+
           */}
 
 
@@ -152,11 +192,13 @@ export default class extends React.Component {
 
             - New technologies.
                 - React: server-side render, efficient DOM
+
             - Organization and structure
                 - Many, many small repositories
                     - Components
                     - Apps
                     - Infrastructure
+
             - Transition strategies.
                 - So important to support teams through transitions.
           */}
@@ -164,32 +206,6 @@ export default class extends React.Component {
 
 
 
-        {/* ---------------------------------------------------------------
-          * Motivation / Introduction
-          * --------------------------------------------------------------- */}
-        <Slide>
-          <Heading size={1} caps fit>
-            Why are we here?
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            (Executive summary)
-          </Heading>
-          <List>
-            <ListItem>
-              Web applications are <strong>growing</strong> in <em>size</em> and
-              <em>function</em>.
-            </ListItem>
-            <ListItem>
-              Developed by larger <strong>frontend teams</strong>.
-            </ListItem>
-            <ListItem>
-              Harder to build, deploy, maintain, and monitor.
-            </ListItem>
-            <ListItem>
-              ... and now <strong>critical</strong> to the business.
-            </ListItem>
-          </List>
-        </Slide>
 
         {/* TODO HERE
 
