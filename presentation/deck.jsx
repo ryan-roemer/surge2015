@@ -75,7 +75,7 @@ export default class extends React.Component {
         </Slide>
 
         {/* ---------------------------------------------------------------
-          * Large Scale Web Applications (Present)
+          * Large Scale Web Applications
           * ---------------------------------------------------------------
 
             - Start with a BANG! Big numbers, big stakes.
@@ -87,38 +87,13 @@ export default class extends React.Component {
                 - walmart.com e-commerce site. Traffic, orders, spikes, etc.
                 - Large amounts of JavaScript. Trend to frontend.
 
-            - Challenges: How are we surviving / thriving?
-                - Development
-                - Production
-                - Organizations
-
-            - Surviving Development
-                - JS (esp. on frontend) is the Wild West.
-                - Big applications
-                - Big teams
-                    - Backend dev's learning the frontend.
-                    - Frontend dev's unfamiliar with large apps, code quality, etc.
-                - Code and infrastructure
-                    - One unified build.
-                    - Multiple track repos: shared JavaScript + JS
-                - Quality
-                    - Static checking
-                    - Unit tests: 70% code coverage.
-                    - Functional tests
-
-            - Surviving Production
-                - Logging: On the frontend. To a service.
-                - Deployment: The build, CDN
-                - Debugging: Source maps
-
-            - Surviving the Organization
-                - Cross-organization initiatives.
-                    - Injected HTML/JS/CSS
-                -
+            - My role
+                - Formidable
+                - JavaScript lead for the website
+                - Lead the "Meta JS" team. (Also Meta CSS, Meta Java teams).
           */}
 
         {/* Large. Scale. Web Apps. */}
-        {/* TODO SLIDE IDEA: "Welcome to THE PRESENT" */}
         <Slide>
           <Heading size={2}>
             The web is <em>massively</em> moving to the <em>frontend</em>
@@ -143,7 +118,8 @@ export default class extends React.Component {
           <Heading size={2}>
             And, yes, even for the <em>enterprise</em>
           </Heading>
-        </Slide>        <Slide bgColor="tertiary">
+        </Slide>
+        <Slide bgColor="tertiary">
           <Heading size={4} fit caps textColor="primary">
             Lots of JavaScript
           </Heading>
@@ -159,10 +135,95 @@ export default class extends React.Component {
 
 
 
-        {/* Challenges */}
+
+
 
 
         {/* ---------------------------------------------------------------
+          * Challenges: Surviving, Thriving
+          * ---------------------------------------------------------------
+
+            - OVERVIEW - Challenges: How are we surviving / thriving?
+                - JavaScript
+                - Development
+                - Production
+                - Organizations
+
+            - OVERVIEW - Survival Tactics:
+                - Guide development with a Meta team
+                - Educate developers
+                - Automate quality
+                - Log
+                - Monitor
+                - Build debugging "life lines"
+                - Minimize exposure to things you can't control
+
+            - Surviving JavaScript
+                - The Wild, Wild West
+                - The Good:
+                    - It's flexible, developer-friendly, and scalable.
+
+                - The Bad:
+                    - Flexible almost to a fault (monkey patching everywhere)
+                    - Tough to do correctly
+                    - ... in all browsers
+                    - Code must be small and avoid duplication
+                    - The technology ecosystem changes at a ridiculous rate
+
+                - TIP: Coordinate team / infrastructure to funnel.
+                    - Common open source / vendor libraries
+                    - Conventions and code review for the team
+                    - Utilities and guidance.
+                    - And do this ASAP.
+                - TIP: (See "the future")
+                - TIP: ... get ready for a bumpy ride.
+
+            - Surviving Development
+                - Big teams
+                    - Backend dev's learning the frontend.
+                    - Frontend dev's unfamiliar with large apps, code quality, etc.
+                    - TIP: Education
+                        - Good documentation
+                - TIP: Organize your code.
+                    - Going to have enormous amount of code.
+                    - One unified build.
+                    - Multiple track repos: shared JavaScript + JS
+                - TIP: Use quality tooling and automation.
+                    - Static checking
+                    - Unit tests: 70% code coverage.
+                    - Functional tests
+                    - And do this ASAP
+
+            - Surviving Production
+                - Errors:
+                    - Very, very costly.
+                    - With incredible development speed + so many different browsers, you should be
+                      very, very scared.
+                - Logging: On the frontend. To a service.
+                    - Code goes out in the wild, goes wrong and is really, really hard to support.
+                - Monitoring: Observe spikes and idiosyncrasies.
+                - Debugging: Source maps
+                - Deployment: The build, CDN
+                - Spikes: Black Friday, Cyber Monday
+                    - Like usual, just more system stress and higher error penalties.
+                    - Code freezes
+                    - Exhaustive testing
+                    - Oncall team
+                    - TODO: A takeway / concise point (?)
+
+            - Surviving the Organization
+                - Cross-organization initiatives.
+                    - Injected HTML/JS/CSS
+                - TIP: Minimize exposure to things you can't control.
+                    - iFrames
+          */}
+
+
+
+
+
+        {/* TODO: CUT THIS SECTION?
+          * ---------------------------------------------------------------
           * Past
           * ---------------------------------------------------------------
 
@@ -189,6 +250,9 @@ export default class extends React.Component {
         {/* ---------------------------------------------------------------
           * Future
           * ---------------------------------------------------------------
+
+            - TODO(IDEA): "Surviving the Future" / "Surviving Indefinitely"
+            - TODO(IDEA): end with "THRIVE!"
 
             - New technologies.
                 - React: server-side render, efficient DOM
