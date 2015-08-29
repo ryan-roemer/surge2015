@@ -1,3 +1,4 @@
+/*eslint-disable no-multiple-empty-lines*/
 import React from "react/addons";
 
 // Slide abstractions
@@ -74,6 +75,96 @@ export default class extends React.Component {
         </Slide>
 
         {/* ---------------------------------------------------------------
+          * Large Scale Web Applications (Present)
+          * ---------------------------------------------------------------
+
+            - Start with a BANG! Big numbers, big stakes.
+                - Let's talk about: LARGE. SCALE. WEB APPS.
+                - This is everyone's future.
+
+            - It's Time for the Enterprise
+                - Enterprise's time has come. And we're going to talk it through.
+                - walmart.com e-commerce site. Traffic, orders, spikes, etc.
+                - Large amounts of JavaScript. Trend to frontend.
+
+            - Challenges
+                - Big applications
+                - Big teams
+                    - Backend dev's learning the frontend.
+                    - Frontend dev's unfamiliar with large apps, code quality, etc.
+
+            - Surviving development
+                - Code and infrastructure
+                    - One unified build.
+                    - Multiple track repos: shared JavaScript + JS
+                - Quality
+                    - Static checking
+                    - Unit tests: 70% code coverage.
+                    - Functional tests
+
+            - Surviving production
+                - Logging: On the frontend.
+                - Deployment: The build, CDN
+                - Debugging: Source maps
+          */}
+
+        {/* Large. Scale. Web Apps. */}
+        {/* TODO SLIDE IDEA: "Welcome to THE PRESENT" */}
+        <Slide>
+          <Heading size={2}>
+            The web is <em>massively</em> moving to the <em>frontend</em>.
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={2}>
+            Users want <em>rich</em> and <em>seamless</em> experiences.
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={2}>
+            Product owners want <em>fast</em> and <em>nimble</em> applications.
+          </Heading>
+        </Slide>
+
+        {/* Quantifying, Examining Large Scale Apps */}
+
+
+        {/* ---------------------------------------------------------------
+          * Past
+          * ---------------------------------------------------------------
+
+            - Starting point: A redesign of the site.
+            - Getting to production
+                - Performance: Not a "from the start" mandate. And tough ever
+                  since.
+                    - Get into place ASAP, which actual architecture support.
+                    - Hat tip to other perf talk.
+                    - Maybe a demo.
+          */}
+
+
+
+
+
+        {/* ---------------------------------------------------------------
+          * Future
+          * ---------------------------------------------------------------
+
+            - New technologies.
+                - React: server-side render, efficient DOM
+            - Organization and structure
+                - Many, many small repositories
+                    - Components
+                    - Apps
+                    - Infrastructure
+            - Transition strategies.
+                - So important to support teams through transitions.
+          */}
+
+
+
+
+        {/* ---------------------------------------------------------------
           * Motivation / Introduction
           * --------------------------------------------------------------- */}
         <Slide>
@@ -100,8 +191,7 @@ export default class extends React.Component {
           </List>
         </Slide>
 
-        {/*eslint-disable no-multiple-empty-lines*/
-         /* TODO HERE
+        {/* TODO HERE
 
             - INTRODUCTION
                 - Need something fast, quick and to the point.
@@ -112,7 +202,7 @@ export default class extends React.Component {
             - Dive into each of the bullet points above.
                 - Larger Apps
                     - We want fast, responsive apps.
-                    - Have enormous possibilities: e.g., React with serevr-side render, bootstrap,
+                    - Have enormous possibilities: e.g., React with server-side render, bootstrap,
                       into SPA
                     - ... but the code bases are getting much, much larger.
                 - Larger Teams
@@ -153,9 +243,6 @@ export default class extends React.Component {
 
 
 
-
-         *//*eslint-enable no-multiple-empty-lines*/}
-
         <Slide bgImage={images.city} bgDarken={0.75}>
           <Heading size={1} caps fit textColor="primary">
             TODO
@@ -170,6 +257,8 @@ export default class extends React.Component {
           </Heading>
 
         </Slide>
+
+         */}
 
         {/* ---------------------------------------------------------------
           * Thanks
