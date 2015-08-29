@@ -294,6 +294,16 @@ export default class extends React.Component {
             - ... and here are some of my experiences helping support and ship the website.
             */}
         </Slide>
+        <Slide>
+          {/*
+            - So many moving parts, details and complexities.
+            - I'm going to focus on just a few of things we've found critical
+              to keeping our large scale applications up and running.
+            */}
+          <Heading size={3}>
+            A few battle-tested tips from the field...
+          </Heading>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * Challenges: Surviving, Thriving
@@ -307,16 +317,17 @@ export default class extends React.Component {
 
             - OVERVIEW - Survival Tactics:
                 (Wrangling)
-                - Guide development with a Meta team
+                - Meta Leadership
                 - Educate developers
-                - Automate quality
                 - Review everything
+                - Automate quality
                 (Infrastructure)
+                - Build
                 - Log
                 - Monitor
-                - Build debugging "life lines"
+                - Debugging "life lines"
                 - Anticipate failures
-                - Minimize exposure to things you can't control
+                - Minimize exposure
 
             - Surviving JavaScript
                 - The Wild, Wild West
@@ -330,7 +341,7 @@ export default class extends React.Component {
                     - Code must be small and avoid duplication
                     - The technology ecosystem changes at a ridiculous rate
 
-                - TIP: Coordinate team / infrastructure to funnel.
+                - TIP: Meta team - Coordinate team / infrastructure to funnel.
                     - Common open source / vendor libraries
                     - Conventions and code review for the team
                     - Utilities and guidance.
@@ -339,10 +350,14 @@ export default class extends React.Component {
                 - TIP: You need a real "build" now.
                     - JS is complicated: Minification, ES6, Polyfills,
                     - CDN interaction and dev. vs. prod mode.
+                    - Make it as **fast** as possible.
+                        - Especially in development.
                     - Your Meta team should own this.
 
-                - TIP: (See "the future")
-                - TIP: ... get ready for a bumpy ride.
+                - SUB-TIP: Keep development as close to production as possible, dev-wise.
+                    - Including full CDN mode if possible.
+
+                - SUB-TIP: ... get ready for a bumpy ride.
 
             - Surviving Development
                 - Big teams
@@ -350,37 +365,51 @@ export default class extends React.Component {
                     - Frontend dev's unfamiliar with large apps, code quality, etc.
                     - TIP: Education
                         - Good documentation
-                - TIP: Organize your code.
+
+                - TIP: Meta team - Organize your code.
                     - Going to have enormous amount of code.
                     - One unified build.
-                    - Multiple track repos: shared JavaScript + JS
+                    - Originally, a monolith repo, now multiple track repos.
+                    - Shared Java + JS
+                        - LESSON: Original decision to nest JS deeply in Java has been painful.
+
+                - TIP: Meta team - Review all your code, even vendor code.
+                    - Substantive review from track
+                    - Meta JS/CSS/Java review too
+                        - Keeps coding styles consistent.
+                        - Cross-pollinates the teams.
+                        - Identify recurring issues, best practices.
+                        - Helps aid documentation efforts.
+                    - STORY: Unreviewed code with max. integer assumption for an ID. Took down
+                      prod and quite costly. Meta Java team would have caught / did catch
+                      immediately after the bug surfaced.
+                    - STORY: `Event.prototype.setPropagation` fiasco
+
                 - TIP: Use quality tooling and automation.
                     - Static checking
                     - Unit tests: 70% code coverage.
                     - Functional tests
                     - And do this ASAP
-                - TIP: Review all your code, even vendor code.
-                    - STORY: Unreviewed code with max. integer assumption for an ID. Took down
-                      prod and quite costly. Meta Java team would have caught / did catch
-                      immediately after the bug surfaced.
-                    - STORY: `Event.prototype.setPropagation` fiasco
-                - TIP: Keep development as close to production as possible, dev-wise.
 
             - Surviving Production
                 - IMPACT: Errors:
                     - Very, very costly.
                     - With incredible development speed + so many different browsers, you should be
-                      very, very scared.
+                      very, very scared
+                      .
                 - TIP: Logging: On the frontend. To a service.
                     - Code goes out in the wild, goes wrong and is really, really hard to support.
+
                 - TIP: Monitoring: Observe spikes and idiosyncrasies.
+
                 - TIP: Debugging: Source maps
-                - Deployment: The build, CDN
-                    - TODO: What is this point?
+
                 - TIP: Learn and anticipate your failures.
                     - Your JS webapp is most likely to fail: TODO_INSERT_SCENARIOS
                     - Learn your own app / organization's weak points.
-                - STORY: Spikes: Black Friday, Cyber Monday
+
+                - TIP: Plan for spikes
+                    - Spikes: Black Friday, Cyber Monday
                     - Like usual, just more system stress and higher error penalties.
                     - Code freezes
                     - Exhaustive testing
@@ -412,10 +441,11 @@ export default class extends React.Component {
                   since.
                     - Get into place ASAP, which actual architecture support.
                     - Hat tip to other perf talk.
-                    - Maybe a demo.
-
-            - Infrastructure
-                - Monolith -> individual repos.
+                    - TIP: Analysis tools _for_ the development team.
+                        - But, the work for the dev. teams is **hard**.
+                        - Maybe a demo.
+                    - LESSON: Teams will be "feature-driven" unless perf is a metric and
+                      explicit requirement.
 
           */}
 
@@ -429,17 +459,21 @@ export default class extends React.Component {
 
             - TODO(IDEA): "Surviving the Future" / "Surviving Indefinitely"
             - TODO(IDEA): end with "THRIVE!"
-            - TODO: Add a conclusion
-            - TODO: See how this section works with the overall "points" above.
+            - TODO: Transition to "THANKS".
 
-            - New technologies.
-                - React: server-side render, efficient DOM
+            - TIP: Embrace change, even if uncomfortable.
+                - Most of the code in a huge application will be aging / legacy
+                  by the time you actually ship it.
+                - Keep up with the times, and re-examine what you should be doing.
+                    - And especially for JavaScript.
+                - STORY: React: server-side render, efficient DOM
 
-            - Organization and structure
+            - TIP: Refactor infrastructure & organization
                 - TIP: Many, many small repositories
                     - Components
                     - Apps
                     - Infrastructure
+
                 - TIP: Lessen the direct role of Meta teams
                     - Opt for "guidance"
                     - And autonomy for tracks sooner.
@@ -447,62 +481,6 @@ export default class extends React.Component {
             - TIP: Transition strategies.
                 - So important to support teams through transitions.
           */}
-
-
-
-
-
-        {/* TODO HERE
-
-            - INTRODUCTION
-                - Need something fast, quick and to the point.
-                - Maybe stats about a web app / dev team? (team size, code size, transactions, etc.)
-
-            - OVERALL THEME - Wild West, "Large"
-
-            - Dive into each of the bullet points above.
-                - Larger Apps
-                    - We want fast, responsive apps.
-                    - Have enormous possibilities: e.g., React with server-side render, bootstrap,
-                      into SPA
-                    - ... but the code bases are getting much, much larger.
-                - Larger Teams
-                    - With varying levels of experience.
-                        - HTML / CSS dev's learning large scale applications
-                        - Backend dev's learning the frontend.
-                - Harder to build / deploy / maintain / monitor
-                    - JS is the Wild, Wild West [image: wild west, cowboys]
-                    - Frameworks change every week
-                    - Libraries are of varying quality
-                    - We now have "The Build" for JS because it's that complicated.
-                        - Optimization for JS / web applications is complicated.
-                    - Code goes out in the wild, goes wrong and is really, really hard to support.
-                - Critical
-                    - The future is JS is on the critical path for apps to work.
-                    - JS errors are 5 or 6 figure issues.
-
-
-
-
-
-
-
-        <Slide bgImage={images.city} bgDarken={0.75}>
-          <Heading size={1} caps fit textColor="primary">
-            TODO
-          </Heading>
-
-          <Heading size={1} caps fit textColor="tertiary">
-            ADD SOME SECTIONS
-          </Heading>
-
-          <Heading size={1} caps fit textColor="primary">
-            AND IMAGES
-          </Heading>
-
-        </Slide>
-
-         */}
 
         {/* ---------------------------------------------------------------
           * Thanks
