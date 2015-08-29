@@ -45,6 +45,16 @@ Point.propTypes = {
   children: React.PropTypes.node
 };
 
+// Links
+// -----
+const links = {
+  /*eslint-disable max-len*/
+  tcThanksgiving2014: "http://techcrunch.com/2014/12/02/walmart-com-reports-biggest-cyber-monday-in-history-mobile-traffic-at-70-over-the-holidays/",
+  frMobileTraffic: "http://www.fierceretail.com/mobileretail/story/walmart-mobile-traffic-100/2015-05-20",
+  wmFy2014: "http://cdn.corporate.walmart.com/66/e5/9ff9a87445949173fde56316ac5f/2014-annual-report.pdf"
+  /*eslint-enable max-len*/
+};
+
 // Presentation
 // ------------
 export default class extends React.Component {
@@ -176,21 +186,57 @@ export default class extends React.Component {
           </Link>
         </Slide>
         <Slide>
-          <Heading size={3}>
-            TODO: INSERT SLIDE - Website usage and impact.
+          <Heading size={1} caps fit>
+            The Numbers
           </Heading>
+          <List>
+            <ListItem>
+              <Link href={links.wmFy2014}><Point>$10 billion
+              </Point></Link> in sales for FY 2014 (30% increase)
+              {/*
+                - "Each operating segment strengthened its e-commerce platforms, and customers
+                   responded, driving annual Global eCommerce sales, including acquisitions, above
+                   the $10-billion mark, a 30 percent increase."
+               */}
+            </ListItem>
+            <ListItem>
+              <Link href={links.wmFy2014}><Point>$13 billion</Point></Link> estimate for FY 2015
+              {/*
+                - "In fiscal 2015, we expect Global eCommerce gross merchandise value, which
+                   includes digital sales of Walmart goods and third-party sales through our sites,
+                   to exceed $13 billion."
+               */}
+            </ListItem>
+            <ListItem>
+              <Link href={links.tcThanksgiving2014}><Point>1.5
+              billion</Point> page views</Link> for Thanksgiving - Cyber Monday 2014
+            </ListItem>
+            <ListItem>
+              Cyber Monday 2014 orders surpassed <em>all previous records</em>
+            </ListItem>
+          </List>
           {/*
-            - Traffic numbers
-            - Revenue numbers
-            - Black Friday, CyberMonday numbers
+            - 70% mobile for Thanksgiving - Cyber Monday 2014
+            - 3472 page views / second estimate from 1.5 billion 2014 number.
             */}
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            The Team
+          </Heading>
+          <List>
+            <ListItem>A <Point>2+</Point> year website rewrite</ListItem>
+            <ListItem><Point>50+</Point> core frontend engineers</ListItem>
+            <ListItem><Point>14</Point> vertical teams / "tracks"</ListItem>
+            <ListItem>Multiple developing & integrating organizations</ListItem>
+            <ListItem>Meta <code>(JS,CSS,Java)</code> teams</ListItem>
+          </List>
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
             The Web Apps
           </Heading>
           <List>
-            <ListItem>A <Point>2+</Point> year website rewrite</ListItem>
             <ListItem>
               <Point>50+</Point> JS "entry points", ranging
               from <Point>1K - 145K</Point>
@@ -226,17 +272,6 @@ export default class extends React.Component {
 
               298431   1312631  builds/tracks/lib.min.js
             */}
-        </Slide>
-        <Slide>
-          <Heading size={1} caps fit>
-            The Team
-          </Heading>
-          <List>
-            <ListItem><Point>50+</Point> core frontend engineers</ListItem>
-            <ListItem><Point>14</Point> vertical teams / "tracks"</ListItem>
-            <ListItem>Multiple developing & integrating organizations</ListItem>
-            <ListItem>Meta <code>(JS,CSS,Java)</code> teams</ListItem>
-          </List>
         </Slide>
         <Slide>
           <Heading size={3}>
