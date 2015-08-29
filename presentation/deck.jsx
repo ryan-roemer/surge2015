@@ -14,11 +14,11 @@ import {
 import preloader from "spectacle/src/utils/preloader";
 
 const images = {
-  polygons: require("../assets/img/polygons.svg"),
-  polygonsGray: require("../assets/img/polygons-gray.svg"),
-  polygonsLight: require("../assets/img/polygons-light.svg"),
-  city: require("spectacle/presentation/city.jpg"),
-  logo: require("spectacle/presentation/formidable-logo.svg")
+  polygons: require("../assets/img/bg/formidable/polygons.svg"),
+  polygonsGray: require("../assets/img/bg/formidable/polygons-gray.svg"),
+  polygonsLight: require("../assets/img/bg/formidable/polygons-light.svg"),
+  logoSquare: require("../assets/img/logo/formidable-square.png"),
+  logoText: require("../assets/img/logo/formidable-text.svg")
 };
 
 preloader([images.city]);
@@ -91,24 +91,13 @@ export default class extends React.Component {
           * Large Scale Web Applications
           * ---------------------------------------------------------------
 
-            - TODO: This outline is out-of-date with content.
+            - The Frontend is winning
+                - Users want the fast experience
+                - Product owners want agile, powerful apps
+                - Frontend web apps are business critical and we'd better catch up.
 
-            - Start with a BANG! Big numbers, big stakes.
-                - Let's talk about: LARGE. SCALE. WEB APPS.
-                - This is everyone's future.
-
-            - It's Time for the Enterprise
-                - Enterprise's time has come. And we're going to talk it through.
-                - walmart.com e-commerce site. Traffic, orders, spikes, etc.
-                - Large amounts of JavaScript. Trend to frontend.
-
-            - My role
-                - Formidable
-                - JavaScript lead for the website
-                - Lead the "Meta JS" team. (Also Meta CSS, Meta Java teams).
+            - Enterprise's time has come. And we're going to talk it through.
           */}
-
-        {/* Large. Scale. Web Apps. */}
         <Slide>
           <Heading size={2}>
             The web is <em>massively</em> moving to the <em>frontend</em>
@@ -169,7 +158,16 @@ export default class extends React.Component {
           </Heading>
         </Slide>
 
-        {/* Quantifying, Examining Large Scale Apps */}
+        {/* ---------------------------------------------------------------
+          * Examining Large Scale Apps
+          * ---------------------------------------------------------------
+
+            - Top-Five Ecommerce Site
+                - Large site
+                - High traffic
+                - Large amount of JavaScript code
+                - Large frontend development teams
+          */}
         <Slide>
           <Heading size={4}>
             Let{"'"}s examine large web applications at a <em>highly-trafficked
@@ -190,7 +188,6 @@ export default class extends React.Component {
         <Slide>
           <Heading size={1} caps fit>
             The Web Apps
-            {/**/}
           </Heading>
           <List>
             <ListItem>A <Point>2+</Point> year website rewrite</ListItem>
@@ -233,11 +230,10 @@ export default class extends React.Component {
         <Slide>
           <Heading size={1} caps fit>
             The Team
-            {/**/}
           </Heading>
           <List>
             <ListItem><Point>50+</Point> core frontend engineers</ListItem>
-            <ListItem><Point>14<Point> vertical teams / "tracks"</ListItem>
+            <ListItem><Point>14</Point> vertical teams / "tracks"</ListItem>
             <ListItem>Multiple developing & integrating organizations</ListItem>
             <ListItem>Meta <code>(JS,CSS,Java)</code> teams</ListItem>
           </List>
@@ -251,6 +247,52 @@ export default class extends React.Component {
           <Heading size={3}>
             TODO: INSERT SLIDE - JS breakdown of homepage from atlas-reports.
           </Heading>
+        </Slide>
+
+        {/* ---------------------------------------------------------------
+          * Ryan & Meta JS
+          * ---------------------------------------------------------------
+
+            - I work for Formidable Labs.
+                - A software development consultancy in Seattle, Wa.
+                - Help teams from startups to Fortune 500 companies.
+                - One of our largest clients.
+
+            - My role
+                - JavaScript lead for the website
+                - Lead the "Meta JS" team. (Also Meta CSS, Meta Java teams)
+
+          */}
+        <Slide bgColor="secondary">
+          <Heading size={4} fit caps textColor="primary">
+            A Tour Through
+          </Heading>
+          <Heading size={4} fit caps textColor="tertiary">
+           the Trenches
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Link href="http://formidablelabs.com">
+            <Image src={images.logoSquare}/>
+          </Link>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            Wrangling Adventures
+          </Heading>
+          <List>
+            <ListItem><Point>JavaScript lead</Point> for site / development teams</ListItem>
+            <ListItem>Lead <Point>"Meta JS"</Point> team of 5-8 developers</ListItem>
+            <ListItem>Part of new core web team</ListItem>
+          </List>
+          {/*
+            - TODO: Maybe an image of my face? Or a twitter handle?
+
+            - Started with the project near the beginning of the redesign.
+            - Authored most parts of the frontend infrastructure.
+            - Point person on all things JS-related wrt production, other teams, etc.
+            - ... and here are some of my experiences helping support and ship the website.
+            */}
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -288,15 +330,16 @@ export default class extends React.Component {
                     - Code must be small and avoid duplication
                     - The technology ecosystem changes at a ridiculous rate
 
-                - TIP: You need a real "build" now.
-                    - JS is complicated: Minification, ES6, Polyfills,
-                    - CDN interaction and dev. vs. prod mode.
-
                 - TIP: Coordinate team / infrastructure to funnel.
                     - Common open source / vendor libraries
                     - Conventions and code review for the team
                     - Utilities and guidance.
                     - And do this ASAP.
+
+                - TIP: You need a real "build" now.
+                    - JS is complicated: Minification, ES6, Polyfills,
+                    - CDN interaction and dev. vs. prod mode.
+                    - Your Meta team should own this.
 
                 - TIP: (See "the future")
                 - TIP: ... get ready for a bumpy ride.
@@ -317,7 +360,10 @@ export default class extends React.Component {
                     - Functional tests
                     - And do this ASAP
                 - TIP: Review all your code, even vendor code.
-                    - `Event.prototype.setPropagation` fiasco
+                    - STORY: Unreviewed code with max. integer assumption for an ID. Took down
+                      prod and quite costly. Meta Java team would have caught / did catch
+                      immediately after the bug surfaced.
+                    - STORY: `Event.prototype.setPropagation` fiasco
                 - TIP: Keep development as close to production as possible, dev-wise.
 
             - Surviving Production
@@ -383,17 +429,22 @@ export default class extends React.Component {
 
             - TODO(IDEA): "Surviving the Future" / "Surviving Indefinitely"
             - TODO(IDEA): end with "THRIVE!"
+            - TODO: Add a conclusion
+            - TODO: See how this section works with the overall "points" above.
 
             - New technologies.
                 - React: server-side render, efficient DOM
 
             - Organization and structure
-                - Many, many small repositories
+                - TIP: Many, many small repositories
                     - Components
                     - Apps
                     - Infrastructure
+                - TIP: Lessen the direct role of Meta teams
+                    - Opt for "guidance"
+                    - And autonomy for tracks sooner.
 
-            - Transition strategies.
+            - TIP: Transition strategies.
                 - So important to support teams through transitions.
           */}
 
@@ -430,23 +481,6 @@ export default class extends React.Component {
                     - The future is JS is on the critical path for apps to work.
                     - JS errors are 5 or 6 figure issues.
 
-            - INTRO: Introduction to Ryan / Formidable
-                - Help teams from startups to Fortune 500 companies.
-                - Talk about experiences with top 5 e-commerce website redesign.
-                - With large team
-                - Enormous code base.
-                - Widespread reach and traffic.
-                - Enormous array of supported browsers.
-
-            - THE POINT: Hone this down.
-
-            - ROADMAP / OUTLINE: Hone this down.
-                - TODO: Extract each of the bullet points from abstract on website.
-
-            - Failures & Lessons: DO SECTION
-
-            - The Future: DO SECTION
-
 
 
 
@@ -478,7 +512,7 @@ export default class extends React.Component {
             Thanks!
           </Heading>
           <Link href="http://formidablelabs.com">
-            <Image width="100%" src={images.logo} style={{"margin-top": "40px"}}/>
+            <Image width="100%" src={images.logoText} style={{"margin-top": "40px"}}/>
           </Link>
         </Slide>
       </Deck>
