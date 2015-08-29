@@ -231,25 +231,27 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={3}>
-            TODO: INSERT SLIDE - Demo or picture of website.
-          </Heading>
-        </Slide>
-        <Slide>
           <Heading size={1} caps fit>
             The Team
             {/**/}
           </Heading>
           <List>
-            <ListItem>50+ core frontend engineers</ListItem>
-            <ListItem>14 vertical teams / "tracks"</ListItem>
-            <ListItem>Multiple higher-level organizations</ListItem>
+            <ListItem><Point>50+</Point> core frontend engineers</ListItem>
+            <ListItem><Point>14<Point> vertical teams / "tracks"</ListItem>
+            <ListItem>Multiple developing & integrating organizations</ListItem>
             <ListItem>Meta <code>(JS,CSS,Java)</code> teams</ListItem>
           </List>
         </Slide>
-
-
-
+        <Slide>
+          <Heading size={3}>
+            TODO: INSERT SLIDE - Demo or picture of homepage.
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            TODO: INSERT SLIDE - JS breakdown of homepage from atlas-reports.
+          </Heading>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * Challenges: Surviving, Thriving
@@ -262,12 +264,16 @@ export default class extends React.Component {
                 - Organizations
 
             - OVERVIEW - Survival Tactics:
+                (Wrangling)
                 - Guide development with a Meta team
                 - Educate developers
                 - Automate quality
+                - Review everything
+                (Infrastructure)
                 - Log
                 - Monitor
                 - Build debugging "life lines"
+                - Anticipate failures
                 - Minimize exposure to things you can't control
 
             - Surviving JavaScript
@@ -282,11 +288,16 @@ export default class extends React.Component {
                     - Code must be small and avoid duplication
                     - The technology ecosystem changes at a ridiculous rate
 
+                - TIP: You need a real "build" now.
+                    - JS is complicated: Minification, ES6, Polyfills,
+                    - CDN interaction and dev. vs. prod mode.
+
                 - TIP: Coordinate team / infrastructure to funnel.
                     - Common open source / vendor libraries
                     - Conventions and code review for the team
                     - Utilities and guidance.
                     - And do this ASAP.
+
                 - TIP: (See "the future")
                 - TIP: ... get ready for a bumpy ride.
 
@@ -305,18 +316,25 @@ export default class extends React.Component {
                     - Unit tests: 70% code coverage.
                     - Functional tests
                     - And do this ASAP
+                - TIP: Review all your code, even vendor code.
+                    - `Event.prototype.setPropagation` fiasco
+                - TIP: Keep development as close to production as possible, dev-wise.
 
             - Surviving Production
-                - Errors:
+                - IMPACT: Errors:
                     - Very, very costly.
                     - With incredible development speed + so many different browsers, you should be
                       very, very scared.
-                - Logging: On the frontend. To a service.
+                - TIP: Logging: On the frontend. To a service.
                     - Code goes out in the wild, goes wrong and is really, really hard to support.
-                - Monitoring: Observe spikes and idiosyncrasies.
-                - Debugging: Source maps
+                - TIP: Monitoring: Observe spikes and idiosyncrasies.
+                - TIP: Debugging: Source maps
                 - Deployment: The build, CDN
-                - Spikes: Black Friday, Cyber Monday
+                    - TODO: What is this point?
+                - TIP: Learn and anticipate your failures.
+                    - Your JS webapp is most likely to fail: TODO_INSERT_SCENARIOS
+                    - Learn your own app / organization's weak points.
+                - STORY: Spikes: Black Friday, Cyber Monday
                     - Like usual, just more system stress and higher error penalties.
                     - Code freezes
                     - Exhaustive testing
