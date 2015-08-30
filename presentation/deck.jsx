@@ -87,7 +87,7 @@ export default class extends React.Component {
                   textColor={theme.colors.light}>
               |
             </Text>
-            <Link href="https://surge2015.formidablelabs.com">
+            <Link href="http://surge2015.formidablelabs.com">
               <Text bold style={{display: "inline-block"}} textColor={theme.colors.light}>
                 surge2015.formidablelabs.com
               </Text>
