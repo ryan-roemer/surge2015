@@ -24,6 +24,7 @@ import "highlight.js/styles/monokai_sublime.css";
 // This _places_ it in build output.
 // See: https://github.com/HenrikJoreteg/hjs-webpack/issues/24
 import "file?name=favicon.ico!./assets/img/favicon.ico";
+import "file?name=CNAME!./CNAME";
 
 // Flux
 const flux = new Flux();
