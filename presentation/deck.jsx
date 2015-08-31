@@ -6,7 +6,7 @@ import React from "react/addons";
 // Appear, BlockQuote, Cite, CodePane, Deck, Fill,
 // Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
 import {
-  Deck, Heading, Image, Link, Slide, Text, Layout, List, ListItem, Fill
+  Deck, CodePane, Heading, Image, Link, Slide, Text, Layout, List, ListItem, Fill
 } from "spectacle/src/spectacle";
 
 // Images
@@ -75,6 +75,34 @@ const links = {
   frMobileTraffic: "http://www.fierceretail.com/mobileretail/story/walmart-mobile-traffic-100/2015-05-20",
   wmFy2014: "http://cdn.corporate.walmart.com/66/e5/9ff9a87445949173fde56316ac5f/2014-annual-report.pdf"
   /*eslint-enable max-len*/
+};
+
+
+// Helpers
+// -------
+// A naive, indent preserving strip.
+const strip = function (val) {
+  // Find first line with text. Capture that indent level.
+  let indent = null;
+
+  return val.split("\n")
+    .map((line) => {
+      // Capture initial indent.
+      if (indent === null && /^\s/.test(line)) {
+        indent = /^ */.exec(line)[0];
+      }
+
+      // If no indent, ignore.
+      if (indent === null) {
+        return null;
+      }
+
+      return line
+        .replace(new RegExp("^" + indent), "")
+        .replace(/\s*$/, "");
+    })
+    .filter((x) => x && x !== indent)
+    .join("\n");
 };
 
 // Presentation
@@ -330,18 +358,18 @@ export default class extends React.Component {
                 On Page
               </Heading>
               <List>
-                <ListItem>Direct from page</ListItem>
+                <ListItem>Direct page <em>scripts</em></ListItem>
                 <ListItem><Point>10</Point> remote scripts</ListItem>
                 <ListItem><Point>18</Point> inline scripts</ListItem>
               </List>
             </Fill>
             <Fill>
               <Heading size={5} caps textColor="tertiary">
-                Async Loaded
+                Lazy Loaded
               </Heading>
               <List>
-                <ListItem>Lazy download</ListItem>
-                <ListItem><Point>6</Point> entry points</ListItem>
+                <ListItem>Injected script tags</ListItem>
+                <ListItem><Point>6</Point> app <em>entry points</em></ListItem>
               </List>
             </Fill>
           </Layout>
@@ -350,7 +378,23 @@ export default class extends React.Component {
           <Heading size={1} caps fit>
             Homepage - Scripts
           </Heading>
-          <Todo>Add source code snippet for scripts.</Todo>
+          {/*eslint-disable max-len*/}
+          <CodePane
+            lang="html"
+            source={strip(`
+              <script async="" src="//i5.walmartimages.com/dfw/4ff9c6c9-1217/k2-_ce6b2cd5-7246-488c-9811-0f03b44ffd05.v325.js"/>
+              <script src="//fonts.walmart.com/fqp0lia.js" type="text/javascript"/>
+              <script><![CDATA[var TBRewriteHostAltWeight = 10.000000;]]></script><script src="//a14.wal.co/capabilities.min.js"/>
+              <script async="" src="//i5.walmartimages.com/dfw/4ff9c6c9-2c86/k2-_1cf91030-5b66-42d4-88af-42da1d47cf61.v314.js"/>
+              <script src="//www.google.com/adsense/search/ads.js"/>
+              <script src="//i5.walmartimages.com/dfw/63fd9f59-dd5c/k2-_136e85ec-4952-4931-a69f-d808d78a8d47.v1.js"/>
+              <script src="//i5.walmartimages.com/dfw/63fd9f59-3c31/k2-_60b82d0b-f55d-49f9-a027-6ee71de83b4b.v1.js"/>
+              <script src="//a14.wal.co/cdn-test.min.js"/>
+            `)}
+            margin="20px auto"
+            style={{fontSize: "1.5em"}}
+          />
+          {/*eslint-enable max-len*/}
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
@@ -389,7 +433,21 @@ export default class extends React.Component {
           <Heading size={1} caps fit>
             Homepage - Entry Points
           </Heading>
-          <Todo>Add source code snippet for entry points.</Todo>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              window._entry(function() {
+                require(["header/header"], function () {
+                  require(["header/header-deferred"]);
+                });
+                // ...
+                require(["homepage/homepage"]);
+                // ...
+              });
+            `)}
+            margin="20px auto"
+            style={{fontSize: "1.5em"}}
+          />
         </Slide>
         <Slide>
           <Heading size={1} caps fit textColor="secondary">
