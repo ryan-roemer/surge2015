@@ -48,6 +48,25 @@ Point.propTypes = {
   children: React.PropTypes.node
 };
 
+// A TODO for later.
+class Todo extends React.Component {
+  render() {
+    return (
+      <div>
+      <br />
+        <span style={{backgroundColor: "yellow", fontFamily: "monospace", fontSize: "3em",
+                      marginTop: "1.5em", fontWeight: "bold"}}>
+          TODO: {this.props.children}
+        </span>
+      </div>
+    );
+  }
+}
+
+Todo.propTypes = {
+  children: React.PropTypes.node
+};
+
 // Links
 // -----
 const links = {
@@ -240,7 +259,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            The App / Code
+            The Apps / Code
           </Heading>
           <List>
             <ListItem>
@@ -279,7 +298,19 @@ export default class extends React.Component {
               298431   1312631  builds/tracks/lib.min.js
             */}
         </Slide>
-        {/* TODO - MOVE?: Consider moving "the homepage" down to a case study or point below. */}
+
+        {/* ---------------------------------------------------------------
+          * Case Study - Homepage
+          * ---------------------------------------------------------------
+
+            - Page scripts
+            - Entry points
+          */}
+        <Slide bgColor="tertiary">
+          <Heading size={4} fit caps textColor="primary">
+            The Homepage
+          </Heading>
+        </Slide>
         <Slide>
           <Link href="http://walmart.com">
             <Image src={images.wmHomepage} width="80%"/>
@@ -291,20 +322,35 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit textColor="secondary">
-            Homepage - Entry Points
+            JS on the Homepage
           </Heading>
-          <Image src={images.wmReport} width="90%"/>
-          {/*
-            - 6 entry points (2 deferred).
-            - 1 shared library
-            - Caching analysis (for portion of shared library used)
-            */}
+          <Layout>
+            <Fill>
+              <Heading size={5} caps textColor="tertiary">
+                On Page
+              </Heading>
+              <List>
+                <ListItem>Direct from page</ListItem>
+                <ListItem><Point>10</Point> remote scripts</ListItem>
+                <ListItem><Point>18</Point> inline scripts</ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <Heading size={5} caps textColor="tertiary">
+                Async Loaded
+              </Heading>
+              <List>
+                <ListItem>Lazy download</ListItem>
+                <ListItem><Point>6</Point> entry points</ListItem>
+              </List>
+            </Fill>
+          </Layout>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="secondary">
+          <Heading size={1} caps fit>
             Homepage - Scripts
           </Heading>
-          <Image src={images.wmScripts} width="90%"/>
+          <Todo>Add source code snippet for scripts.</Todo>
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
@@ -313,7 +359,7 @@ export default class extends React.Component {
           <Layout>
             <Fill>
               <List>
-                <ListItem><Point>2</Point> actual <em>application</em> code</ListItem>
+                <ListItem><Point>2</Point> <em>application</em> code</ListItem>
                 <ListItem><Point>2</Point> CDN infrastructure</ListItem>
                 <ListItem><Point>2</Point> internal ads</ListItem>
                 <ListItem><Point>2</Point> Google ads</ListItem>
@@ -327,7 +373,6 @@ export default class extends React.Component {
               </List>
             </Fill>
           </Layout>
-
           {/*
             - 28 various scripts on the page in HTML
             - More can be loaded by JS
@@ -338,6 +383,28 @@ export default class extends React.Component {
             - 1 fonts
             - 1 polyfill
             - 18 inline script tags.
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            Homepage - Entry Points
+          </Heading>
+          <Todo>Add source code snippet for entry points.</Todo>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit textColor="secondary">
+            Homepage - Entry Points
+          </Heading>
+          <List>
+            <ListItem>Asynchronously loaded</ListItem>
+            <ListItem><Point>1</Point> shared library</ListItem>
+            <ListItem><Point>4</Point> primary entry points</ListItem>
+            <ListItem><Point>2</Point> deferred entry points</ListItem>
+          </List>
+          {/*
+            - 6 entry points (2 deferred).
+            - 1 shared library
+            - Caching analysis (for portion of shared library used)
             */}
         </Slide>
 
@@ -401,6 +468,8 @@ export default class extends React.Component {
           * Challenges: Surviving, Thriving
           * ---------------------------------------------------------------
 
+            - TODO: Theme of "10 tips + 1 future (?)"
+
             - OVERVIEW - Challenges: How are we surviving / thriving?
                 - JavaScript
                 - Development
@@ -410,7 +479,7 @@ export default class extends React.Component {
             - OVERVIEW - Survival Tactics:
                 (Wrangling)
                 - Meta Leadership
-                - Educate
+                - Educate (TODO: Combine with leadership.)
                 - Review everything
                 - Automate quality
                 (Infrastructure)
@@ -631,6 +700,20 @@ export default class extends React.Component {
                     - LESSON: Teams will be "feature-driven" unless perf is a metric and
                       explicit requirement.
 
+
+        // TODO: Perf analysis tools slides / images
+        <Slide>
+          <Heading size={1} caps fit>
+            Homepage - Scripts
+          </Heading>
+          <Image src={images.wmScripts} width="90%"/>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit textColor="secondary">
+            Homepage - Entry Points
+          </Heading>
+          <Image src={images.wmReport} width="90%"/>
+        </Slide>
           */}
 
 
@@ -665,6 +748,8 @@ export default class extends React.Component {
             - TIP: Transition strategies.
                 - So important to support teams through transitions.
           */}
+
+
 
         {/* ---------------------------------------------------------------
           * Thanks
