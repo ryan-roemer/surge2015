@@ -81,6 +81,8 @@ const links = {
 // Helpers
 // -------
 // A naive, indent preserving strip.
+//
+// TODO: Handle spaces _within_ text.
 const strip = function (val) {
   // Find first line with text. Capture that indent level.
   let indent = null;
@@ -287,7 +289,23 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            The Apps / Code
+            The Applications
+          </Heading>
+          <List>
+            <ListItem>
+              Transition from <Point>"old"</Point> to <Point>"new"</Point> world.
+            </ListItem>
+            <ListItem>
+              Mostly <em>multiple</em> entry point (applicatons) per page
+            </ListItem>
+            <ListItem>
+              Handful of <em>Single Page Applications</em> (SPAs)
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            The Code
           </Heading>
           <List>
             <ListItem>
@@ -327,6 +345,63 @@ export default class extends React.Component {
             */}
         </Slide>
 
+        {/* ---------------------------------------------------------------
+          * Ryan & Meta JS
+          * ---------------------------------------------------------------
+
+            - I work for Formidable Labs.
+                - A software development consultancy in Seattle, Wa.
+                - Help teams from startups to Fortune 500 companies.
+                - One of our largest clients.
+
+            - My role
+                - JavaScript lead for the website
+                - Lead the "Meta JS" team. (Also Meta CSS, Meta Java teams)
+
+          */}
+        <Slide bgColor="secondary">
+          <Heading size={4} fit caps textColor="primary">
+            A Tour Through
+          </Heading>
+          <Heading size={4} fit caps textColor="tertiary">
+           the Trenches
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Link href="http://formidablelabs.com">
+            <Image src={images.logoSquare}/>
+          </Link>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={1} caps fit textColor={theme.colors.light}>
+            Wrangling Adventures
+          </Heading>
+          <List textColor="primary">
+            <ListItem><Point>JavaScript lead</Point> for site / development teams</ListItem>
+            <ListItem>Lead <Point>"Meta JS"</Point> team of 5-8 developers</ListItem>
+            <ListItem>Part of new core web team</ListItem>
+          </List>
+          {/*
+            - TODO: Maybe an image of my face? Or a twitter handle?
+
+            - Started with the project near the beginning of the redesign.
+            - Authored most parts of the frontend infrastructure.
+            - Point person on all things JS-related wrt production, other teams, etc.
+            - ... and here are some of my experiences helping support and ship the website.
+            */}
+        </Slide>
+        <Slide>
+          {/*
+            - So many moving parts, details and complexities.
+            - I'm going to focus on just a few of things we've found critical
+              to keeping our large scale applications up and running.
+            */}
+          <Heading size={3}>
+            <em>A few battle-tested tips from the field...</em>
+          </Heading>
+        </Slide>
+
+        {/* TODO: Move into "Challenges" as intro case study? */}
         {/* ---------------------------------------------------------------
           * Case Study - Homepage
           * ---------------------------------------------------------------
@@ -464,62 +539,6 @@ export default class extends React.Component {
             - 1 shared library
             - Caching analysis (for portion of shared library used)
             */}
-        </Slide>
-
-        {/* ---------------------------------------------------------------
-          * Ryan & Meta JS
-          * ---------------------------------------------------------------
-
-            - I work for Formidable Labs.
-                - A software development consultancy in Seattle, Wa.
-                - Help teams from startups to Fortune 500 companies.
-                - One of our largest clients.
-
-            - My role
-                - JavaScript lead for the website
-                - Lead the "Meta JS" team. (Also Meta CSS, Meta Java teams)
-
-          */}
-        <Slide bgColor="secondary">
-          <Heading size={4} fit caps textColor="primary">
-            A Tour Through
-          </Heading>
-          <Heading size={4} fit caps textColor="tertiary">
-           the Trenches
-          </Heading>
-        </Slide>
-        <Slide bgColor="secondary">
-          <Link href="http://formidablelabs.com">
-            <Image src={images.logoSquare}/>
-          </Link>
-        </Slide>
-        <Slide bgColor="secondary">
-          <Heading size={1} caps fit textColor={theme.colors.light}>
-            Wrangling Adventures
-          </Heading>
-          <List textColor="primary">
-            <ListItem><Point>JavaScript lead</Point> for site / development teams</ListItem>
-            <ListItem>Lead <Point>"Meta JS"</Point> team of 5-8 developers</ListItem>
-            <ListItem>Part of new core web team</ListItem>
-          </List>
-          {/*
-            - TODO: Maybe an image of my face? Or a twitter handle?
-
-            - Started with the project near the beginning of the redesign.
-            - Authored most parts of the frontend infrastructure.
-            - Point person on all things JS-related wrt production, other teams, etc.
-            - ... and here are some of my experiences helping support and ship the website.
-            */}
-        </Slide>
-        <Slide>
-          {/*
-            - So many moving parts, details and complexities.
-            - I'm going to focus on just a few of things we've found critical
-              to keeping our large scale applications up and running.
-            */}
-          <Heading size={3}>
-            <em>A few battle-tested tips from the field...</em>
-          </Heading>
         </Slide>
 
         {/* ---------------------------------------------------------------
