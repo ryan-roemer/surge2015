@@ -543,45 +543,50 @@ export default class extends React.Component {
           * Challenges: Surviving, Thriving
           * ---------------------------------------------------------------
 
-            - TODO: Theme of "10 tips + 1 future (?)"
+            - TODO: Weave in BF/Cyber Monday points / anecdotes.
+            - TODO: Add images for appropriate themes.
 
-            - OVERVIEW - Challenges: How are we surviving / thriving?
-                - JavaScript
-                - Development
-                - Production
-                - Organizations
+            - THEMES
+                - Architecture & Architects: Build the foundations.
+                    - **Idea**: "Plan and build a strong base."
+                    - **Motivation**: JS is hard and complicated, and more so for big teams.
+                    - A "Real" Build
+                    - Organize the code
+                    - Meta Team: Code, Conventions, Guidance (segue to next section).
 
-            - OVERVIEW - Survival Tactics:
-                (Wrangling)
-                - Meta Leadership
-                - Educate (TODO: Combine with leadership.)
-                - Review everything
-                - Automate quality
-                (Infrastructure)
-                - Build
-                - Log
-                - Monitor
-                - Debugging "life lines"
-                - Anticipate failures
-                - Minimize exposure
+                - Guides: Help the team along its way.
+                    - **Idea**: "Shephard junior dev's and coordinate the chos"
+                    - **Motivation**: All JS on the same page, ...
+                    - Meta Leadership
+                    - Education
+                    - Review everything (also Gatekeeper)
+                    - (Meta Team): Guides
 
-            - Surviving JavaScript
-                - The Wild, Wild West
-                - The Good:
-                    - It's flexible, developer-friendly, and scalable.
+                - Gatekeepers & Gates: Say "NO" when it's needed.
+                    - **Idea**: "Protect yourself through processes and tech"
+                    - **Motivation**: Need tools and champions (people) to stop bad code / ideas.
+                    - Automate quality
+                    - Minimize exposure
+                    - (Meta Team): Gatekeepers
 
-                - The Bad:
-                    - Flexible almost to a fault (monkey patching everywhere)
-                    - Tough to do correctly
-                    - ... in all browsers
-                    - Code must be small and avoid duplication
-                    - The technology ecosystem changes at a ridiculous rate
+                - Lifeguards: Throw out the life preserver when you're drowning.
+                    - **Idea**: "Create tools to see what's happening in the wild"
+                    - **Motivation**: Once deployed, no insight into browser apps / bugs.
+                    - Log
+                    - Monitor / Alert off the logs.
+                    - Source Maps / Debugging helpers
 
-                - TIP: Meta team - Coordinate team / infrastructure to funnel.
-                    - Common open source / vendor libraries
-                    - Conventions and code review for the team
-                    - Utilities and guidance.
-                    - And do this ASAP.
+            - Architecture & Architects
+                - MOTIVATION: JS is the Wild, Wild West
+                  - The Good:
+                      - It's flexible, developer-friendly, and scalable.
+
+                  - The Bad:
+                      - Flexible almost to a fault (monkey patching everywhere)
+                      - Tough to do correctly
+                      - ... in all browsers
+                      - Code must be small and avoid duplication
+                      - The technology ecosystem changes at a ridiculous rate
 
                 - TIP: You need a real "build" now.
                     - JS is complicated: Minification, ES6, Polyfills,
@@ -590,26 +595,34 @@ export default class extends React.Component {
                         - Especially in development.
                     - Your Meta team should own this.
 
-                - SUB-TIP: Keep development as close to production as possible, dev-wise.
-                    - Including full CDN mode if possible.
-
-                - SUB-TIP: ... get ready for a bumpy ride.
-
-            - Surviving Development
-                - Big teams
-                    - Backend dev's learning the frontend.
-                    - Frontend dev's unfamiliar with large apps, code quality, etc.
-                    - TIP: Education
-                        - Good documentation
-
-                - TIP: Meta team - Organize your code.
+                - TIP: Organize your code.
                     - Going to have enormous amount of code.
                     - One unified build.
                     - Originally, a monolith repo, now multiple track repos.
                     - Shared Java + JS
                         - LESSON: Original decision to nest JS deeply in Java has been painful.
 
-                - TIP: Meta team - Review all your code, even vendor code.
+                - SUB-TIP: Keep development as close to production as possible, dev-wise.
+                    - Including full CDN mode if possible.
+
+                - SUB-TIP: ... get ready for a bumpy ride.
+
+                - TIP: Meta team - Coordinate team / infrastructure to funnel.
+                    - Common open source / vendor libraries
+                    - Conventions and code review for the team
+                    - Utilities and guidance.
+                    - And do this ASAP.
+
+            - Guides
+                - MOTIVATION: Big teams
+                    - Backend dev's learning the frontend.
+                    - Frontend dev's unfamiliar with large apps, code quality, etc.
+
+                - TIP: Education
+                    - Good documentation
+                    - As close the code as possible.
+
+                - TIP: Review all your code, even vendor code.
                     - Substantive review from track
                     - Meta JS/CSS/Java review too
                         - Keeps coding styles consistent.
@@ -621,13 +634,20 @@ export default class extends React.Component {
                       immediately after the bug surfaced.
                     - STORY: `Event.prototype.setPropagation` fiasco
 
+            - Gatekeepers & Gates
                 - TIP: Use quality tooling and automation.
                     - Static checking
                     - Unit tests: 70% code coverage.
                     - Functional tests
+                    - Hook to CI (the "gate")
                     - And do this ASAP
 
-            - Surviving Production
+                - TIP: Minimize exposure to things you can't control.
+                    - Cross-organization initiatives.
+                        - Injected HTML/JS/CSS
+                        - Solutions: iFrames, different domains
+
+            - Lifeguards
                 - IMPACT: Errors:
                     - Very, very costly.
                     - With incredible development speed + so many different browsers, you should be
@@ -652,11 +672,6 @@ export default class extends React.Component {
                     - Oncall team
                     - TODO: A takeway / concise point (?)
 
-            - Surviving the Organization
-                - Cross-organization initiatives.
-                    - Injected HTML/JS/CSS
-                - TIP: Minimize exposure to things you can't control.
-                    - iFrames
           */}
         <Slide bgColor="secondary">
           <Heading size={4} fit caps textColor="primary">
@@ -760,6 +775,8 @@ export default class extends React.Component {
           * Past
           * ---------------------------------------------------------------
 
+            - TODO: Which THEME for this?
+
             - Starting point:
                 - A redesign of the site.
                 - A 2+ year effort.
@@ -802,6 +819,8 @@ export default class extends React.Component {
             - TODO(IDEA): "Surviving the Future" / "Surviving Indefinitely"
             - TODO(IDEA): end with "THRIVE!"
             - TODO: Transition to "THANKS".
+
+            - THEME: Visionary
 
             - TIP: Embrace change, even if uncomfortable.
                 - Most of the code in a huge application will be aging / legacy
