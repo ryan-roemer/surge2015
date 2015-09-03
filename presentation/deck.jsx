@@ -181,7 +181,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={2}>
-            Browser apps are now <em>business critical</em>.
+            Browser apps are now <em>business critical</em>
           </Heading>
           {/*
             - The number of websites anywhere that you can turn off JS is decreasing rapidly.
@@ -830,7 +830,8 @@ export default class extends React.Component {
           * Thanks
           * --------------------------------------------------------------- */}
         <Slide bgColor="secondary" bgImage={images.polygons}>
-          <Heading size={1} bold caps fit textColor="primary" style={{marginTop: "1em", marginBottom: "0.75em"}}>
+          <Heading size={1} bold caps fit textColor="primary"
+                   style={{marginTop: "1em", marginBottom: "0.75em"}}>
             Thanks!
           </Heading>
           <Link href="http://formidablelabs.com">
