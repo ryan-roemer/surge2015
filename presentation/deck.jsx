@@ -14,11 +14,9 @@ import {
 import preloader from "spectacle/src/utils/preloader";
 
 const images = {
-  polygons: require("../assets/img/bg/formidable/polygons.svg"),
-  polygonsGray: require("../assets/img/bg/formidable/polygons-gray.svg"),
-  polygonsLight: require("../assets/img/bg/formidable/polygons-light.svg"),
-  logoSquare: require("../assets/img/logo/formidable-square.png"),
-  logoText: require("../assets/img/logo/formidable-text.svg"),
+  polygons: require("../assets/img/bg/formidable/formidangles-dark.svg"),
+  logoRed: require("../assets/img/logo/formidable-red.svg"),
+  logoBlack: require("../assets/img/logo/formidable-black.svg"),
   wmHomepage: require("../assets/img/wml/screen-homepage.png"),
   wmItem: require("../assets/img/wml/screen-item-ipad.png"),
   wmReport: require("../assets/img/wml/report-homepage.png"),
@@ -116,31 +114,31 @@ export default class extends React.Component {
         {/* ---------------------------------------------------------------
           * Title
           * --------------------------------------------------------------- */}
-        <Slide bgImage={images.polygons} bgDarken={0.25}>
-          <Heading size={1} fit caps textColor="primary">
+        <Slide bgImage={images.polygons}>
+          <Text fit bold caps textColor={theme.colors.primary} fontFamily={theme.fonts.primary}>
             Wrangling
-          </Heading>
-          <Heading size={1} fit caps textColor={theme.colors.light}>
+          </Text>
+          <Text fit bold caps textColor={theme.colors.primary} fontFamily={theme.fonts.primary}>
             Large Scale
-          </Heading>
-          <Heading size={1} fit caps textColor="primary">
+          </Text>
+          <Text fit bold caps textColor={theme.colors.primary} fontFamily={theme.fonts.primary}>
             Frontend Web Applications
-          </Heading>
+          </Text>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
-            <Link href="https://twitter.com/ryan_roemer">
-              <Text bold style={{display: "inline-block"}} textColor={theme.colors.light}>
+            <Text style={{display: "inline-block"}}>
+              <Link href="https://twitter.com/ryan_roemer">
                 @ryan_roemer
-              </Text>
-            </Link>
+              </Link>
+            </Text>
             <Text style={{display: "inline-block", margin: "0 0.35em"}}
-                  textColor={theme.colors.light}>
+                  textColor={theme.colors.darkerGray}>
               |
             </Text>
-            <Link href="http://surge2015.formidablelabs.com">
-              <Text bold style={{display: "inline-block"}} textColor={theme.colors.light}>
+            <Text style={{display: "inline-block"}}>
+              <Link href="http://surge2015.formidablelabs.com">
                 surge2015.formidablelabs.com
-              </Text>
-            </Link>
+              </Link>
+            </Text>
           </div>
         </Slide>
 
@@ -183,7 +181,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={2}>
-            Browser apps are now <em>business critical</em>.
+            Browser apps are now <em>business critical</em>
           </Heading>
           {/*
             - The number of websites anywhere that you can turn off JS is decreasing rapidly.
@@ -204,13 +202,13 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide bgColor="tertiary">
-          <Heading size={4} fit caps textColor="primary">
+          <Heading size={4} bold fit caps textColor={theme.colors.lightestGray}>
             Lots of JavaScript
           </Heading>
-          <Heading size={4} fit caps textColor="secondary">
+          <Heading size={4} bold fit caps textColor={theme.colors.primary}>
             In the browser
           </Heading>
-          <Heading size={4} fit caps textColor="primary">
+          <Heading size={4} bold fit caps textColor={theme.colors.lightestGray}>
             Written by large teams
           </Heading>
         </Slide>
@@ -284,7 +282,7 @@ export default class extends React.Component {
             <ListItem><Point>50+</Point> core frontend engineers</ListItem>
             <ListItem><Point>14</Point> vertical teams / "tracks"</ListItem>
             <ListItem>Multiple developing & integrating organizations</ListItem>
-            <ListItem>Meta <code>(JS,CSS,Java)</code> teams</ListItem>
+            <ListItem>Meta (<code>JS,CSS,Java</code>) teams</ListItem>
           </List>
         </Slide>
         <Slide>
@@ -369,16 +367,16 @@ export default class extends React.Component {
         </Slide>
         <Slide bgColor="secondary">
           <Link href="http://formidablelabs.com">
-            <Image src={images.logoSquare}/>
+            <Image width="100%" src={images.logoRed}/>
           </Link>
         </Slide>
         <Slide bgColor="secondary">
-          <Heading size={1} caps fit textColor={theme.colors.light}>
+          <Heading size={1} caps fit textColor={theme.colors.lighterGray}>
             Wrangling Adventures
           </Heading>
           <List textColor="primary">
             <ListItem><Point>JavaScript lead</Point> for site / development teams</ListItem>
-            <ListItem>Lead <Point>"Meta JS"</Point> team of 5-8 developers</ListItem>
+            <ListItem>Lead <Point>“Meta JS”</Point> team of 5-8 developers</ListItem>
             <ListItem>Part of new core web team</ListItem>
           </List>
           {/*
@@ -666,7 +664,7 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={4} fit caps textColor="tertiary">
+          <Heading size={4} fit caps>
             Challenges
           </Heading>
           <Layout>
@@ -704,7 +702,7 @@ export default class extends React.Component {
         <Slide>
           <Layout>
             <Fill>
-              <Heading size={5} caps textColor="tertiary">
+              <Heading size={5} caps>
                 Wrangling
               </Heading>
               <List>
@@ -723,7 +721,7 @@ export default class extends React.Component {
               </List>
             </Fill>
             <Fill>
-              <Heading size={5} caps textColor="tertiary">
+              <Heading size={5} caps>
                 Infrastructure
               </Heading>
               <List>
@@ -831,12 +829,13 @@ export default class extends React.Component {
         {/* ---------------------------------------------------------------
           * Thanks
           * --------------------------------------------------------------- */}
-        <Slide bgColor="tertiary" bgImage={images.polygonsLight}>
-          <Heading size={1} caps fit textColor="tertiary">
+        <Slide bgColor="secondary" bgImage={images.polygons}>
+          <Heading size={1} bold caps fit textColor="primary"
+                   style={{marginTop: "1em", marginBottom: "0.75em"}}>
             Thanks!
           </Heading>
           <Link href="http://formidablelabs.com">
-            <Image width="100%" src={images.logoText} style={{"margin-top": "40px"}}/>
+            <Image width="40%" src={images.logoRed} />
           </Link>
         </Slide>
       </Deck>
