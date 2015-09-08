@@ -414,6 +414,7 @@ export default class extends React.Component {
           {/* TODO: Full square layout. */}
           {/* TODO: Background images? */}
           {/* TODO: Icons? */}
+          {/* TODO: Put in taglines for each one? (or presenter notes?) */}
           <Layout>
             <Fill>
               <Heading size={4} caps textColor="secondary">
