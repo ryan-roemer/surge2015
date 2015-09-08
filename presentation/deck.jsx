@@ -225,7 +225,7 @@ export default class extends React.Component {
           */}
         <Slide>
           <Heading size={4} textColor="secondary">
-            Let{"'"}s dig into some large apps at a <em>high-traffic
+            Let{"'"}s dig into JS apps at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
           </Heading>
           {/**/}
@@ -399,7 +399,133 @@ export default class extends React.Component {
           </Heading>
         </Slide>
 
-        {/* TODO: Move into "Challenges" as intro case study? */}
+        {/* ---------------------------------------------------------------
+          * Themes - Introduction
+          * ---------------------------------------------------------------
+          */}
+        <Slide>
+          <Heading size={4} textColor="secondary">
+            ... concentrating on <em>four roles</em> /
+            <em>archetypes</em>
+          </Heading>
+          {/**/}
+        </Slide>
+        <Slide bgColor="primary">
+          {/* TODO: Full square layout. */}
+          {/* TODO: Background images? */}
+          {/* TODO: Icons? */}
+          <Layout>
+            <Fill>
+              <Heading size={4} caps textColor="secondary">
+                Architects
+              </Heading>
+            </Fill>
+            <Fill>
+              <Heading size={4} caps textColor="secondary">
+                Guides
+              </Heading>
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Heading size={4} caps textColor="secondary">
+                Gatekeepers
+              </Heading>
+            </Fill>
+            <Fill>
+              <Heading size={4} caps textColor="secondary">
+                Lifeguards
+              </Heading>
+            </Fill>
+          </Layout>
+        </Slide>
+
+        {/* ---------------------------------------------------------------
+          * THEME - Architects
+          * ---------------------------------------------------------------
+
+          - Architects: Build the foundations.
+              - **Idea**: "Plan and build a strong base."
+              - **Motivation**: JS is hard and complicated, and more so for big teams.
+              - A "Real" Build
+              - Organize the code
+              - Meta Team: Code, Conventions, Guidance (segue to next section).
+
+          - Architecture & Architects
+              - MOTIVATION: JS is the Wild, Wild West
+                - The Good:
+                    - It's flexible, developer-friendly, and scalable.
+
+                - The Bad:
+                    - Flexible almost to a fault (monkey patching everywhere)
+                    - Tough to do correctly
+                    - ... in all browsers
+                    - Code must be small and avoid duplication
+                    - The technology ecosystem changes at a ridiculous rate
+
+              - TIP: You need a real "build" now.
+                  - CASE STUDY: The homepage is really complicated.
+                      - TODO: See notes from phone.
+                  - JS is complicated: Minification, ES6, Polyfills,
+                  - CDN interaction and dev. vs. prod mode.
+                  - Make it as **fast** as possible.
+                      - Especially in development.
+                  - Your Meta team should own this.
+
+              - TIP: Organize your code.
+                  - Going to have enormous amount of code.
+                  - One unified build.
+                  - Originally, a monolith repo, now multiple track repos.
+                  - Shared Java + JS
+                      - LESSON: Original decision to nest JS deeply in Java has been painful.
+
+              - SUB-TIP: Keep development as close to production as possible, dev-wise.
+                  - Including full CDN mode if possible.
+
+              - SUB-TIP: ... get ready for a bumpy ride.
+
+              - TIP: Meta team - Coordinate team / infrastructure to funnel.
+                  - Common open source / vendor libraries
+                  - Conventions and code review for the team
+                  - Utilities and guidance.
+                  - And do this ASAP.
+
+          */}
+        <Slide bgColor="tertiary">
+          <Heading size={4} fit caps textColor="primary">
+            Architects
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={4} textColor="secondary">
+            Plan & build a <em>strong foundation</em>
+          </Heading>
+          {/**/}
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            Architects
+          </Heading>
+          {/* TODO: <Text> font looks bad... */}
+          <Text>the folks that help with:</Text>
+          <List>
+            <ListItem>
+              A "real" build
+            </ListItem>
+            <ListItem>
+              Organizing your code
+            </ListItem>
+            <ListItem>
+              Part of an Architecture Firm ("meta" team)
+            </ListItem>
+          </List>
+        </Slide>
+        {/* TODO: Rest of content / points */}
+
+
+
+
+
         {/* ---------------------------------------------------------------
           * Case Study - Homepage
           * ---------------------------------------------------------------
@@ -547,13 +673,6 @@ export default class extends React.Component {
             - TODO: Add images for appropriate themes.
 
             - THEMES
-                - Architecture & Architects: Build the foundations.
-                    - **Idea**: "Plan and build a strong base."
-                    - **Motivation**: JS is hard and complicated, and more so for big teams.
-                    - A "Real" Build
-                    - Organize the code
-                    - Meta Team: Code, Conventions, Guidance (segue to next section).
-
                 - Guides: Help the team along its way.
                     - **Idea**: "Shephard junior dev's and coordinate the chos"
                     - **Motivation**: All JS on the same page, ...
@@ -562,7 +681,7 @@ export default class extends React.Component {
                     - Review everything (also Gatekeeper)
                     - (Meta Team): Guides
 
-                - Gatekeepers & Gates: Say "NO" when it's needed.
+                - Gatekeepers: Say "NO" when it's needed.
                     - **Idea**: "Protect yourself through processes and tech"
                     - **Motivation**: Need tools and champions (people) to stop bad code / ideas.
                     - Automate quality
@@ -575,43 +694,6 @@ export default class extends React.Component {
                     - Log
                     - Monitor / Alert off the logs.
                     - Source Maps / Debugging helpers
-
-            - Architecture & Architects
-                - MOTIVATION: JS is the Wild, Wild West
-                  - The Good:
-                      - It's flexible, developer-friendly, and scalable.
-
-                  - The Bad:
-                      - Flexible almost to a fault (monkey patching everywhere)
-                      - Tough to do correctly
-                      - ... in all browsers
-                      - Code must be small and avoid duplication
-                      - The technology ecosystem changes at a ridiculous rate
-
-                - TIP: You need a real "build" now.
-                    - JS is complicated: Minification, ES6, Polyfills,
-                    - CDN interaction and dev. vs. prod mode.
-                    - Make it as **fast** as possible.
-                        - Especially in development.
-                    - Your Meta team should own this.
-
-                - TIP: Organize your code.
-                    - Going to have enormous amount of code.
-                    - One unified build.
-                    - Originally, a monolith repo, now multiple track repos.
-                    - Shared Java + JS
-                        - LESSON: Original decision to nest JS deeply in Java has been painful.
-
-                - SUB-TIP: Keep development as close to production as possible, dev-wise.
-                    - Including full CDN mode if possible.
-
-                - SUB-TIP: ... get ready for a bumpy ride.
-
-                - TIP: Meta team - Coordinate team / infrastructure to funnel.
-                    - Common open source / vendor libraries
-                    - Conventions and code review for the team
-                    - Utilities and guidance.
-                    - And do this ASAP.
 
             - Guides
                 - MOTIVATION: Big teams
@@ -786,6 +868,7 @@ export default class extends React.Component {
                   since.
                     - Get into place ASAP, which actual architecture support.
                     - Hat tip to other perf talk.
+                        - http://surge.omniti.com/2015?patrick-meenan
                     - TIP: Analysis tools _for_ the development team.
                         - But, the work for the dev. teams is **hard**.
                         - Maybe a demo.
