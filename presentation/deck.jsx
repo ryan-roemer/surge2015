@@ -467,6 +467,11 @@ export default class extends React.Component {
                   - CASE STUDY: The homepage is really complicated.
                       - TODO: See notes from phone.
                   - JS is complicated: Minification, ES6, Polyfills,
+                  - Bundle:
+                      - Discuss RJS, Browserify, Webpack
+                          - RJS great at large, unified, shared builds.
+                          - Webpack is "winning" and tight and terse.
+                      - TIP: Just pick one.
                   - CDN interaction and dev. vs. prod mode.
                   - Make it as **fast** as possible.
                       - Especially in development.
@@ -530,8 +535,13 @@ export default class extends React.Component {
           * Case Study - Homepage
           * ---------------------------------------------------------------
 
-            - Page scripts
-            - Entry points
+            - An example of something "in transition" from a bunch of random
+              JS into more structured mini applications.
+            - On it's way to a single, cogent SPA.
+            - The page itself is very complicated. Some of this you can't avoid
+              in large scale applications.
+            - Our structure is an example of how basic pages work (and how
+              complicated that can be).
           */}
         <Slide bgColor="tertiary">
           <Heading size={4} fit caps textColor="primary">
@@ -549,7 +559,20 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit textColor="secondary">
-            JS on the Homepage
+            The Homepage
+          </Heading>
+          <List>
+            <ListItem><em>Multiple</em>, <em>independent</em> JS apps</ListItem>
+            <ListItem>Code from <Point>8</Point> different teams</ListItem>
+            <ListItem>
+              Exemplary "<em>in transition</em>" page, somewhere
+              between raw JavaScript & a SPA
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit textColor="secondary">
+            Homepage: JS
           </Heading>
           <Layout>
             <Fill>
@@ -575,7 +598,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            Homepage - Scripts
+            Homepage: Scripts
           </Heading>
           {/*eslint-disable max-len*/}
           <CodePane
@@ -597,7 +620,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            Homepage - Scripts
+            Homepage: Scripts
           </Heading>
           <Layout>
             <Fill>
@@ -630,7 +653,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            Homepage - Entry Points
+            Homepage: Entry Points
           </Heading>
           <CodePane
             lang="javascript"
@@ -650,7 +673,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit textColor="secondary">
-            Homepage - Entry Points
+            Homepage: Entry Points
           </Heading>
           <List>
             <ListItem>Asynchronously loaded</ListItem>
