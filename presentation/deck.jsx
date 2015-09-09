@@ -406,7 +406,7 @@ export default class extends React.Component {
         <Slide>
           <Heading size={4} textColor="secondary">
             ... concentrating on <em>four roles</em> /
-            <em>archetypes</em>
+            <em>ideas</em>
           </Heading>
           {/**/}
         </Slide>
@@ -491,6 +491,8 @@ export default class extends React.Component {
               - SUB-TIP: ... get ready for a bumpy ride.
 
               - TIP: Meta team - Coordinate team / infrastructure to funnel.
+                  - A coordination point, not "dictators"
+                  - Organic growth or designated champions -- either is fine.
                   - Common open source / vendor libraries
                   - Conventions and code review for the team
                   - Utilities and guidance.
@@ -512,26 +514,45 @@ export default class extends React.Component {
           <Heading size={1} caps fit>
             Architects
           </Heading>
-          {/* TODO: <Text> font looks bad... */}
-          <Text>the folks that help with:</Text>
           <List>
             <ListItem>
-              A "real" build
+              A <Point>"Meta" team</Point> that helps with...
             </ListItem>
             <ListItem>
-              Organizing your code
+              Code <Point>Organization</Point>
             </ListItem>
             <ListItem>
-              Part of an Architecture Firm ("meta" team)
+              A <Point>real</Point> build
             </ListItem>
           </List>
         </Slide>
-        {/* TODO: Rest of content / points */}
-
-
-
-
-
+        <Slide>
+          <Heading size={1} caps fit>
+            Architecture Challenges
+          </Heading>
+          <List>
+            <ListItem>
+              All JavaScript interacts in <Point>one execution environment</Point>
+            </ListItem>
+            <ListItem>
+              Code <Point>size</Point> and <Point>duplication</Point> are critical
+            </ListItem>
+            <ListItem>
+              JavaScript is the <Point>Wild, Wild, West</Point>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            The Wild West of JS
+          </Heading>
+          <Todo>Redo all motivation / challenges sections</Todo>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            <em>Let{"'"}s see what we{"'"}re up against...</em>
+          </Heading>
+        </Slide>
         {/* ---------------------------------------------------------------
           * Case Study - Homepage
           * ---------------------------------------------------------------
@@ -688,6 +709,58 @@ export default class extends React.Component {
             - Caching analysis (for portion of shared library used)
             */}
         </Slide>
+
+        <Slide>
+          <Heading size={1} caps fit>
+            The Meta Team
+          </Heading>
+          <List>
+            <ListItem>
+              A <Point>coordination point</Point> for the project
+            </ListItem>
+            <ListItem>
+              Set <Point>conventions</Point> & <Point>best practices</Point> for the frontend
+            </ListItem>
+            <ListItem>
+              Utilities, documentation, and guidance
+            </ListItem>
+            <ListItem>
+              <Point>Code review</Point>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={2} caps fit>
+            Your Meta Team Task:
+          </Heading>
+          <Heading size={1} caps fit>
+            Have One.
+          </Heading>
+          {/*
+            - Organic or hand-picked
+            - Loose or strict mandates
+            */}
+        </Slide>
+
+        {/* TODO: Rest of content / points */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {/* ---------------------------------------------------------------
           * Challenges: Surviving, Thriving

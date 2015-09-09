@@ -61,6 +61,7 @@ theme.components.heading.h6.fontFamily = fonts.primary;
 theme.components.heading.h6.lineHeight = "1.2";
 theme.components.link.color = colors.darkGray;
 theme.components.list.listStylePosition = "outside";
+theme.components.text.fontFamily = fonts.secondary;
 theme.components.text.color = colors.darkestGray;
 
 export default theme;
