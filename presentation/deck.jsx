@@ -526,27 +526,41 @@ export default class extends React.Component {
             </ListItem>
           </List>
         </Slide>
-        <Slide>
-          <Heading size={1} caps fit>
-            Architecture Challenges
+        <Slide bgColor="tertiary">
+          <Heading size={4} bold fit caps textColor={theme.colors.lightestGray}>
+            The Fundamental Challenge:
           </Heading>
-          <List>
-            <ListItem>
-              All JavaScript interacts in <Point>one execution environment</Point>
-            </ListItem>
-            <ListItem>
-              Code <Point>size</Point> and <Point>duplication</Point> are critical
-            </ListItem>
-            <ListItem>
-              JavaScript is the <Point>Wild, Wild, West</Point>
-            </ListItem>
-          </List>
+          <Heading size={4} bold fit caps textColor={theme.colors.primary}>
+            JavaScript is the
+          </Heading>
+          <Heading size={4} bold fit caps textColor={theme.colors.lightestGray}>
+            Wild, Wild West
+          </Heading>
+          {/*
+            - TODO: Talking points for wild, wild west.
+            */}
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            The Wild West of JS
+            Architecture / JS Challenges
           </Heading>
-          <Todo>Redo all motivation / challenges sections</Todo>
+          <List>
+            <ListItem>
+              JS is easy to do <Point>very, very wrong</Point>
+            </ListItem>
+            <ListItem>
+              Technologies change at a <Point>ridiculous rate</Point>
+            </ListItem>
+            <ListItem>
+              All JS interacts in <Point>one execution environment</Point>
+            </ListItem>
+            <ListItem>
+              Code <Point>size / duplication</Point> is critical
+            </ListItem>
+            <ListItem>
+              JS has a <em>cowboy legacy</em> that doesn{"'"}t play well in large apps
+            </ListItem>
+          </List>
         </Slide>
         <Slide>
           <Heading size={3}>
