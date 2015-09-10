@@ -213,6 +213,12 @@ export default class extends React.Component {
           </Heading>
         </Slide>
 
+        {/* TODO: SLIDE?
+          - Maybe something on "focus on arch, but also process"
+          - Segue: Show you what your organization is in for...
+          */}
+
+
         {/* ---------------------------------------------------------------
           * Examining Large Scale Apps
           * ---------------------------------------------------------------
