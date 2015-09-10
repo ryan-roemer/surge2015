@@ -470,6 +470,14 @@ export default class extends React.Component {
                     - Code must be small and avoid duplication
                     - The technology ecosystem changes at a ridiculous rate
 
+              - TIP: Meta team - Coordinate team / infrastructure to funnel.
+                  - A coordination point, not "dictators"
+                  - Organic growth or designated champions -- either is fine.
+                  - Common open source / vendor libraries
+                  - Conventions and code review for the team
+                  - Utilities and guidance.
+                  - And do this ASAP.
+
               - TIP: You need a real "build" now.
                   - CASE STUDY: The homepage is really complicated.
                       - TODO: See notes from phone.
@@ -484,25 +492,15 @@ export default class extends React.Component {
                       - Especially in development.
                   - Your Meta team should own this.
 
+                  - SUB-TIP: Keep development as close to production as possible, dev-wise.
+                      - Including full CDN mode if possible.
+
               - TIP: Organize your code.
                   - Going to have enormous amount of code.
                   - One unified build.
                   - Originally, a monolith repo, now multiple track repos.
                   - Shared Java + JS
                       - LESSON: Original decision to nest JS deeply in Java has been painful.
-
-              - SUB-TIP: Keep development as close to production as possible, dev-wise.
-                  - Including full CDN mode if possible.
-
-              - SUB-TIP: ... get ready for a bumpy ride.
-
-              - TIP: Meta team - Coordinate team / infrastructure to funnel.
-                  - A coordination point, not "dictators"
-                  - Organic growth or designated champions -- either is fine.
-                  - Common open source / vendor libraries
-                  - Conventions and code review for the team
-                  - Utilities and guidance.
-                  - And do this ASAP.
 
           */}
         <Slide bgColor="tertiary">
@@ -564,7 +562,7 @@ export default class extends React.Component {
               Code <Point>size / duplication</Point> is critical
             </ListItem>
             <ListItem>
-              JS has a <em>cowboy legacy</em> that doesn{"'"}t play well in large apps
+              JS has a <Point>cowboy legacy</Point> that doesn{"'"}t play well in large apps
             </ListItem>
           </List>
         </Slide>
@@ -730,6 +728,10 @@ export default class extends React.Component {
             */}
         </Slide>
 
+        {/* ---------------------------------------------------------------
+          * Architects - The Meta Team
+          * ---------------------------------------------------------------
+          */}
         <Slide>
           <Heading size={1} caps fit>
             The Meta Team
@@ -742,10 +744,10 @@ export default class extends React.Component {
               Set <Point>conventions</Point> & <Point>best practices</Point> for the frontend
             </ListItem>
             <ListItem>
-              Utilities, documentation, and guidance
+              <Point>Code review</Point>
             </ListItem>
             <ListItem>
-              <Point>Code review</Point>
+              Utilities, documentation, and guidance
             </ListItem>
           </List>
         </Slide>
@@ -761,10 +763,70 @@ export default class extends React.Component {
             - Loose or strict mandates
             */}
         </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            Our Meta JS Team
+          </Heading>
+          <List>
+            <ListItem>
+              <Point>1.5</Point> dedicated developers
+            </ListItem>
+            <ListItem>
+              <Point>6</Point> "loaned" track developers
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            Our Meta JS Duties
+          </Heading>
+          <List>
+            <ListItem>
+              ~1 day of code review / week
+            </ListItem>
+            <ListItem>
+              Chat channel participation
+            </ListItem>
+            <ListItem>
+              Cross-track JS initiatives (i18n, multi-tenancy, PCI, etc.)
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            Meta JS Benefits
+          </Heading>
+          <List>
+            <ListItem>
+              <Point>Consistency</Point> across the entire project
+            </ListItem>
+            <ListItem>
+              Help tracks consider <Point>other teams</Point>
+            </ListItem>
+            <ListItem>
+              <Point>Represent</Point> track interests in the core
+            </ListItem>
+          </List>
+        </Slide>
 
-        {/* TODO: Rest of content / points */}
+        <Slide>
+          <Heading size={1} caps fit>
+            A "Real" Build
+          </Heading>
+          {/*
+            TODO: BUILD SECTION
+            */}
+        </Slide>
 
-
+        <Slide>
+          <Heading size={1} caps fit>
+            Code Organization
+          </Heading>
+          {/*
+            - TODO: BUILD SECTION
+            - TODO: Cut section? OR Mention as a sub-point?
+            */}
+        </Slide>
 
 
 
