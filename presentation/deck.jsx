@@ -123,7 +123,7 @@ export default class extends React.Component {
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
             <Text style={{display: "inline-block", fontSize: "2.5em"}}>
               <Link href="https://twitter.com/ryan_roemer"
-                    textColor={theme.colors.lighterGray}>
+                    textColor="lighterGray">
                 @ryan_roemer
               </Link>
             </Text>
@@ -133,7 +133,7 @@ export default class extends React.Component {
             </Text>
             <Text style={{display: "inline-block", fontSize: "2.5em"}}>
               <Link href="http://surge2015.formidablelabs.com"
-                    textColor={theme.colors.lighterGray}>
+                    textColor="lighterGray">
                 surge2015.formidablelabs.com
               </Link>
             </Text>
@@ -529,13 +529,13 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide bgColor="tertiary">
-          <Heading size={4} bold fit caps textColor={theme.colors.lightestGray}>
+          <Heading size={4} bold fit caps textColor="lightestGray">
             The Fundamental Challenge:
           </Heading>
-          <Heading size={4} bold fit caps textColor={theme.colors.primary}>
+          <Heading size={4} bold fit caps textColor="primary">
             JavaScript is the
           </Heading>
-          <Heading size={4} bold fit caps textColor={theme.colors.lightestGray}>
+          <Heading size={4} bold fit caps textColor="lightestGray">
             Wild, Wild West
           </Heading>
           {/*
