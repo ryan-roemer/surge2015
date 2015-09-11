@@ -111,17 +111,17 @@ export default class extends React.Component {
           * Title
           * --------------------------------------------------------------- */}
         <Slide bgImage={images.polygons}>
-          <Text fit bold caps textColor="primary" fontFamily="primary">
+          <Text fit bold caps textColor="primary" textFont="primary">
             Wrangling
           </Text>
-          <Text fit bold caps textColor="primary" fontFamily="primary">
+          <Text fit bold caps textColor="primary" textFont="primary">
             Large Scale
           </Text>
-          <Text fit bold caps textColor="primary" fontFamily="primary">
+          <Text fit bold caps textColor="primary" textFont="primary">
             Frontend Web Applications
           </Text>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
-            <Text style={{display: "inline-block"}}>
+            <Text style={{display: "inline-block", fontSize: "2.5em"}}>
               <Link href="https://twitter.com/ryan_roemer">
                 @ryan_roemer
               </Link>
@@ -130,7 +130,7 @@ export default class extends React.Component {
                   textColor="darkerGray">
               |
             </Text>
-            <Text style={{display: "inline-block"}}>
+            <Text style={{display: "inline-block", fontSize: "2.5em"}}>
               <Link href="http://surge2015.formidablelabs.com">
                 surge2015.formidablelabs.com
               </Link>
