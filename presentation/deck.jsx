@@ -126,7 +126,8 @@ export default class extends React.Component {
           </Text>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
             <Text style={{display: "inline-block"}}>
-              <Link href="https://twitter.com/ryan_roemer">
+              <Link href="https://twitter.com/ryan_roemer"
+                    textColor={theme.colors.lighterGray}>
                 @ryan_roemer
               </Link>
             </Text>
@@ -135,7 +136,8 @@ export default class extends React.Component {
               |
             </Text>
             <Text style={{display: "inline-block"}}>
-              <Link href="http://surge2015.formidablelabs.com">
+              <Link href="http://surge2015.formidablelabs.com"
+                    textColor={theme.colors.lighterGray}>
                 surge2015.formidablelabs.com
               </Link>
             </Text>
