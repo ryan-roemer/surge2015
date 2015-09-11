@@ -25,10 +25,6 @@ const images = {
 
 preloader([images.city]);
 
-// Themes
-// ------
-import theme from "../themes/formidable/index";
-
 // Components
 // ----------
 // A meaningful "point" in text.
@@ -115,26 +111,26 @@ export default class extends React.Component {
           * Title
           * --------------------------------------------------------------- */}
         <Slide bgImage={images.polygons}>
-          <Text fit bold caps textColor={theme.colors.primary} fontFamily={theme.fonts.primary}>
+          <Text fit bold caps textColor="primary" textFont="primary">
             Wrangling
           </Text>
-          <Text fit bold caps textColor={theme.colors.primary} fontFamily={theme.fonts.primary}>
+          <Text fit bold caps textColor="primary" textFont="primary">
             Large Scale
           </Text>
-          <Text fit bold caps textColor={theme.colors.primary} fontFamily={theme.fonts.primary}>
+          <Text fit bold caps textColor="primary" textFont="primary">
             Frontend Web Applications
           </Text>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
-            <Text style={{display: "inline-block"}}>
+            <Text style={{display: "inline-block", fontSize: "2.5em"}}>
               <Link href="https://twitter.com/ryan_roemer">
                 @ryan_roemer
               </Link>
             </Text>
             <Text style={{display: "inline-block", margin: "0 0.35em"}}
-                  textColor={theme.colors.darkerGray}>
+                  textColor="darkerGray">
               |
             </Text>
-            <Text style={{display: "inline-block"}}>
+            <Text style={{display: "inline-block", fontSize: "2.5em"}}>
               <Link href="http://surge2015.formidablelabs.com">
                 surge2015.formidablelabs.com
               </Link>
@@ -202,13 +198,13 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide bgColor="tertiary">
-          <Heading size={4} bold fit caps textColor={theme.colors.lightestGray}>
+          <Heading size={4} bold fit caps textColor="lightestGray">
             Lots of JavaScript
           </Heading>
-          <Heading size={4} bold fit caps textColor={theme.colors.primary}>
+          <Heading size={4} bold fit caps textColor="primary">
             In the browser
           </Heading>
-          <Heading size={4} bold fit caps textColor={theme.colors.lightestGray}>
+          <Heading size={4} bold fit caps textColor="lightestGray">
             Written by large teams
           </Heading>
         </Slide>
@@ -371,7 +367,7 @@ export default class extends React.Component {
           </Link>
         </Slide>
         <Slide bgColor="secondary">
-          <Heading size={1} caps fit textColor={theme.colors.lighterGray}>
+          <Heading size={1} caps fit textColor="lighterGray">
             Wrangling Adventures
           </Heading>
           <List textColor="primary">
