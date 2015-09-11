@@ -63,5 +63,6 @@ theme.components.link.color = colors.darkGray;
 theme.components.list.listStylePosition = "outside";
 theme.components.text.fontFamily = fonts.secondary;
 theme.components.text.color = colors.darkestGray;
+theme.components.text.fontFamily = fonts.secondary;
 
 export default theme;

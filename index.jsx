@@ -18,7 +18,7 @@ config.html = require("./themes/formidable/html");
 // Styling
 import "normalize.css";
 import "./themes/formidable/index.css";
-import "highlight.js/styles/monokai_sublime.css";
+import "spectacle/node_modules/highlight.js/styles/monokai_sublime.css";
 
 // Hack the favicon into the build directory.
 // This _places_ it in build output.
