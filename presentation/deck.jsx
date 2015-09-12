@@ -448,10 +448,10 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         <Slide>
-          <Heading size={4} textColor="secondary">
+          <Heading size={3}>
             ... we will focus on
           </Heading>
-          <Heading size={4} textColor="secondary">
+          <Heading size={3}>
             four <em>roles</em> / <em>ideas</em>
           </Heading>
           {/**/}
@@ -496,7 +496,6 @@ export default class extends React.Component {
               - **Motivation**: JS is hard and complicated, and more so for big teams.
               - A "Real" Build
               - Organize the code
-              - Meta Team: Code, Conventions, Guidance (segue to next section).
 
           - Architecture & Architects
               - MOTIVATION: JS is the Wild, Wild West
@@ -512,8 +511,6 @@ export default class extends React.Component {
 
               - CASE STUDY: The homepage is really complicated.
                   - TODO: See notes from phone.
-
-              - TIP: Meta team - Coordinate team / infrastructure to funnel.
 
               - TIP: You need a real "build" now.
 
@@ -532,22 +529,15 @@ export default class extends React.Component {
           {/**/}
         </Slide>
         <Slide>
-          <Heading fit caps>
-            Architects
+          <Heading size={3}>
+            Architects & Architecture
           </Heading>
           <List>
             <ListItem>
-              A <Point>"Meta" team</Point> that helps with...
+              A <Point>real build</Point>
             </ListItem>
-            {/* TODO
-              - If cutting, add "guidance, leadership, etc." as bullet point.
-
             <ListItem>
               Code <Point>organization</Point>
-            </ListItem>
-            */}
-            <ListItem>
-              A <Point>real build</Point>
             </ListItem>
           </List>
         </Slide>
@@ -589,9 +579,9 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={3}>
-            <em>Let{"'"}s see an example of what we{"'"}re up against...</em>
-          </Heading>
+          <Text>
+            Let{"'"}s see an example of what we{"'"}re up against...
+          </Text>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -760,87 +750,6 @@ export default class extends React.Component {
         </Slide>
 
         {/* ---------------------------------------------------------------
-          * Architects - The Meta Team
-          * ---------------------------------------------------------------
-          */}
-        <Slide>
-          <Heading fit caps>
-            The Meta Team
-          </Heading>
-          <List>
-            <ListItem>
-              A <Point>coordination point</Point> for the project
-            </ListItem>
-            <ListItem>
-              Set <Point>conventions</Point> & <Point>best practices</Point> for the frontend
-            </ListItem>
-            <ListItem>
-              <Point>Code review</Point>
-            </ListItem>
-            <ListItem>
-              Develop common <Point>utilites</Point> & the <Point>deployment</Point> infrastructure
-            </ListItem>
-          </List>
-        </Slide>
-        <Slide>
-          <Heading fit caps>
-            Your Meta Team Task:
-          </Heading>
-          <Heading fit caps textColor="red">
-            Have One.
-          </Heading>
-          {/*
-            - Organic or hand-picked
-            - Loose or strict mandates
-            */}
-        </Slide>
-        <Slide>
-          <Heading fit caps>
-            Our Meta JS Team
-          </Heading>
-          <List>
-            <ListItem>
-              <Point>1.5</Point> dedicated developers
-            </ListItem>
-            <ListItem>
-              <Point>6</Point> "loaned" track developers
-            </ListItem>
-          </List>
-        </Slide>
-        <Slide>
-          <Heading fit caps>
-            Our Meta JS Duties
-          </Heading>
-          <List>
-            <ListItem>
-              ~1 day of code review / week
-            </ListItem>
-            <ListItem>
-              Chat channel participation
-            </ListItem>
-            <ListItem>
-              Cross-track JS initiatives (i18n, multi-tenancy, PCI, etc.)
-            </ListItem>
-          </List>
-        </Slide>
-        <Slide>
-          <Heading fit caps>
-            Meta JS Benefits
-          </Heading>
-          <List>
-            <ListItem>
-              Project-wide <Point>consistency</Point> & <Point>support</Point>
-            </ListItem>
-            <ListItem>
-              Help tracks consider <Point>other teams</Point>
-            </ListItem>
-            <ListItem>
-              <Point>Represent</Point> track interests in the core
-            </ListItem>
-          </List>
-        </Slide>
-
-        {/* ---------------------------------------------------------------
           * Architects - A "Real" Build
           * ---------------------------------------------------------------
           */}
@@ -995,33 +904,24 @@ export default class extends React.Component {
             */}
         </Slide>
 
-
-
         {/* ---------------------------------------------------------------
           * Architects - Code Organization
           * ---------------------------------------------------------------
 
-          -----------------------------------------------------------------------------------------
+          - TIP: Organize your code.
+              - Going to have enormous amount of code.
+              - One unified build.
+              - Originally, a monolith repo, now multiple track repos.
+              - Shared Java + JS
+                  - LESSON: Original decision to nest JS deeply in Java has been painful.
+
+          */}
         <Slide>
           <Heading fit caps>
             Code Organization
           </Heading>
-
-            - TODO: BUILD SECTION
-            - TODO: Cut section? OR Mention as a sub-point?
         </Slide>
-          */}
-        {/* TODO:
 
-              - TIP: Organize your code.
-                  - Going to have enormous amount of code.
-                  - One unified build.
-                  - Originally, a monolith repo, now multiple track repos.
-                  - Shared Java + JS
-                      - LESSON: Original decision to nest JS deeply in Java has been painful.
-
-          -----------------------------------------------------------------------------------------
-          */}
 
 
 
@@ -1035,7 +935,7 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
 
             - Guides: Help the team along its way.
-                - **Idea**: "Shephard junior dev's and coordinate the chos"
+                - **Idea**: "Shephard junior dev's and coordinate the chaos"
                 - **Motivation**: All JS on the same page, ...
                 - Meta Leadership
                 - Education
@@ -1047,6 +947,144 @@ export default class extends React.Component {
                 - Frontend dev's unfamiliar with large apps, code quality, etc.
 
           */}
+        <Slide bgColor="tertiary">
+          <Heading fit caps textColor="primary">
+            Guides
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={4} textColor="secondary">
+            <Point>Coordinate</Point> the chaos,
+          </Heading>
+          <Heading size={4} textColor="secondary">
+            <Point>level up</Point> the development teams
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading caps>
+            Guides & Guidance
+          </Heading>
+          <List>
+            <ListItem>
+              The <Point>Meta</Point> team
+            </ListItem>
+            <ListItem>
+              <Point>Educate</Point>
+            </ListItem>
+            <ListItem>
+              <Point>Review</Point> everything
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading fit caps>
+            Guidance Challenges
+          </Heading>
+          <List>
+            <ListItem>
+              <Point>Backend devs</Point> learning JS & the frontend
+            </ListItem>
+            <ListItem>
+              <Point>Frontend devs</Point> unfamiliar with large app design, testing, etc.
+            </ListItem>
+            <ListItem>
+              <Point>Onboarding</Point> new devs of all backgrounds
+            </ListItem>
+            <ListItem>
+              Making knowledge transfer <Point>self-sustaining</Point>
+            </ListItem>
+          </List>
+        </Slide>
+
+        {/* ---------------------------------------------------------------
+          * Guides - The Meta Team
+          * ---------------------------------------------------------------
+          */}
+        <Slide>
+          <Heading fit caps>
+            The Meta Team
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading fit caps>
+            The Meta Team
+          </Heading>
+          <List>
+            <ListItem>
+              A <Point>coordination point</Point> for the project
+            </ListItem>
+            <ListItem>
+              Set <Point>conventions</Point> & <Point>best practices</Point> for the frontend
+            </ListItem>
+            <ListItem>
+              <Point>Code review</Point>
+            </ListItem>
+            <ListItem>
+              Develop common <Point>utilites</Point> & the <Point>deployment</Point> infrastructure
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading fit caps>
+            Your Meta Team Task:
+          </Heading>
+          <Heading fit caps textColor="red">
+            Have One.
+          </Heading>
+          {/*
+            - Organic or hand-picked
+            - Loose or strict mandates
+            */}
+        </Slide>
+        <Slide>
+          <Heading fit caps>
+            Our Meta JS Team
+          </Heading>
+          <List>
+            <ListItem>
+              <Point>1.5</Point> dedicated developers
+            </ListItem>
+            <ListItem>
+              <Point>6</Point> "loaned" track developers
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading fit caps>
+            Our Meta JS Duties
+          </Heading>
+          <List>
+            <ListItem>
+              ~1 day of code review / week
+            </ListItem>
+            <ListItem>
+              Chat channel participation
+            </ListItem>
+            <ListItem>
+              Cross-track JS initiatives (i18n, multi-tenancy, PCI, etc.)
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading fit caps>
+            Meta JS Benefits
+          </Heading>
+          <List>
+            <ListItem>
+              Project-wide <Point>consistency</Point> & <Point>support</Point>
+            </ListItem>
+            <ListItem>
+              Help tracks consider <Point>other teams</Point>
+            </ListItem>
+            <ListItem>
+              <Point>Represent</Point> track interests in the core
+            </ListItem>
+            <ListItem>
+              <Point>More engineers</Point> to support the whole project
+            </ListItem>
+          </List>
+        </Slide>
+
         {/* ---------------------------------------------------------------
           * Guides - Educate
           * ---------------------------------------------------------------
@@ -1058,6 +1096,7 @@ export default class extends React.Component {
 
             - Mentorship:
                 - Jump into branches and pair program
+                -
                 - Invest in track leads to take over common tests.
 
             - STORY: Had to write a lot of test skeletons and jump in branches
@@ -1065,6 +1104,42 @@ export default class extends React.Component {
               self-sustaining from there.
 
           */}
+        <Slide>
+          <Heading fit caps>
+            Education
+          </Heading>
+        </Slide>
+        <Slide>
+          <Text>
+            Continually write <Point>living</Point> documentation,
+          </Text>
+          <Text>
+            <Point>close to the code</Point>
+          </Text>
+        </Slide>
+        <Slide>
+          <Text>
+            Take a <Point>"hands on approach"</Point>
+          </Text>
+        </Slide>
+        <Slide>
+          <Text>
+            Invest in <Point>rising developers</Point> &
+          </Text>
+          <Text>
+            spread knowledge <Point>back to teams</Point>
+          </Text>
+          {/*
+            - STORY: Had to write a lot of test skeletons and jump in branches
+              until track leads / devs finally got off the ground, then was
+              self-sustaining from there.
+
+            */}
+        </Slide>
+
+
+
+
         {/* ---------------------------------------------------------------
           * Guides - Review Everything
           * ---------------------------------------------------------------
