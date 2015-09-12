@@ -326,7 +326,10 @@ export default class extends React.Component {
               Handful of <Point>Single Page Applications</Point> (SPAs)
             </ListItem>
             <ListItem>
-              App paradigm shifting from <Point>"old"</Point> to <Point>"new"</Point> world
+              Shifting from <Point>"old"</Point> to <Point>"new"</Point> JS world
+            </ListItem>
+            <ListItem>
+              <Point>Java</Point> (<em>old</em>) & <Point>Node.js</Point> (<em>new</em>) backends
             </ListItem>
           </List>
         </Slide>
@@ -446,8 +449,10 @@ export default class extends React.Component {
           */}
         <Slide>
           <Heading size={4} textColor="secondary">
-            ... concentrating on <em>four roles</em> /
-            <em>ideas</em>
+            ... we will focus on
+          </Heading>
+          <Heading size={4} textColor="secondary">
+            four <em>roles</em> / <em>ideas</em>
           </Heading>
           {/**/}
         </Slide>
@@ -824,7 +829,7 @@ export default class extends React.Component {
           </Heading>
           <List>
             <ListItem>
-              <Point>Consistency</Point> & <Point>support</Point> across the entire project
+              Project-wide <Point>consistency</Point> & <Point>support</Point>
             </ListItem>
             <ListItem>
               Help tracks consider <Point>other teams</Point>
@@ -868,18 +873,27 @@ export default class extends React.Component {
           <List>
             {/* TODO: Add links */}
             <ListItem>
-              Choose an <Point>organization scheme</Point>: AMD, CommonJS
+              Choose an <Point>paradigm</Point>: AMD, CommonJS
             </ListItem>
             <ListItem>
               Choose a <Point>build tool / loader</Point>: RequireJS, Browserify, Webpack
             </ListItem>
             <ListItem>
-              Any of the above will do.
-            </ListItem>
-            <ListItem>
-              Take the time to <Point>evaluate</Point> and understand the <Point>tradeoffs</Point>
+              Take time to learn & evaluate the <Point>tradeoffs</Point>
             </ListItem>
           </List>
+          {/*
+            - Any of the above schemes / tools will do.
+            - Strengths and weaknesses to approaches.
+                - Schemes
+                    - CommonJS is the most liked format, but _must_ be watched / built.
+                    - AMD requires boilerplate / awkward syntax, but can have superquick dev.
+                - Tools
+                    - RequireJS: Most flexible for a large build, but not the "hot tool".
+                    - Browserify: Loved by dev's for simple projects.
+                    - Webpack: The new hotness, with good AMD/CommonJS support, and some more
+                      advanced tooling like shared libraries.
+            */}
         </Slide>
         <Slide>
           <Heading fit caps textColor="gray">
@@ -912,9 +926,6 @@ export default class extends React.Component {
             <ListItem>
               Optimize for <Point>both</Point>
             </ListItem>
-            <ListItem>
-              And for <Point>application</Point> & <Point>test</Point> code
-            </ListItem>
           </List>
           {/*
             - The build supports: (1) production, (2) dev, and (3) test.
@@ -928,9 +939,6 @@ export default class extends React.Component {
           <List>
             <ListItem>
               Make <Point>development</Point> resemble production wherever possible
-            </ListItem>
-            <ListItem>
-              Make <Point>tests</Point> resemble production too
             </ListItem>
             <ListItem>
               Differences <Point>will</Point> be the source of bugs
@@ -966,11 +974,10 @@ export default class extends React.Component {
              Sharing <Point>frontend</Point> & <Point>backend</Point> code
             </ListItem>
             <ListItem>
-             Combining application, open source, & 3rd party vendor JS code
+             Combining application, OSS, & 3rd party code
             </ListItem>
             <ListItem>
-             ... deciding when to support <Point>unconventional
-             scenarios</Point> & when to <Point>just say "no"</Point>
+             Supporting <Point>unconventional scenarios</Point>
             </ListItem>
           </List>
           {/*
@@ -981,6 +988,10 @@ export default class extends React.Component {
                      live in deeply-nested Java paths. Most common, "normal"
                      JavaScript lives in a flat repository. Consequently, we
                      have very, very tough shared
+            - Part of the build complexities also figure into Gatekeeping,
+              specifically when to say no:
+                - 3rd party vendor libraries.
+                - How far to bend the JS to accomodate Java.
             */}
         </Slide>
 
@@ -1227,7 +1238,7 @@ export default class extends React.Component {
           */}
         <Slide>
           <Heading size={2}>
-            Some parting thoughts on the <Point>future</Point>
+            Some parting thoughts on the <em>future</em>
           </Heading>
         </Slide>
         <Slide>
