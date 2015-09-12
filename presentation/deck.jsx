@@ -1272,7 +1272,7 @@ export default class extends React.Component {
                 - So important to support teams through transitions.
             */}
         </Slide>
-        <Slide bgColor="tertiary">
+        <Slide bgColor="secondary" bgImage={images.polygons}>
           {/*
             - ... and that's about it.
             - So here's wishing you...
