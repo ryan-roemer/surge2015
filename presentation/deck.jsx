@@ -906,8 +906,58 @@ export default class extends React.Component {
                 - STORY: Production: Moving Java CDN tool to pure JS
             */}
         </Slide>
-
+        <Slide>
+          <Heading size={1} caps fit>
+            (2) Our Development Workflow
+          </Heading>
+          <List>
+            <ListItem>
+              The build supports (1) "watchers" for JS / CSS and (2) shell commands.
+            </ListItem>
+            <ListItem>
+              Write code & tests
+            </ListItem>
+            <ListItem>
+              Check with dev. / test servers & command line tools
+            </ListItem>
+            <ListItem>
+              Commit, push, & eventually open a pull request
+            </ListItem>
+            <ListItem>
+              ... <Point>quickly</Point>, <Point>easily</Point>, and <Point>understandably</Point>
+            </ListItem>
+          </List>
           {/*
+            - TIP: Developers hate waiting for dev changes and test runs.
+                   Quality slips if not really, really fast.
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            (2) Our Production Workflow
+          </Heading>
+          <List>
+            <ListItem>
+              All the optimizations (minification, etc.)
+            </ListItem>
+            <ListItem>
+              The complete QA checklist (in CI): lint, unit tests, E2E tests.
+            </ListItem>
+            <ListItem>
+              Push to CDN.
+            </ListItem>
+          </List>
+          {/*
+            - TIP: Should be fast to keep prod deploys agile.
+            */}
+        </Slide>
+
+
+        {/* ---------------------------------------------------------------
+          * Architects - Code Organization
+          * ---------------------------------------------------------------
+
+          -----------------------------------------------------------------------------------------
         <Slide>
           <Heading size={1} caps fit>
             Code Organization
@@ -916,7 +966,7 @@ export default class extends React.Component {
             - TODO: BUILD SECTION
             - TODO: Cut section? OR Mention as a sub-point?
         </Slide>
-            */}
+          */}
         {/* TODO:
 
               - TIP: Organize your code.
@@ -926,6 +976,7 @@ export default class extends React.Component {
                   - Shared Java + JS
                       - LESSON: Original decision to nest JS deeply in Java has been painful.
 
+          -----------------------------------------------------------------------------------------
           */}
 
 
@@ -940,6 +991,10 @@ export default class extends React.Component {
 
 
 
+        {/* ---------------------------------------------------------------
+          * XXXX - XXXX
+          * ---------------------------------------------------------------
+          */}
 
 
 
