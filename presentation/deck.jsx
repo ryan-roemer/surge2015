@@ -1023,7 +1023,6 @@ export default class extends React.Component {
           * THEME - Guides
           * ---------------------------------------------------------------
 
-
             - Guides: Help the team along its way.
                 - **Idea**: "Shephard junior dev's and coordinate the chos"
                 - **Motivation**: All JS on the same page, ...
@@ -1042,8 +1041,17 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
 
             - TIP: Education
-                - Good documentation
+
+            - Good documentation
                 - As close the code as possible.
+
+            - Mentorship:
+                - Jump into branches and pair program
+                - Invest in track leads to take over common tests.
+
+            - STORY: Had to write a lot of test skeletons and jump in branches
+              until track leads / devs finally got off the ground, then was
+              self-sustaining from there.
 
           */}
         {/* ---------------------------------------------------------------
@@ -1192,39 +1200,6 @@ export default class extends React.Component {
 
 
         {/* ---------------------------------------------------------------
-          * Future
-          * ---------------------------------------------------------------
-
-            - TODO(IDEA): "Surviving the Future" / "Surviving Indefinitely"
-            - TODO(IDEA): end with "THRIVE!"
-            - TODO: Transition to "THANKS".
-
-            - THEME: Visionary
-
-            - TIP: Embrace change, even if uncomfortable.
-                - Most of the code in a huge application will be aging / legacy
-                  by the time you actually ship it.
-                - Keep up with the times, and re-examine what you should be doing.
-                    - And especially for JavaScript.
-                - STORY: React: server-side render, efficient DOM
-
-            - TIP: Refactor infrastructure & organization
-                - TIP: Many, many small repositories
-                    - Components
-                    - Apps
-                    - Infrastructure
-
-                - TIP: Lessen the direct role of Meta teams
-                    - Opt for "guidance"
-                    - And autonomy for tracks sooner.
-
-            - TIP: Transition strategies.
-                - So important to support teams through transitions.
-          */}
-
-
-
-        {/* ---------------------------------------------------------------
           * FINAL NOTES (TODO)
           * ---------------------------------------------------------------
 
@@ -1232,6 +1207,83 @@ export default class extends React.Component {
             - TODO: Add images for appropriate themes.
 
           */}
+
+
+
+
+        {/* ---------------------------------------------------------------
+          * Future
+          * ---------------------------------------------------------------
+
+            - THEME: Visionary
+
+            - This has been a complicated tour of where we've been and are now.
+            - As a hint to how we are looking to the future, I have just a few
+              remaining points...
+            - These could alone be a separate talk, so please feel free to
+              catch me in the hall later. I'm always happy to talk.
+            - ... so without further ado, let's close with...
+
+          */}
+        <Slide>
+          <Heading size={2}>
+            Some parting thoughts on the <Point>future</Point>
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={4} bold fit caps>
+            Embrace change
+          </Heading>
+          {/*
+            - TIP: Embrace change, even if uncomfortable.
+                - Most of the code in a huge application will be aging / legacy
+                  by the time you actually ship it.
+                - Keep up with the times, and re-examine what you should be doing.
+                    - And especially for JavaScript.
+                - STORY: React: server-side render, efficient DOM
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={4} bold fit caps>
+            Reevaluate & refactor
+          </Heading>
+          <Heading size={4} bold fit caps>
+            Infrastructure & organization
+          </Heading>
+          {/*
+            - TIP: Reevaluate / refactor infrastructure & organization
+
+            - TIP: Many, many small repositories
+                - Components
+                - Apps
+                - Infrastructure
+
+            - TIP: Lessen the direct role of Meta teams
+                - Opt for "guidance"
+                - And autonomy for tracks sooner.
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={4} bold fit caps>
+            Have a transition strategy
+          </Heading>
+          {/*
+            - TIP: Transition strategies.
+                - So important to support teams through transitions.
+            */}
+        </Slide>
+        <Slide bgColor="tertiary">
+          {/*
+            - ... and that's about it.
+            - So here's wishing you...
+            */}
+          <Heading bold fit caps textColor="primary">
+            Happy
+          </Heading>
+          <Heading bold fit caps textColor="primary">
+            Wrangling
+          </Heading>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * Thanks
