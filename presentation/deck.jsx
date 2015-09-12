@@ -468,37 +468,14 @@ export default class extends React.Component {
                     - Code must be small and avoid duplication
                     - The technology ecosystem changes at a ridiculous rate
 
+              - CASE STUDY: The homepage is really complicated.
+                  - TODO: See notes from phone.
+
               - TIP: Meta team - Coordinate team / infrastructure to funnel.
-                  - A coordination point, not "dictators"
-                  - Organic growth or designated champions -- either is fine.
-                  - Common open source / vendor libraries
-                  - Conventions and code review for the team
-                  - Utilities and guidance.
-                  - And do this ASAP.
 
               - TIP: You need a real "build" now.
-                  - CASE STUDY: The homepage is really complicated.
-                      - TODO: See notes from phone.
-                  - JS is complicated: Minification, ES6, Polyfills,
-                  - Bundle:
-                      - Discuss RJS, Browserify, Webpack
-                          - RJS great at large, unified, shared builds.
-                          - Webpack is "winning" and tight and terse.
-                      - TIP: Just pick one.
-                  - CDN interaction and dev. vs. prod mode.
-                  - Make it as **fast** as possible.
-                      - Especially in development.
-                  - Your Meta team should own this.
-
-                  - SUB-TIP: Keep development as close to production as possible, dev-wise.
-                      - Including full CDN mode if possible.
 
               - TIP: Organize your code.
-                  - Going to have enormous amount of code.
-                  - One unified build.
-                  - Originally, a monolith repo, now multiple track repos.
-                  - Shared Java + JS
-                      - LESSON: Original decision to nest JS deeply in Java has been painful.
 
           */}
         <Slide bgColor="tertiary">
@@ -520,11 +497,15 @@ export default class extends React.Component {
             <ListItem>
               A <Point>"Meta" team</Point> that helps with...
             </ListItem>
+            {/* TODO
+              - If cutting, add "guidance, leadership, etc." as bullet point.
+
             <ListItem>
-              Code <Point>Organization</Point>
+              Code <Point>organization</Point>
             </ListItem>
+            */}
             <ListItem>
-              A <Point>real</Point> build
+              A <Point>real build</Point>
             </ListItem>
           </List>
         </Slide>
@@ -569,6 +550,7 @@ export default class extends React.Component {
             <em>Let{"'"}s see what we{"'"}re up against...</em>
           </Heading>
         </Slide>
+
         {/* ---------------------------------------------------------------
           * Case Study - Homepage
           * ---------------------------------------------------------------
@@ -725,6 +707,14 @@ export default class extends React.Component {
             - Caching analysis (for portion of shared library used)
             */}
         </Slide>
+        <Slide>
+          <Heading size={2} caps fit>
+            The takeaway?
+          </Heading>
+          <Heading size={1} caps fit>
+            It{"'"}s complicated.
+          </Heading>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * Architects - The Meta Team
@@ -745,7 +735,7 @@ export default class extends React.Component {
               <Point>Code review</Point>
             </ListItem>
             <ListItem>
-              Utilities, documentation, and guidance
+              Develop common <Point>utilites</Point> & the <Point>deployment</Point> infrastructure
             </ListItem>
           </List>
         </Slide>
@@ -796,7 +786,7 @@ export default class extends React.Component {
           </Heading>
           <List>
             <ListItem>
-              <Point>Consistency</Point> across the entire project
+              <Point>Consistency</Point> & <Point>support</Point> across the entire project
             </ListItem>
             <ListItem>
               Help tracks consider <Point>other teams</Point>
@@ -807,24 +797,137 @@ export default class extends React.Component {
           </List>
         </Slide>
 
+        {/* ---------------------------------------------------------------
+          * Architects - A "Real" Build
+          * ---------------------------------------------------------------
+          */}
         <Slide>
           <Heading size={1} caps fit>
             A "Real" Build
           </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            Build Challenges
+          </Heading>
+          <List>
+            <ListItem>
+              <Point>Modern JS apps</Point> are <em>complicated</em> (compression,
+                polyfills, transpiling, etc.)
+            </ListItem>
+            <ListItem>
+              Pages <Point>in transition</Point> are <em>complicated</em> ("mini-apps",
+                raw JS, etc.)
+            </ListItem>
+            <ListItem>
+              <Point>CDN</Point> / production-facing considerations
+            </ListItem>
+            <ListItem>
+              Keeping development <Point>fast</Point>
+            </ListItem>
+            <ListItem>
+              Have clear <Point>ownership</Point> (your meta team, etc.)
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            (1) Use a Build Tool
+          </Heading>
+          <List>
+            {/* TODO: Add links */}
+            <ListItem>
+              Choose an <Point>organization scheme</Point>: AMD, CommonJS
+            </ListItem>
+            <ListItem>
+              Choose a <Point>build tool / loader</Point>: RequireJS, Browserify, Webpack
+            </ListItem>
+            <ListItem>
+              Any of the above will do.
+            </ListItem>
+            <ListItem>
+              Take the time to <Point>evaluate</Point> and understand the <Point>tradeoffs</Point>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            (1) Our Present / Future Builds
+          </Heading>
+          <List>
+            <ListItem>
+              <Point>Legacy</Point>: AMD + RequireJS
+            </ListItem>
+            <ListItem>
+              <Point>Modern</Point>: CommonJS + Webpack
+            </ListItem>
+            <ListItem>
+              <Point>Transition</Point>: AMD & CommonJS + Webpack
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            (2) Production vs. Development
+          </Heading>
+          <List>
+            <ListItem>
+              The real target is <Point>CDN</Point> deployment
+            </ListItem>
+            <ListItem>
+              But <Point>developer</Point> <em>productivity</em>, <em>speed</em>,
+              & <em>happiness</em> are critical.
+            </ListItem>
+            <ListItem>
+              Optimize for <Point>both</Point>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            (2) Production vs. Development
+          </Heading>
+          <List>
+            <ListItem>
+              Make development resemble production wherever possible
+            </ListItem>
+            <ListItem>
+              Differences <Point>will</Point> be the source of bugs
+            </ListItem>
+            <ListItem>
+              Keep both prod & dev workflows <Point>blazingly fast</Point>
+            </ListItem>
+          </List>
           {/*
-            TODO: BUILD SECTION
+            - STORY: Dev == Prod: PCI compliance, have CDN mode available in dev.
+            - STORY: Difference Bugs: Asset helper and 404'ing `/static/` assets.
+            - Optimize speed for:
+                - STORY: Development: Fast, partial in memory workflows.
+                - STORY: Production: Moving Java CDN tool to pure JS
             */}
         </Slide>
 
+          {/*
         <Slide>
           <Heading size={1} caps fit>
             Code Organization
           </Heading>
-          {/*
+
             - TODO: BUILD SECTION
             - TODO: Cut section? OR Mention as a sub-point?
-            */}
         </Slide>
+            */}
+        {/* TODO:
+
+              - TIP: Organize your code.
+                  - Going to have enormous amount of code.
+                  - One unified build.
+                  - Originally, a monolith repo, now multiple track repos.
+                  - Shared Java + JS
+                      - LESSON: Original decision to nest JS deeply in Java has been painful.
+
+          */}
+
 
 
 
