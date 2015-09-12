@@ -1019,14 +1019,49 @@ export default class extends React.Component {
 
 
 
-
-
-
-
-
         {/* ---------------------------------------------------------------
-          * XXXX - XXXX
+          * THEME - Guides
           * ---------------------------------------------------------------
+
+
+            - Guides: Help the team along its way.
+                - **Idea**: "Shephard junior dev's and coordinate the chos"
+                - **Motivation**: All JS on the same page, ...
+                - Meta Leadership
+                - Education
+                - Review everything (also Gatekeeper)
+                - (Meta Team): Guides
+
+            - MOTIVATION: Big teams
+                - Backend dev's learning the frontend.
+                - Frontend dev's unfamiliar with large apps, code quality, etc.
+
+          */}
+        {/* ---------------------------------------------------------------
+          * Guides - Educate
+          * ---------------------------------------------------------------
+
+            - TIP: Education
+                - Good documentation
+                - As close the code as possible.
+
+          */}
+        {/* ---------------------------------------------------------------
+          * Guides - Review Everything
+          * ---------------------------------------------------------------
+
+            - TIP: Review all your code, even vendor code.
+                - Substantive review from track
+                - Meta JS/CSS/Java review too
+                    - Keeps coding styles consistent.
+                    - Cross-pollinates the teams.
+                    - Identify recurring issues, best practices.
+                    - Helps aid documentation efforts.
+                - STORY: Unreviewed code with max. integer assumption for an ID. Took down
+                  prod and quite costly. Meta Java team would have caught / did catch
+                  immediately after the bug surfaced.
+                - STORY: `Event.prototype.setPropagation` fiasco
+
           */}
 
 
@@ -1034,186 +1069,102 @@ export default class extends React.Component {
 
 
         {/* ---------------------------------------------------------------
-          * Challenges: Surviving, Thriving
+          * THEME - Gatekeepers
           * ---------------------------------------------------------------
 
-            - TODO: Weave in BF/Cyber Monday points / anecdotes.
-            - TODO: Add images for appropriate themes.
-
-            - THEMES
-                - Guides: Help the team along its way.
-                    - **Idea**: "Shephard junior dev's and coordinate the chos"
-                    - **Motivation**: All JS on the same page, ...
-                    - Meta Leadership
-                    - Education
-                    - Review everything (also Gatekeeper)
-                    - (Meta Team): Guides
-
-                - Gatekeepers: Say "NO" when it's needed.
-                    - **Idea**: "Protect yourself through processes and tech"
-                    - **Motivation**: Need tools and champions (people) to stop bad code / ideas.
-                    - Automate quality
-                    - Minimize exposure
-                    - (Meta Team): Gatekeepers
-
-                - Lifeguards: Throw out the life preserver when you're drowning.
-                    - **Idea**: "Create tools to see what's happening in the wild"
-                    - **Motivation**: Once deployed, no insight into browser apps / bugs.
-                    - Log
-                    - Monitor / Alert off the logs.
-                    - Source Maps / Debugging helpers
-
-            - Guides
-                - MOTIVATION: Big teams
-                    - Backend dev's learning the frontend.
-                    - Frontend dev's unfamiliar with large apps, code quality, etc.
-
-                - TIP: Education
-                    - Good documentation
-                    - As close the code as possible.
-
-                - TIP: Review all your code, even vendor code.
-                    - Substantive review from track
-                    - Meta JS/CSS/Java review too
-                        - Keeps coding styles consistent.
-                        - Cross-pollinates the teams.
-                        - Identify recurring issues, best practices.
-                        - Helps aid documentation efforts.
-                    - STORY: Unreviewed code with max. integer assumption for an ID. Took down
-                      prod and quite costly. Meta Java team would have caught / did catch
-                      immediately after the bug surfaced.
-                    - STORY: `Event.prototype.setPropagation` fiasco
-
-            - Gatekeepers & Gates
-                - TIP: Use quality tooling and automation.
-                    - Static checking
-                    - Unit tests: 70% code coverage.
-                    - Functional tests
-                    - Hook to CI (the "gate")
-                    - And do this ASAP
-
-                - TIP: Minimize exposure to things you can't control.
-                    - Cross-organization initiatives.
-                        - Injected HTML/JS/CSS
-                        - Solutions: iFrames, different domains
-
-            - Lifeguards
-                - IMPACT: Errors:
-                    - Very, very costly.
-                    - With incredible development speed + so many different browsers, you should be
-                      very, very scared
-                      .
-                - TIP: Logging: On the frontend. To a service.
-                    - Code goes out in the wild, goes wrong and is really, really hard to support.
-
-                - TIP: Monitoring: Observe spikes and idiosyncrasies.
-
-                - TIP: Debugging: Source maps
-
-                - TIP: Learn and anticipate your failures.
-                    - Your JS webapp is most likely to fail: TODO_INSERT_SCENARIOS
-                    - Learn your own app / organization's weak points.
-
-                - TIP: Plan for spikes
-                    - Spikes: Black Friday, Cyber Monday
-                    - Like usual, just more system stress and higher error penalties.
-                    - Code freezes
-                    - Exhaustive testing
-                    - Oncall team
-                    - TODO: A takeway / concise point (?)
+            - Gatekeepers: Say "NO" when it's needed.
+                - **Idea**: "Protect yourself through processes and tech"
+                - **Motivation**: Need tools and champions (people) to stop bad code / ideas.
+                - Automate quality
+                - Minimize exposure
+                - (Meta Team): Gatekeepers
 
           */}
-        <Slide bgColor="secondary">
-          <Heading size={4} fit caps textColor="primary">
-            Challenges
-          </Heading>
-        </Slide>
-        <Slide>
-          <Heading size={4} fit caps>
-            Challenges
-          </Heading>
-          <Layout>
-            <Fill>
-              <List>
-                <ListItem>
-                  JavaScript
-                </ListItem>
-                <ListItem>
-                  Development
-                </ListItem>
-              </List>
-            </Fill>
-            <Fill>
-              <List>
-                <ListItem>
-                  Production
-                </ListItem>
-                <ListItem>
-                  Organizations
-                </ListItem>
-              </List>
-            </Fill>
-          </Layout>
-        </Slide>
+        {/* ---------------------------------------------------------------
+          * Gatekeepers - Automate Quality
+          * ---------------------------------------------------------------
 
-        <Slide bgColor="secondary">
-          <Heading size={4} fit caps textColor="primary">
-            Survival
-          </Heading>
-          <Heading size={4} fit caps textColor="primary">
-            Tactics
-          </Heading>
-        </Slide>
-        <Slide>
-          <Layout>
-            <Fill>
-              <Heading size={5} caps>
-                Wrangling
-              </Heading>
-              <List>
-                <ListItem>
-                  Meta Leadership
-                </ListItem>
-                <ListItem>
-                  Educate
-                </ListItem>
-                <ListItem>
-                  Review everything
-                </ListItem>
-                <ListItem>
-                  Automate quality
-                </ListItem>
-              </List>
-            </Fill>
-            <Fill>
-              <Heading size={5} caps>
-                Infrastructure
-              </Heading>
-              <List>
-                <ListItem>
-                  Build
-                </ListItem>
-                <ListItem>
-                  Log, Monitor
-                </ListItem>
-                <ListItem>
-                  Debugging "life lines"
-                </ListItem>
-                <ListItem>
-                  Anticipate failures
-                </ListItem>
-                <ListItem>
-                  Minimize exposure
-                </ListItem>
-              </List>
-            </Fill>
-          </Layout>
-        </Slide>
+            - TODO: Review above for tests and maybe remove those points.
+
+            - TIP: Use quality tooling and automation.
+                - Static checking
+                - Unit tests: 70% code coverage.
+                - Functional tests
+                - Hook to CI (the "gate")
+                - Part of the build duties:
+                    - Must be fast, easy and automatic.
+                    - Test should closely resemble dev and prod.
+                - And do this ASAP
+
+          */}
+        {/* ---------------------------------------------------------------
+          * Gatekeepers - Minimize Risk
+          * ---------------------------------------------------------------
+
+            - TIP: Minimize exposure to things you can't control.
+                - Cross-organization initiatives.
+                    - Injected HTML/JS/CSS
+                    - Solutions: iFrames, different domains
+
+          */}
 
 
 
 
-        {/* TODO HERE: Keep writing the slides... */}
+
+        {/* ---------------------------------------------------------------
+          * THEME - Lifeguards
+          * ---------------------------------------------------------------
+
+            - Lifeguards: Throw out the life preserver when you're drowning.
+                - **Idea**: "Create tools to see what's happening in the wild"
+                - **Motivation**: Once deployed, no insight into browser apps / bugs.
+                - Log
+                - Monitor / Alert off the logs.
+                - Source Maps / Debugging helpers
+
+            - IMPACT: Errors:
+                - Very, very costly.
+                - With incredible development speed + so many different browsers, you should be
+                  very, very scared
+                  .
+            - TIP: Logging: On the frontend. To a service.
+                - Code goes out in the wild, goes wrong and is really, really hard to support.
+
+            - TIP: Monitoring: Observe spikes and idiosyncrasies.
+
+            - TIP: Debugging: Source maps
+
+            - TIP: Learn and anticipate your failures.
+                - Your JS webapp is most likely to fail: TODO_INSERT_SCENARIOS
+                - Learn your own app / organization's weak points.
+
+            - TIP: Plan for spikes
+                - Spikes: Black Friday, Cyber Monday
+                - Like usual, just more system stress and higher error penalties.
+                - Code freezes
+                - Exhaustive testing
+                - Oncall team
+                - TODO: A takeway / concise point (?)
+
+
+          */}
+        {/* ---------------------------------------------------------------
+          * Lifeguards - XXXX
+          * ---------------------------------------------------------------
+          */}
+        {/* ---------------------------------------------------------------
+          * Lifeguards - XXXX
+          * ---------------------------------------------------------------
+          */}
+        {/* ---------------------------------------------------------------
+          * Lifeguards - XXXX
+          * ---------------------------------------------------------------
+          */}
+        {/* ---------------------------------------------------------------
+          * Lifeguards - XXXX
+          * ---------------------------------------------------------------
+          */}
 
 
 
@@ -1295,6 +1246,15 @@ export default class extends React.Component {
           */}
 
 
+
+        {/* ---------------------------------------------------------------
+          * FINAL NOTES (TODO)
+          * ---------------------------------------------------------------
+
+            - TODO: Weave in BF/Cyber Monday points / anecdotes.
+            - TODO: Add images for appropriate themes.
+
+          */}
 
         {/* ---------------------------------------------------------------
           * Thanks
