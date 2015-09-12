@@ -111,13 +111,13 @@ export default class extends React.Component {
           * Title
           * --------------------------------------------------------------- */}
         <Slide bgImage={images.polygons}>
-          <Text fit bold caps textColor="primary" textFont="primary">
+          <Text bold fit caps textColor="primary" textFont="primary">
             Wrangling
           </Text>
-          <Text fit bold caps textColor="primary" textFont="primary">
+          <Text bold fit caps textColor="primary" textFont="primary">
             Large Scale
           </Text>
-          <Text fit bold caps textColor="primary" textFont="primary">
+          <Text bold fit caps textColor="primary" textFont="primary">
             Frontend Web Applications
           </Text>
           <div style={{display: "inline-block", marginTop: "2.5em"}}>
@@ -200,13 +200,13 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide bgColor="tertiary">
-          <Heading size={4} bold fit caps textColor="lightestGray">
+          <Heading bold fit caps textColor="lightestGray">
             Lots of JavaScript
           </Heading>
-          <Heading size={4} bold fit caps textColor="primary">
+          <Heading bold fit caps textColor="primary">
             In the browser
           </Heading>
-          <Heading size={4} bold fit caps textColor="lightestGray">
+          <Heading bold fit caps textColor="lightestGray">
             Written by large teams
           </Heading>
           {/*
@@ -215,7 +215,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={4} bold fit caps textColor="gray">
+          <Heading bold fit caps textColor="gray">
             Our Goals?
           </Heading>
           {/*
@@ -226,26 +226,26 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={4} bold fit caps textColor="gray">
+          <Heading bold fit caps textColor="gray">
             (1) Understand the
           </Heading>
-          <Heading size={4} bold fit caps textColor="gray">
+          <Heading bold fit caps textColor="gray">
             challenges & pitfalls
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={4} bold fit caps textColor="gray">
+          <Heading bold fit caps textColor="gray">
             (2) Identify some key
           </Heading>
-          <Heading size={4} bold fit caps textColor="gray">
+          <Heading bold fit caps textColor="gray">
             issues & solutions
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={4} bold fit caps textColor="gray">
+          <Heading bold fit caps textColor="gray">
             (3) Increase frontend
           </Heading>
-          <Heading size={4} bold fit caps textColor="gray">
+          <Heading bold fit caps textColor="gray">
             wrangling confidence
           </Heading>
           {/*
@@ -280,7 +280,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="secondary">
+          <Heading fit caps textColor="secondary">
             The Numbers
           </Heading>
           <List>
@@ -315,7 +315,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             The Applications
           </Heading>
           <List>
@@ -331,7 +331,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             The Code
           </Heading>
           <List>
@@ -372,7 +372,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             The Dev Team
           </Heading>
           <List>
@@ -393,10 +393,10 @@ export default class extends React.Component {
             - As I help wrangle some of this, I'd like to take you on a ...
             - (Tour through the trenches)
             */}
-          <Heading size={4} fit caps textColor="primary">
+          <Heading fit caps textColor="primary">
             A Tour Through
           </Heading>
-          <Heading size={4} fit caps textColor="tertiary">
+          <Heading fit caps textColor="tertiary">
            the Trenches
           </Heading>
         </Slide>
@@ -412,7 +412,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide bgColor="secondary">
-          <Heading size={1} caps fit textColor="lighterGray">
+          <Heading fit caps textColor="lighterGray">
             Wrangling Adventures
           </Heading>
           <List textColor="primary">
@@ -516,7 +516,7 @@ export default class extends React.Component {
 
           */}
         <Slide bgColor="tertiary">
-          <Heading size={4} fit caps textColor="primary">
+          <Heading fit caps textColor="primary">
             Architects
           </Heading>
         </Slide>
@@ -527,7 +527,7 @@ export default class extends React.Component {
           {/**/}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Architects
           </Heading>
           <List>
@@ -547,18 +547,18 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide bgColor="tertiary">
-          <Heading size={4} bold fit caps textColor="lightestGray">
+          <Heading bold fit caps textColor="lightestGray">
             The Fundamental Challenge:
           </Heading>
-          <Heading size={4} bold fit caps textColor="primary">
+          <Heading bold fit caps textColor="primary">
             JavaScript is the
           </Heading>
-          <Heading size={4} bold fit caps textColor="lightestGray">
+          <Heading bold fit caps textColor="lightestGray">
             Wild, Wild West
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Architecture / JS Challenges
           </Heading>
           <List>
@@ -602,7 +602,7 @@ export default class extends React.Component {
               complicated that can be).
           */}
         <Slide bgColor="tertiary">
-          <Heading size={4} fit caps textColor="primary">
+          <Heading fit caps textColor="primary">
             The Homepage
           </Heading>
         </Slide>
@@ -616,7 +616,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="secondary">
+          <Heading fit caps textColor="secondary">
             The Homepage
           </Heading>
           <List>
@@ -629,7 +629,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="secondary">
+          <Heading fit caps textColor="secondary">
             Homepage: JS
           </Heading>
           <Layout>
@@ -655,7 +655,7 @@ export default class extends React.Component {
           </Layout>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Homepage: Scripts
           </Heading>
           {/*eslint-disable max-len*/}
@@ -677,7 +677,7 @@ export default class extends React.Component {
           {/*eslint-enable max-len*/}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Homepage: Scripts
           </Heading>
           <Layout>
@@ -710,7 +710,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Homepage: Entry Points
           </Heading>
           <CodePane
@@ -730,7 +730,7 @@ export default class extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="secondary">
+          <Heading fit caps textColor="secondary">
             Homepage: Entry Points
           </Heading>
           <List>
@@ -746,10 +746,10 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={2} caps fit>
+          <Heading fit caps>
             The takeaway?
           </Heading>
-          <Heading size={1} caps fit textColor="red">
+          <Heading fit caps textColor="red">
             It{"'"}s complicated.
           </Heading>
         </Slide>
@@ -759,7 +759,7 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             The Meta Team
           </Heading>
           <List>
@@ -778,10 +778,10 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={2} caps fit>
+          <Heading fit caps>
             Your Meta Team Task:
           </Heading>
-          <Heading size={1} caps fit textColor="red">
+          <Heading fit caps textColor="red">
             Have One.
           </Heading>
           {/*
@@ -790,7 +790,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Our Meta JS Team
           </Heading>
           <List>
@@ -803,7 +803,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Our Meta JS Duties
           </Heading>
           <List>
@@ -819,7 +819,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Meta JS Benefits
           </Heading>
           <List>
@@ -840,12 +840,12 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             A "Real" Build
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="red">
+          <Heading fit caps textColor="red">
             Build Challenges
           </Heading>
           <List>
@@ -862,7 +862,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="gray">
+          <Heading fit caps textColor="gray">
             Use a Build Tool
           </Heading>
           <List>
@@ -882,7 +882,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="gray">
+          <Heading fit caps textColor="gray">
             Our Build Tools
           </Heading>
           <List>
@@ -898,7 +898,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Production vs. Development
           </Heading>
           <List>
@@ -922,7 +922,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Production vs. Development - Goals
           </Heading>
           <List>
@@ -952,7 +952,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit textColor="red">
+          <Heading fit caps textColor="red">
             Build Complexities
           </Heading>
           <List>
@@ -992,7 +992,7 @@ export default class extends React.Component {
 
           -----------------------------------------------------------------------------------------
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading fit caps>
             Code Organization
           </Heading>
 
@@ -1231,7 +1231,7 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={4} bold fit caps>
+          <Heading bold fit caps>
             Embrace change
           </Heading>
           {/*
@@ -1244,10 +1244,10 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={4} bold fit caps>
+          <Heading bold fit caps>
             Reevaluate & refactor
           </Heading>
-          <Heading size={4} bold fit caps>
+          <Heading bold fit caps>
             Infrastructure & organization
           </Heading>
           {/*
@@ -1264,7 +1264,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading size={4} bold fit caps>
+          <Heading bold fit caps>
             Have a transition strategy
           </Heading>
           {/*
@@ -1289,7 +1289,7 @@ export default class extends React.Component {
           * Thanks
           * --------------------------------------------------------------- */}
         <Slide bgColor="secondary" bgImage={images.polygons}>
-          <Heading size={1} bold caps fit textColor="primary"
+          <Heading bold fit caps textColor="primary"
                    style={{marginTop: "1em", marginBottom: "0.75em"}}>
             Thanks!
           </Heading>
