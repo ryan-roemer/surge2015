@@ -894,9 +894,6 @@ export default class extends React.Component {
             <ListItem>
              Combining application, OSS, & 3rd party code
             </ListItem>
-            <ListItem>
-             Supporting <Point>unconventional scenarios</Point>
-            </ListItem>
           </List>
           {/*
             - STORY: Sharing code for efficiency for your "common cases" is both
@@ -930,14 +927,58 @@ export default class extends React.Component {
             Code Organization
           </Heading>
         </Slide>
+        <Slide>
+          <Text>
+            Plan your <Point>repository structure</Point>
+          </Text>
+          {/*
+            - You are going to have an enormous amount of code. It's important to structure
+              properly and plan it **up front**.
+                - Track code
+                - Shared code, reusable components
 
+            - STORY: Originally one monolithic repository
+                - GOOD: Consistent build, JS environment
+                - GOOD: Avoided really any big bugs during Black Friday 2014
+                - BAD: Painful to develop, test, deploy.
 
+            - STORY: Now, a per-track repository structure.
+                - GOOD: Faster dev, easier iterations and tooling.
+                - BAD: Painful for cross-track updates.
+                - BAD: Likely a little more bug surface.
+            */}
+        </Slide>
+        <Slide>
+          <Text>
+            Have a bias for <Point>small</Point> & <Point>flexible</Point>
+          </Text>
+          {/*
+            - STORY: Heading towards many, many small repositories
+                - Per component
+                - A mini "open source" model.
 
+            - GOOD: Fast, flexible, honed development.
+            - GOOD: Promise of more quality, consistent versioning, etc.
 
-
-
-
-
+            - BAD: Updating / maintaining infrastructure across repositories
+            - BAD: Our transition is going to be painful and long.
+            */}
+        </Slide>
+        <Slide>
+          <Text>
+            Decide when to support
+          </Text>
+          <Text>
+            <Point>unconventional</Point> code organization
+          </Text>
+          {/*
+            - STORY: Track JavaScript lives in deeply nested Java paths for the
+              benefit of Java IDEs.
+                - GOOD: Java developers that rely heavily on IDEs like it.
+                - BAD: Dramatically increased the build complexity.
+                - BAD: Not consistent across projects.
+            */}
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * THEME - Guides
@@ -1326,9 +1367,9 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Heading bold fit caps>
-            Embrace change
-          </Heading>
+          <Text>
+            Embrace <Point>change</Point>
+          </Text>
           {/*
             - TIP: Embrace change, even if uncomfortable.
                 - Most of the code in a huge application will be aging / legacy
@@ -1339,12 +1380,12 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading bold fit caps>
-            Reevaluate & refactor
-          </Heading>
-          <Heading bold fit caps>
-            Infrastructure & organization
-          </Heading>
+          <Text>
+            Reevaluate & refactor your
+          </Text>
+          <Text>
+            <Point>infrastructure</Point> & <Point>organization</Point>
+          </Text>
           {/*
             - TIP: Reevaluate / refactor infrastructure & organization
 
@@ -1359,9 +1400,9 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading bold fit caps>
-            Have a transition strategy
-          </Heading>
+          <Text>
+            Have a <Point>transition strategy</Point>
+          </Text>
           {/*
             - TIP: Transition strategies.
                 - So important to support teams through transitions.
