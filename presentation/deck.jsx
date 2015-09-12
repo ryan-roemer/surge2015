@@ -209,13 +209,50 @@ export default class extends React.Component {
           <Heading size={4} bold fit caps textColor="lightestGray">
             Written by large teams
           </Heading>
+          {/*
+            - Each one of these points should scare you.
+            - ... and present great opportunity.
+            */}
         </Slide>
-
-        {/* TODO: SLIDE?
-          - Maybe something on "focus on arch, but also process"
-          - Segue: Show you what your organization is in for...
-          */}
-
+        <Slide>
+          <Heading size={4} bold fit caps textColor="gray">
+            Our Goals?
+          </Heading>
+          {/*
+            - The topic of managing a frontend build is **huge**.
+            - We're going to have to focus to fit this talk into the time and
+              be actually useful.
+            - So, our focus is...
+            */}
+        </Slide>
+        <Slide>
+          <Heading size={4} bold fit caps textColor="gray">
+            (1) Understand the
+          </Heading>
+          <Heading size={4} bold fit caps textColor="gray">
+            challenges & pitfalls
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={4} bold fit caps textColor="gray">
+            (2) Identify some key
+          </Heading>
+          <Heading size={4} bold fit caps textColor="gray">
+            issues & solutions
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={4} bold fit caps textColor="gray">
+            (3) Increase frontend
+          </Heading>
+          <Heading size={4} bold fit caps textColor="gray">
+            wrangling confidence
+          </Heading>
+          {/*
+            - Our main goal here is giving a little more direction to the folks
+              on the hook for growing frontend builds.
+            */}
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * Examining Large Scale Apps
@@ -229,7 +266,7 @@ export default class extends React.Component {
           */}
         <Slide>
           <Heading size={4} textColor="secondary">
-            Let{"'"}s dig into JS apps at a <em>high-traffic
+            Let{"'"}s dig into some large frontends at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
           </Heading>
           {/**/}
@@ -279,29 +316,17 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            The Dev Team
-          </Heading>
-          <List>
-            <ListItem>A <Point>2+</Point> year website rewrite</ListItem>
-            <ListItem><Point>50+</Point> core frontend engineers</ListItem>
-            <ListItem><Point>14</Point> vertical teams / "tracks"</ListItem>
-            <ListItem>Multiple developing & integrating organizations</ListItem>
-            <ListItem>Meta (<code>JS,CSS,Java</code>) teams</ListItem>
-          </List>
-        </Slide>
-        <Slide>
-          <Heading size={1} caps fit>
             The Applications
           </Heading>
           <List>
             <ListItem>
-              Transition from <Point>"old"</Point> to <Point>"new"</Point> world.
+              Most pages have <Point>multiple</Point> entry points (apps)
             </ListItem>
             <ListItem>
-              Mostly <em>multiple</em> entry point (applicatons) per page
+              Handful of <Point>Single Page Applications</Point> (SPAs)
             </ListItem>
             <ListItem>
-              Handful of <em>Single Page Applications</em> (SPAs)
+              App paradigm shifting from <Point>"old"</Point> to <Point>"new"</Point> world
             </ListItem>
           </List>
         </Slide>
@@ -315,12 +340,12 @@ export default class extends React.Component {
               from <Point>1K - 145K</Point>
             </ListItem>
             <ListItem>Shared <Point>300K</Point> common library</ListItem>
-            <ListItem>Additional external and internal JS apps</ListItem>
+            <ListItem>Additional external & internal JS apps</ListItem>
             <ListItem>
               <Point>650K</Point> lines, <Point>2500</Point> files of JavaScript source
             </ListItem>
             <ListItem>
-              <Point>More JavaScript</Point> lines and files than <Point>Java</Point>
+              <Point>More JavaScript</Point> lines & files than <Point>Java</Point>
             </ListItem>
           </List>
           {/*
@@ -346,22 +371,28 @@ export default class extends React.Component {
               298431   1312631  builds/tracks/lib.min.js
             */}
         </Slide>
+        <Slide>
+          <Heading size={1} caps fit>
+            The Dev Team
+          </Heading>
+          <List>
+            <ListItem>A <Point>2+</Point> year website rewrite</ListItem>
+            <ListItem><Point>50+</Point> core frontend engineers</ListItem>
+            <ListItem><Point>14</Point> vertical teams / <Point>"tracks"</Point></ListItem>
+            <ListItem>Multiple developing & integrating organizations</ListItem>
+            <ListItem>Meta (<code>JS,CSS,Java</code>) teams</ListItem>
+          </List>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * Ryan & Meta JS
           * ---------------------------------------------------------------
-
-            - I work for Formidable Labs.
-                - A software development consultancy in Seattle, Wa.
-                - Help teams from startups to Fortune 500 companies.
-                - One of our largest clients.
-
-            - My role
-                - JavaScript lead for the website
-                - Lead the "Meta JS" team. (Also Meta CSS, Meta Java teams)
-
           */}
         <Slide bgColor="secondary">
+          {/*
+            - As I help wrangle some of this, I'd like to take you on a ...
+            - (Tour through the trenches)
+            */}
           <Heading size={4} fit caps textColor="primary">
             A Tour Through
           </Heading>
@@ -373,6 +404,12 @@ export default class extends React.Component {
           <Link href="http://formidablelabs.com">
             <Image width="100%" src={images.logoRed}/>
           </Link>
+          {/*
+            - I work for Formidable Labs.
+            - A software development consultancy in Seattle, WA.
+            - Help teams from startups to Fortune 500 companies.
+            - One of our largest clients.
+            */}
         </Slide>
         <Slide bgColor="secondary">
           <Heading size={1} caps fit textColor="lighterGray">
@@ -519,9 +556,6 @@ export default class extends React.Component {
           <Heading size={4} bold fit caps textColor="lightestGray">
             Wild, Wild West
           </Heading>
-          {/*
-            - TODO: Talking points for wild, wild west.
-            */}
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
@@ -529,10 +563,7 @@ export default class extends React.Component {
           </Heading>
           <List>
             <ListItem>
-              JS is easy to do <Point>very, very wrong</Point>
-            </ListItem>
-            <ListItem>
-              Technologies change at a <Point>ridiculous rate</Point>
+              JS is easy to do <Point>very, very wrong</Point> and hard to manage
             </ListItem>
             <ListItem>
               All JS interacts in <Point>one execution environment</Point>
@@ -544,10 +575,17 @@ export default class extends React.Component {
               JS has a <Point>cowboy legacy</Point> that doesn{"'"}t play well in large apps
             </ListItem>
           </List>
+          {/*
+            - JS is flexible to a fault.
+            - Developers and library monkey patch internals
+            - The code ecosystem evolves at a ludicrously fast rate
+            - We're dealing with the historical warts of the language
+            - And a touch transition period to language evolutions like ES6 and ES7
+            */}
         </Slide>
         <Slide>
           <Heading size={3}>
-            <em>Let{"'"}s see what we{"'"}re up against...</em>
+            <em>Let{"'"}s see an example of what we{"'"}re up against...</em>
           </Heading>
         </Slide>
 
@@ -711,7 +749,7 @@ export default class extends React.Component {
           <Heading size={2} caps fit>
             The takeaway?
           </Heading>
-          <Heading size={1} caps fit>
+          <Heading size={1} caps fit textColor="red">
             It{"'"}s complicated.
           </Heading>
         </Slide>
@@ -743,7 +781,7 @@ export default class extends React.Component {
           <Heading size={2} caps fit>
             Your Meta Team Task:
           </Heading>
-          <Heading size={1} caps fit>
+          <Heading size={1} caps fit textColor="red">
             Have One.
           </Heading>
           {/*
@@ -807,32 +845,25 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
+          <Heading size={1} caps fit textColor="red">
             Build Challenges
           </Heading>
           <List>
             <ListItem>
-              <Point>Modern JS apps</Point> are <em>complicated</em> (compression,
-                polyfills, transpiling, etc.)
+              <Point>Modern JS apps</Point> are complicated <em>(compression,
+                polyfills, transpiling, etc.)</em>
             </ListItem>
             <ListItem>
-              Pages <Point>in transition</Point> are <em>complicated</em> ("mini-apps",
-                raw JS, etc.)
+              <Point>Multiple</Point> JS apps on the same page is even more complex
             </ListItem>
             <ListItem>
-              <Point>CDN</Point> / production-facing considerations
-            </ListItem>
-            <ListItem>
-              Keeping development <Point>fast</Point>
-            </ListItem>
-            <ListItem>
-              Have clear <Point>ownership</Point> (your meta team, etc.)
+              Supporting development & production / <Point>CDN</Point>
             </ListItem>
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
-            (1) Use a Build Tool
+          <Heading size={1} caps fit textColor="gray">
+            Use a Build Tool
           </Heading>
           <List>
             {/* TODO: Add links */}
@@ -851,8 +882,8 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
-            (1) Our Present / Future Builds
+          <Heading size={1} caps fit textColor="gray">
+            Our Build Tools
           </Heading>
           <List>
             <ListItem>
@@ -868,7 +899,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            (2) Production vs. Development
+            Production vs. Development
           </Heading>
           <List>
             <ListItem>
@@ -881,15 +912,25 @@ export default class extends React.Component {
             <ListItem>
               Optimize for <Point>both</Point>
             </ListItem>
+            <ListItem>
+              And for <Point>application</Point> & <Point>test</Point> code
+            </ListItem>
           </List>
+          {/*
+            - The build supports: (1) production, (2) dev, and (3) test.
+            - All are critically important to do (1) correctly and (2) fast.
+            */}
         </Slide>
         <Slide>
           <Heading size={1} caps fit>
-            (2) Production vs. Development
+            Production vs. Development - Goals
           </Heading>
           <List>
             <ListItem>
-              Make development resemble production wherever possible
+              Make <Point>development</Point> resemble production wherever possible
+            </ListItem>
+            <ListItem>
+              Make <Point>tests</Point> resemble production too
             </ListItem>
             <ListItem>
               Differences <Point>will</Point> be the source of bugs
@@ -904,53 +945,45 @@ export default class extends React.Component {
             - Optimize speed for:
                 - STORY: Development: Fast, partial in memory workflows.
                 - STORY: Production: Moving Java CDN tool to pure JS
-            */}
-        </Slide>
-        <Slide>
-          <Heading size={1} caps fit>
-            (2) Our Development Workflow
-          </Heading>
-          <List>
-            <ListItem>
-              The build supports (1) "watchers" for JS / CSS and (2) shell commands.
-            </ListItem>
-            <ListItem>
-              Write code & tests
-            </ListItem>
-            <ListItem>
-              Check with dev. / test servers & command line tools
-            </ListItem>
-            <ListItem>
-              Commit, push, & eventually open a pull request
-            </ListItem>
-            <ListItem>
-              ... <Point>quickly</Point>, <Point>easily</Point>, and <Point>understandably</Point>
-            </ListItem>
-          </List>
-          {/*
+
             - TIP: Developers hate waiting for dev changes and test runs.
                    Quality slips if not really, really fast.
+            - TIP: Prod deploys should be fast to keep you agile.
             */}
         </Slide>
         <Slide>
-          <Heading size={1} caps fit>
-            (2) Our Production Workflow
+          <Heading size={1} caps fit textColor="red">
+            Build Complexities
           </Heading>
           <List>
             <ListItem>
-              All the optimizations (minification, etc.)
+              Sharing / caching <Point>common code</Point> (<code>lib.js</code>)
             </ListItem>
             <ListItem>
-              The complete QA checklist (in CI): lint, unit tests, E2E tests.
+             Varying <Point>repository structures</Point>
             </ListItem>
             <ListItem>
-              Push to CDN.
+             Sharing <Point>frontend</Point> & <Point>backend</Point> code
+            </ListItem>
+            <ListItem>
+             Combining application, open source, & 3rd party vendor JS code
+            </ListItem>
+            <ListItem>
+             ... deciding when to support <Point>unconventional
+             scenarios</Point> & when to <Point>just say "no"</Point>
             </ListItem>
           </List>
           {/*
-            - TIP: Should be fast to keep prod deploys agile.
+            - STORY: Sharing code for efficiency for your "common cases" is both
+                     critical, difficult and changing. We use analysis tools
+                     and repeatedly re-examine assumptions.
+            - STORY: We have a legacy decision of having most track JavaScript
+                     live in deeply-nested Java paths. Most common, "normal"
+                     JavaScript lives in a flat repository. Consequently, we
+                     have very, very tough shared
             */}
         </Slide>
+
 
 
         {/* ---------------------------------------------------------------
