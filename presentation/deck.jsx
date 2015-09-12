@@ -1077,7 +1077,7 @@ export default class extends React.Component {
                 - **Motivation**: Need tools and champions (people) to stop bad code / ideas.
                 - Automate quality
                 - Minimize exposure
-                - (Meta Team): Gatekeepers
+                - Sometimes the meta team, sometimes exec / PM leadership
 
           */}
         {/* ---------------------------------------------------------------
@@ -1107,7 +1107,27 @@ export default class extends React.Component {
                     - Solutions: iFrames, different domains
 
           */}
+        {/* ---------------------------------------------------------------
+          * Gatekeepers - Require Performance
+          * ---------------------------------------------------------------
 
+            - Learn more about how and why with other Surge talk:
+                - http://surge.omniti.com/2015?patrick-meenan
+
+            - TIP: Require and enforce performance from the start.
+                - Developers
+                - Project managers
+                - Automate tooling to capture
+                    - Find Parahuram's talk and link.
+                - Write analysis tools _for_ development teams.
+
+            - LESSON: Teams will be "feature-driven" unless perf is a metric and
+                explicit requirement.
+                - We've made great strides in infrastructure and CDN-level.
+                - But, the code is too big and 2+ years into the project, it's
+                  really, really painful.
+
+          */}
 
 
 
@@ -1166,49 +1186,6 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
 
-
-
-
-
-
-        {/* TODO: CUT THIS SECTION?
-          * ---------------------------------------------------------------
-          * Past
-          * ---------------------------------------------------------------
-
-            - TODO: Which THEME for this?
-
-            - Starting point:
-                - A redesign of the site.
-                - A 2+ year effort.
-
-            - Getting to production
-                - Performance: Not a "from the start" mandate. And tough ever
-                  since.
-                    - Get into place ASAP, which actual architecture support.
-                    - Hat tip to other perf talk.
-                        - http://surge.omniti.com/2015?patrick-meenan
-                    - TIP: Analysis tools _for_ the development team.
-                        - But, the work for the dev. teams is **hard**.
-                        - Maybe a demo.
-                    - LESSON: Teams will be "feature-driven" unless perf is a metric and
-                      explicit requirement.
-
-
-        // TODO: Perf analysis tools slides / images
-        <Slide>
-          <Heading size={1} caps fit>
-            Homepage - Scripts
-          </Heading>
-          <Image src={images.wmScripts} width="90%"/>
-        </Slide>
-        <Slide>
-          <Heading size={1} caps fit textColor="secondary">
-            Homepage - Entry Points
-          </Heading>
-          <Image src={images.wmReport} width="90%"/>
-        </Slide>
-          */}
 
 
 
