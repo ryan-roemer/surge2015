@@ -215,7 +215,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading bold fit caps textColor="gray">
+          <Heading bold fit caps>
             Our Goals?
           </Heading>
           {/*
@@ -226,28 +226,28 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading bold fit caps textColor="gray">
+          <Text>
             (1) Understand the
-          </Heading>
-          <Heading bold fit caps textColor="gray">
-            challenges & pitfalls
-          </Heading>
+          </Text>
+          <Text>
+            <Point>challenges</Point> & <Point>pitfalls</Point>
+          </Text>
         </Slide>
         <Slide>
-          <Heading bold fit caps textColor="gray">
+          <Text>
             (2) Identify some key
-          </Heading>
-          <Heading bold fit caps textColor="gray">
-            issues & solutions
-          </Heading>
+          </Text>
+          <Text>
+            <Point>issues</Point> & <Point>solutions</Point>
+          </Text>
         </Slide>
         <Slide>
-          <Heading bold fit caps textColor="gray">
+          <Text>
             (3) Increase frontend
-          </Heading>
-          <Heading bold fit caps textColor="gray">
-            wrangling confidence
-          </Heading>
+          </Text>
+          <Text>
+            wrangling <Point>confidence</Point>
+          </Text>
           {/*
             - Our main goal here is giving a little more direction to the folks
               on the hook for growing frontend builds.
@@ -280,7 +280,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps textColor="secondary">
+          <Heading size={3}>
             The Numbers
           </Heading>
           <List>
@@ -315,7 +315,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3}>
             The Applications
           </Heading>
           <List>
@@ -334,7 +334,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3}>
             The Code
           </Heading>
           <List>
@@ -375,7 +375,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3}>
             The Dev Team
           </Heading>
           <List>
@@ -438,8 +438,11 @@ export default class extends React.Component {
             - I'm going to focus on just a few of things we've found critical
               to keeping our large scale applications up and running.
             */}
-          <Heading size={3}>
-            <em>A few battle-tested tips from the field...</em>
+          <Heading size={4}>
+            A few battle-tested
+          </Heading>
+          <Heading size={4}>
+            <em>tips</em> from the <em>field</em>...
           </Heading>
         </Slide>
 
@@ -448,10 +451,10 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         <Slide>
-          <Heading size={3}>
-            ... we will focus on
+          <Heading size={4}>
+            ... with a focus on
           </Heading>
-          <Heading size={3}>
+          <Heading size={4}>
             four <em>roles</em> / <em>ideas</em>
           </Heading>
           {/**/}
@@ -553,8 +556,8 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Heading fit caps>
-            Architecture / JS Challenges
+          <Heading size={4} textColor="red">
+            Architecture & JS Challenges
           </Heading>
           <List>
             <ListItem>
@@ -580,7 +583,13 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Text>
-            Let{"'"}s see an example of what we{"'"}re up against...
+            Let{"'"}s look at the
+          </Text>
+          <Text>
+            architectural <Point>complexities</Point>
+          </Text>
+          <Text>
+            of just <Point>one page</Point>...
           </Text>
         </Slide>
 
@@ -611,7 +620,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps textColor="secondary">
+          <Heading size={3}>
             The Homepage
           </Heading>
           <List>
@@ -624,7 +633,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading fit caps textColor="secondary">
+          <Heading size={3}>
             Homepage: JS
           </Heading>
           <Layout>
@@ -650,7 +659,7 @@ export default class extends React.Component {
           </Layout>
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3}>
             Homepage: Scripts
           </Heading>
           {/*eslint-disable max-len*/}
@@ -672,7 +681,7 @@ export default class extends React.Component {
           {/*eslint-enable max-len*/}
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3}>
             Homepage: Scripts
           </Heading>
           <Layout>
@@ -705,7 +714,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3}>
             Homepage: Entry Points
           </Heading>
           <CodePane
@@ -725,7 +734,7 @@ export default class extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading fit caps textColor="secondary">
+          <Heading size={3}>
             Homepage: Entry Points
           </Heading>
           <List>
@@ -759,7 +768,7 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Heading fit caps textColor="red">
+          <Heading size={3} textColor="red">
             Build Challenges
           </Heading>
           <List>
@@ -776,7 +785,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading fit caps textColor="gray">
+          <Heading size={3}>
             Use a Build Tool
           </Heading>
           <List>
@@ -805,7 +814,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps textColor="gray">
+          <Heading size={3} textColor="darkGray">
             Our Build Tools
           </Heading>
           <List>
@@ -821,7 +830,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={4}>
             Production vs. Development
           </Heading>
           <List>
@@ -842,8 +851,8 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps>
-            Production vs. Development - Goals
+          <Heading size={4}>
+            Prod vs. Dev - Goals
           </Heading>
           <List>
             <ListItem>
@@ -869,7 +878,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps textColor="red">
+          <Heading size={3} textColor="red">
             Build Complexities
           </Heading>
           <List>
@@ -954,14 +963,14 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={4} textColor="secondary">
-            <Point>Coordinate</Point> the chaos,
+            <em>Coordinate</em> the chaos,
           </Heading>
           <Heading size={4} textColor="secondary">
-            <Point>level up</Point> the development teams
+            <em>level up</em> the development teams
           </Heading>
         </Slide>
         <Slide>
-          <Heading caps>
+          <Heading size={3}>
             Guides & Guidance
           </Heading>
           <List>
@@ -977,7 +986,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3} textColor="red">
             Guidance Challenges
           </Heading>
           <List>
@@ -1006,7 +1015,7 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3}>
             The Meta Team
           </Heading>
           <List>
@@ -1037,7 +1046,7 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3} textColor="darkGray">
             Our Meta JS Team
           </Heading>
           <List>
@@ -1050,7 +1059,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3} textColor="darkGray">
             Our Meta JS Duties
           </Heading>
           <List>
@@ -1066,7 +1075,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading fit caps>
+          <Heading size={3}>
             Meta JS Benefits
           </Heading>
           <List>
