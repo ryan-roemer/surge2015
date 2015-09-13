@@ -1155,11 +1155,7 @@ export default class extends React.Component {
 
             - Mentorship:
                 - Jump into branches and pair program
-                - Invest in track leads to take over common tests.
-
-            - STORY: Had to write a lot of test skeletons and jump in branches
-              until track leads / devs finally got off the ground, then was
-              self-sustaining from there.
+                - Invest in track leads to take over education.
 
           */}
         <Slide>
@@ -1253,11 +1249,56 @@ export default class extends React.Component {
                 - Sometimes the meta team, sometimes exec / PM leadership
 
           */}
+        <Slide bgColor="tertiary">
+          <Heading fit caps textColor="primary">
+            Gatekeepers
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={4} textColor="secondary">
+            Protect the frontend through
+          </Heading>
+          <Heading size={4} textColor="secondary">
+            <em>process</em> & <em>architecture</em>
+          </Heading>
+        </Slide>
+        <Slide
+          notes={notes(
+            "<b>Code review</b> + other processes are part of this",
+            "Responsibility of meta team, PMs, executives"
+          )}>
+          <Heading size={3}>
+            Gates & Gatekeepers
+          </Heading>
+          <List>
+            <ListItem>
+              <Point>Automate</Point> quality
+            </ListItem>
+            <ListItem>
+              Minimize <Point>risks</Point> / <Point>exposure</Point>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={3} textColor="red">
+            Gatekeeping Challenges
+          </Heading>
+          <List>
+            <ListItem>
+              Feature pressure
+            </ListItem>
+            <ListItem>
+              Poor quality code
+            </ListItem>
+            <ListItem>
+              <Point>Unknown</Point> included code
+            </ListItem>
+          </List>
+        </Slide>
+
         {/* ---------------------------------------------------------------
           * Gatekeepers - Automate Quality
           * ---------------------------------------------------------------
-
-            - TODO: Review above for tests and maybe remove those points.
 
             - TIP: Use quality tooling and automation.
                 - Static checking
@@ -1270,11 +1311,63 @@ export default class extends React.Component {
                 - And do this ASAP
 
           */}
+        <Slide>
+          <Heading fit caps>
+            Quality Automation
+          </Heading>
+        </Slide>
+        <Slide
+          notes={notes(
+            "The low-hanging fruit, easiest quality checks to do"
+          )}>
+          <Text>
+            <Point>Static checking</Point> (eslint, jshint, jscs, etc.)
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Easy to write and run",
+            "Brittle over time"
+          )}>
+          <Text>
+            Clientside <Point>unit</Point> tests
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Complement to unit tests",
+            "Slow to run, but the 'real deal'"
+          )}>
+          <Text>
+            <Point>Integration</Point> / <Point>E2E</Point> tests
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "We use a 70% code coverage threshold",
+            "Devs 'buy' exceptions with test tickets",
+            "Goal is really just 'execute once'"
+          )}>
+          <Text>
+            <Point>Code coverage</Point>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Continuous integration _is_ 'the gate'"
+          )}>
+          <Text>
+            <Point>Continuous integration</Point> (CI)
+          </Text>
+        </Slide>
+
         {/* ---------------------------------------------------------------
           * Gatekeepers - Minimize Risk
           * ---------------------------------------------------------------
 
             - TIP: Minimize exposure to things you can't control.
+                - Recognized & identify risks and dangerous parts of the infrastructure.
+                    - TODO: Examples
                 - Cross-organization initiatives.
                     - Injected HTML/JS/CSS
                     - Solutions: iFrames, different domains
