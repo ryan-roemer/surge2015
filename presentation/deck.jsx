@@ -101,6 +101,12 @@ const strip = function (val) {
     .join("\n");
 };
 
+// Convert note items to list.
+const notes = function () {
+  const args = [].slice.call(arguments);
+  return "<ul>" + args.map((note) => `<li>${note}</li>`).join("") + "</ul>";
+};
+
 // Presentation
 // ------------
 export default class extends React.Component {
@@ -1010,7 +1016,10 @@ export default class extends React.Component {
             <em>level up</em> the development teams
           </Heading>
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "These aren't pure 'architecture' points, but so intertwined we can't ignore"
+          )}>
           <Heading size={3}>
             Guides & Guidance
           </Heading>
@@ -1146,7 +1155,6 @@ export default class extends React.Component {
 
             - Mentorship:
                 - Jump into branches and pair program
-                -
                 - Invest in track leads to take over common tests.
 
             - STORY: Had to write a lot of test skeletons and jump in branches
@@ -1187,9 +1195,6 @@ export default class extends React.Component {
             */}
         </Slide>
 
-
-
-
         {/* ---------------------------------------------------------------
           * Guides - Review Everything
           * ---------------------------------------------------------------
@@ -1207,10 +1212,34 @@ export default class extends React.Component {
                 - STORY: `Event.prototype.setPropagation` fiasco
 
           */}
-
-
-
-
+        <Slide>
+          <Heading fit caps>
+            Code Review
+          </Heading>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Caught <b>so many bugs</b> in track/meta reviews",
+            "<b>STORY</b>: Bad timing on category id going to prod"
+          )}>
+          <Text>
+            All code gets <Point>substantive</Point> &
+          </Text>
+          <Text>
+            <Point>meta</Point> review
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "<b>STORY</b>: `Event.prototype.stopPropagation` breaking code"
+          )}>
+          <Text>
+            Including all <Point>third party</Point> &
+          </Text>
+          <Text>
+            <Point>internal to the org</Point> vendor code
+          </Text>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * THEME - Gatekeepers
