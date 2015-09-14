@@ -119,8 +119,8 @@ const strip = function (val) {
         .replace(new RegExp("^" + indent), "")
         .replace(/\s*$/, "");
     })
-    .filter((x) => x && x !== indent)
-    .join("\n");
+    .join("\n")
+    .replace(/^\s*|\s$/, "");
 };
 
 // Convert note items to list.
@@ -1315,6 +1315,9 @@ export default class extends React.Component {
             <ListItem>
               Minimize <Point>risks</Point> / <Point>exposure</Point>
             </ListItem>
+            <ListItem>
+              Require <Point>performance</Point>
+            </ListItem>
           </List>
         </Slide>
         <Slide>
@@ -1411,6 +1414,62 @@ export default class extends React.Component {
                     - Solutions: iFrames, different domains
 
           */}
+        <Slide>
+          <Heading fit caps>
+            Minimize Risk
+          </Heading>
+        </Slide>
+        <Slide>
+          <Text>
+            Learn / identify your biggest <Point>risk areas</Point>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Previous protections: code review, tests, etc.",
+            "<b>Architect</b> protection as well"
+          )}>
+          <Text>
+            <Point>Protect</Point> youself wherever possible
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Our number one source of frontend errors",
+            "<b>STORY</b>: Custom HTML, deadlines, quality, no review",
+            "<b>Protect</b>: iframe, different domains, etc."
+          )}>
+          <Text>
+            Architecture risks:
+          </Text>
+          <Text>
+            <Point>Injected HTML/CSS/JS</Point>
+          </Text>
+        </Slide>
+        <Slide>
+          <Text>
+            Code pattern risks:
+          </Text>
+          <Text>
+            <Point>Defer & pray</Point>
+          </Text>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              var HOPEFULLY_ENOUGH_TIME = 2000; // I'm guessing...
+
+              // Wait until ready for next step.
+              setTimeout(function () {
+                theNextStep();
+              }, HOPEFULLY_ENOUGH_TIME)
+            `)}
+            margin="20px auto"
+            style={{fontSize: "1.5em"}}
+          />
+        </Slide>
+
+
+
         {/* ---------------------------------------------------------------
           * Gatekeepers - Require Performance
           * ---------------------------------------------------------------
