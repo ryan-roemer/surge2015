@@ -27,6 +27,28 @@ preloader([images.city]);
 
 // Components
 // ----------
+// Custom overrides for the deck
+class CustomDeck extends Deck {
+  _handleKeyPress(e) {
+    // Call base method.
+    super._handleKeyPress(e);
+
+    // Add some extra key bindings for Satechi remote.
+    /*globals window:false*/
+    const event = window.event || e;
+
+    const SATECHI_PREV_KEY = 38;
+    if (event.keyCode === SATECHI_PREV_KEY) {
+      this._prevSlide();
+    }
+
+    const SATECHI_NEXT_KEY = 40;
+    if (event.keyCode === SATECHI_NEXT_KEY) {
+      this._nextSlide();
+    }
+  }
+}
+
 // A meaningful "point" in text.
 class Point extends React.Component {
   render() {
@@ -104,7 +126,13 @@ const strip = function (val) {
 // Convert note items to list.
 const notes = function () {
   const args = [].slice.call(arguments);
-  return "<ul>" + args.map((note) => `<li>${note}</li>`).join("") + "</ul>";
+
+  // HACKY: Raw HTML string insertion.
+  return (
+    "<ul style='font-size: 0.8em'>" +
+      args.map((note) => `<li>${note}</li>`).join("") +
+    "</ul>"
+  );
 };
 
 // Presentation
@@ -112,7 +140,7 @@ const notes = function () {
 export default class extends React.Component {
   render() {
     return (
-      <Deck progress="bar" transition={["slide"]}>
+      <CustomDeck progress="bar" transition={["slide"]}>
         {/* ---------------------------------------------------------------
           * Title
           * --------------------------------------------------------------- */}
@@ -1041,16 +1069,13 @@ export default class extends React.Component {
           </Heading>
           <List>
             <ListItem>
-              <Point>Backend devs</Point> learning JS & the frontend
+              Thinking of the project <Point>as a whole</Point>
             </ListItem>
             <ListItem>
-              <Point>Frontend devs</Point> unfamiliar with large app design, testing, etc.
+              <Point>Onboarding</Point> unfamiliar / junior developers
             </ListItem>
             <ListItem>
-              <Point>Onboarding</Point> new devs of all backgrounds
-            </ListItem>
-            <ListItem>
-              Making knowledge transfer <Point>self-sustaining</Point>
+              Helping teams be <Point>consistent</Point> / <Point>complementary</Point>
             </ListItem>
           </List>
         </Slide>
@@ -1064,36 +1089,49 @@ export default class extends React.Component {
             The Meta Team
           </Heading>
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "Here's the real problem..."
+          )}>
+          <Text>Code from <Point>multiple teams</Point></Text>
+          <Text>all combined on <Point>one page</Point></Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "<b>STORY - DRY</b>: Had 3 different image carousels emerging"
+          )}>
+          <Text>These folks represent the <Point>whole page</Point></Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "A <b>coordination point</b> for the project"
+          )}>
           <Heading size={3}>
             The Meta Team
           </Heading>
           <List>
             <ListItem>
-              A <Point>coordination point</Point> for the project
+              Set <Point>conventions</Point> & <Point>best practices</Point>
             </ListItem>
             <ListItem>
-              Set <Point>conventions</Point> & <Point>best practices</Point> for the frontend
-            </ListItem>
-            <ListItem>
-              <Point>Code review</Point>
+              Lead <Point>Code reviews</Point> for consistency / DRY
             </ListItem>
             <ListItem>
               Develop common <Point>utilites</Point> & the <Point>deployment</Point> infrastructure
             </ListItem>
           </List>
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "<b>Organic</b> or hand-picked team",
+            "<b>Loose</b> or explicit mandates"
+          )}>
           <Heading fit caps>
             Your Meta Team Task:
           </Heading>
           <Heading fit caps textColor="red">
             Have One.
           </Heading>
-          {/*
-            - Organic or hand-picked
-            - Loose or strict mandates
-            */}
         </Slide>
         <Slide>
           <Heading size={3} textColor="darkGray">
@@ -1555,7 +1593,7 @@ export default class extends React.Component {
             <Image width="40%" src={images.logoRed} />
           </Link>
         </Slide>
-      </Deck>
+      </CustomDeck>
     );
   }
 }
