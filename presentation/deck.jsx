@@ -1461,14 +1461,12 @@ export default class extends React.Component {
               // Wait until ready for next step.
               setTimeout(function () {
                 theNextStep();
-              }, HOPEFULLY_ENOUGH_TIME)
+              }, HOPEFULLY_ENOUGH_TIME);
             `)}
             margin="20px auto"
             style={{fontSize: "1.5em"}}
           />
         </Slide>
-
-
 
         {/* ---------------------------------------------------------------
           * Gatekeepers - Require Performance
@@ -1491,9 +1489,77 @@ export default class extends React.Component {
                   really, really painful.
 
           */}
-
-
-
+        <Slide>
+          <Heading fit caps>
+            Require Performance
+          </Heading>
+        </Slide>
+        <Slide>
+          <Text>
+            Frontend code must be <Point>small</Point> & <Point>fast</Point>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "<b>STORY</b>: We tried doing this 2 years in. Really tough."
+          )}>
+          <Text>
+            Teams will be <Point>"feature-driven"</Point>
+          </Text>
+          <Text>
+            unless performance is <Point>enforced</Point> & <Point>required</Point>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Patrick Meenan's Surge talk on Web App perf"
+          )}>
+          <Text>
+            Enforce with <Point>audits</Point>
+          </Text>
+          <hr style={{width: "75%"}} />
+          <Text>
+            <Link href="http://surge.omniti.com/2015?patrick-meenan">
+              "Web App Performance Measurement, Monitoring and Resiliency"
+            </Link>
+          </Text>
+          <Text>
+            <Link href="http://www.webpagetest.org/">
+              http://www.webpagetest.org
+            </Link>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Performance work should be on sprints"
+          )}>
+          <Text>
+            Enforce with <Point>process</Point>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Ideally have CI checks for performance"
+          )}>
+          <Text>
+            Enforce with <Point>automation</Point>
+          </Text>
+          <hr style={{width: "75%"}} />
+          <Text>
+            <Link href="http://2015.cascadiajs.com/speakers/parashuram-n">
+              "Automating Web Performance Measurement"
+            </Link>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Our build is complex enough, we had to build reporting tools",
+            "<b>STORY</b>: Devs have hard time with deps in lib.js"
+          )}>
+          <Text>
+            Build your own <Point>tools</Point> where necessary
+          </Text>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * THEME - Lifeguards
