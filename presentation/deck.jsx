@@ -1722,6 +1722,53 @@ export default class extends React.Component {
         </Slide>
 
         {/* ---------------------------------------------------------------
+          * Summary
+          * ---------------------------------------------------------------
+          */}
+
+        <Slide>
+          <Heading size={3}>
+            All together now
+          </Heading>
+          <Layout>
+            <Fill>
+              <List>
+                <ListItem>A "real" <Point>build</Point></ListItem>
+                <ListItem><Point>Organized</Point> code</ListItem>
+                <ListItem>
+                  The <Point>Meta</Point> team
+                </ListItem>
+                <ListItem>
+                  <Point>Education</Point>
+                </ListItem>
+                <ListItem>
+                  Code <Point>Review</Point>
+                </ListItem>
+              </List>
+            </Fill>
+            <Fill>
+              <List>
+                <ListItem>
+                  <Point>Automate</Point> quality
+                </ListItem>
+                <ListItem>
+                  Minimize <Point>risks</Point>
+                </ListItem>
+                <ListItem>
+                  Require <Point>performance</Point>
+                </ListItem>
+                <ListItem>
+                  <Point>Logging</Point>, <Point>Monitoring</Point>
+                </ListItem>
+                <ListItem>
+                  <Point>Debugging</Point> helpers
+                </ListItem>
+              </List>
+            </Fill>
+          </Layout>
+        </Slide>
+
+        {/* ---------------------------------------------------------------
           * Future
           * ---------------------------------------------------------------
 
