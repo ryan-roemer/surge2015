@@ -801,12 +801,16 @@ export default class extends React.Component {
             Use a Build Tool
           </Heading>
           <List>
-            {/* TODO: Add links */}
             <ListItem>
-              Choose an <Point>paradigm</Point>: AMD, CommonJS
+              Choose an <Point>paradigm</Point>:{" "}
+              <Link href="http://requirejs.org/docs/whyamd.html">AMD</Link>,{" "}
+              <Link href="http://wiki.commonjs.org/wiki/CommonJS">CommonJS</Link>
             </ListItem>
             <ListItem>
-              Choose a <Point>build tool / loader</Point>: RequireJS, Browserify, Webpack
+              Choose a <Point>build tool / loader</Point>:{" "}
+              <Link href="http://requirejs.org/">RequireJS</Link>,{" "}
+              <Link href="http://browserify.org/">Browserify</Link>,{" "}
+              <Link href="http://webpack.github.io/">Webpack</Link>
             </ListItem>
             <ListItem>
               Take time to learn & evaluate the <Point>tradeoffs</Point>
