@@ -64,25 +64,6 @@ Point.propTypes = {
   children: React.PropTypes.node
 };
 
-// A TODO for later.
-class Todo extends React.Component {
-  render() {
-    return (
-      <div>
-      <br />
-        <span style={{backgroundColor: "yellow", fontFamily: "monospace", fontSize: "3em",
-                      marginTop: "1.5em", fontWeight: "bold"}}>
-          TODO: {this.props.children}
-        </span>
-      </div>
-    );
-  }
-}
-
-Todo.propTypes = {
-  children: React.PropTypes.node
-};
-
 // Links
 // -----
 const links = {
@@ -97,8 +78,6 @@ const links = {
 // Helpers
 // -------
 // A naive, indent preserving strip.
-//
-// TODO: Handle spaces _within_ text.
 const strip = function (val) {
   // Find first line with text. Capture that indent level.
   let indent = null;
@@ -547,7 +526,6 @@ export default class extends React.Component {
                     - The technology ecosystem changes at a ridiculous rate
 
               - CASE STUDY: The homepage is really complicated.
-                  - TODO: See notes from phone.
 
               - TIP: You need a real "build" now.
 
@@ -1408,7 +1386,6 @@ export default class extends React.Component {
 
             - TIP: Minimize exposure to things you can't control.
                 - Recognized & identify risks and dangerous parts of the infrastructure.
-                    - TODO: Examples
                 - Cross-organization initiatives.
                     - Injected HTML/JS/CSS
                     - Solutions: iFrames, different domains
@@ -1584,13 +1561,6 @@ export default class extends React.Component {
                 - Very, very costly.
                 - With incredible development speed + so many different browsers, you should be
                   very, very scared
-                  .
-            - TIP: Logging: On the frontend. To a service.
-                - Code goes out in the wild, goes wrong and is really, really hard to support.
-
-            - TIP: Monitoring: Observe spikes and idiosyncrasies.
-
-            - TIP: Debugging: Source maps
 
           */}
         <Slide bgColor="tertiary">
@@ -1640,33 +1610,116 @@ export default class extends React.Component {
           * Lifeguards - Logging, Monitoring
           * ---------------------------------------------------------------
 
-          TODO: SECTION
+            - TIP: Logging: On the frontend. To a service.
+                - Code goes out in the wild, goes wrong and is really, really hard to support.
+
+            - TIP: Monitoring: Observe spikes and idiosyncrasies.
 
           */}
+        <Slide>
+          <Heading fit caps>
+            Logging & Monitoring
+          </Heading>
+        </Slide>
+        <Slide>
+          <Text>
+            Frontend code executes <Point>in the wild</Point>
+          </Text>
+          <Text>
+            on a variety of <Point>browsers</Point>
+          </Text>
+        </Slide>
+        <Slide>
+          <Text>
+            You need to <Point>know</Point>
+          </Text>
+          <Text>
+            when things go <Point>wrong</Point>
+          </Text>
+        </Slide>
+        <Slide>
+          <Text>
+            Tune for <Point>development</Point>,
+          </Text>
+          <Text>
+            <Point>staging</Point>, & <Point>production</Point>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Hook into <b>chat channels</b> &amp; <b>alert systems</b>"
+          )}>
+          <Text>
+            Log <Point>errors</Point> & <Point>messages</Point> remotely
+          </Text>
+          <Text>
+            and <Point>monitor</Point> & <Point>alert</Point>
+          </Text>
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            Providers
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://rollbar.com/">Rollbar</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://www.loggly.com/docs/javascript/">Loggly</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://getsentry.com/welcome/">Sentry</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://airbrake.io/">Airbrake</Link>
+            </ListItem>
+          </List>
+        </Slide>
+
         {/* ---------------------------------------------------------------
           * Lifeguards - Debugging, Source Maps
           * ---------------------------------------------------------------
-
-          TODO: SECTION
-
           */}
-
-
-
-
-
-
-        {/* ---------------------------------------------------------------
-          * FINAL NOTES (TODO)
-          * ---------------------------------------------------------------
-
-            - TODO: Weave in BF/Cyber Monday points / anecdotes.
-            - TODO: Add images for appropriate themes.
-
-          */}
-
-
-
+        <Slide>
+          <Heading fit caps>
+            Debugging Support
+          </Heading>
+        </Slide>
+        <Slide>
+          <Text>
+            Give developers <Point>life lines</Point>
+          </Text>
+          <Text>
+            when things go <Point>wrong</Point>
+          </Text>
+        </Slide>
+        <Slide
+          notes={notes(
+            "Only request when dev console is open",
+            "Completely inactive for normal users"
+          )}>
+          <Text>Source Maps</Text>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              /* ... LOTS MORE CODE ... */
+              [],window._entry=c}();
+              //# sourceMappingURL=http://dev.walmart.com:9873/js-dist-frontend/core-bundle.js.map
+            `)}
+            margin="20px auto"
+            style={{fontSize: "1.5em"}}
+          />
+        </Slide>
+        <Slide>
+          <Text>
+            Upload source maps in <Point>deployment</Point>
+          </Text>
+        </Slide>
+        <Slide>
+          <Text>
+            Host within VPN for developer <Point>emergencies</Point>
+          </Text>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * Future
