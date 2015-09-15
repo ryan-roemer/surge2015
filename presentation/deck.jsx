@@ -1467,6 +1467,14 @@ export default class extends React.Component {
             style={{fontSize: "1.5em"}}
           />
         </Slide>
+        <Slide>
+          <Text>
+            Deployment / process risks:
+          </Text>
+          <Text>
+            <Point>"Hotfeatures"</Point>
+          </Text>
+        </Slide>
 
         {/* ---------------------------------------------------------------
           * Gatekeepers - Require Performance
@@ -1584,35 +1592,63 @@ export default class extends React.Component {
 
             - TIP: Debugging: Source maps
 
-            - TIP: Learn and anticipate your failures.
-                - Your JS webapp is most likely to fail: TODO_INSERT_SCENARIOS
-                - Learn your own app / organization's weak points.
+          */}
+        <Slide bgColor="tertiary">
+          <Heading fit caps textColor="primary">
+            Lifeguards
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={4} textColor="secondary">
+            Create <em>escape hatches</em> &
+          </Heading>
+          <Heading size={4} textColor="secondary">
+            <em>lifelines</em> in production
+          </Heading>
+        </Slide>
+        <Slide
+          notes={notes(
+            "These aren't pure 'architecture' points, but so intertwined we can't ignore"
+          )}>
+          <Heading size={3}>
+            Lifeguards & Life Savers
+          </Heading>
+          <List>
+            <ListItem>
+              <Point>Logging</Point>, <Point>Monitoring</Point>
+            </ListItem>
+            <ListItem>
+              <Point>Debugging</Point> helpers
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={3} textColor="red">
+            Lifeguarding Challenges
+          </Heading>
+          <List>
+            <ListItem>
+              Code executes <Point>remotely</Point> on <Point>different browsers</Point>
+            </ListItem>
+            <ListItem>
+              Frontend errors are <Point>costly</Point> & often <Point>invisible</Point>
+            </ListItem>
+          </List>
+        </Slide>
 
-            - TIP: Plan for spikes
-                - Spikes: Black Friday, Cyber Monday
-                - Like usual, just more system stress and higher error penalties.
-                - Code freezes
-                - Exhaustive testing
-                - Oncall team
-                - TODO: A takeway / concise point (?)
+        {/* ---------------------------------------------------------------
+          * Lifeguards - Logging, Monitoring
+          * ---------------------------------------------------------------
 
+          TODO: SECTION
 
           */}
         {/* ---------------------------------------------------------------
-          * Lifeguards - XXXX
+          * Lifeguards - Debugging, Source Maps
           * ---------------------------------------------------------------
-          */}
-        {/* ---------------------------------------------------------------
-          * Lifeguards - XXXX
-          * ---------------------------------------------------------------
-          */}
-        {/* ---------------------------------------------------------------
-          * Lifeguards - XXXX
-          * ---------------------------------------------------------------
-          */}
-        {/* ---------------------------------------------------------------
-          * Lifeguards - XXXX
-          * ---------------------------------------------------------------
+
+          TODO: SECTION
+
           */}
 
 
