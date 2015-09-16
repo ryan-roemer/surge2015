@@ -185,55 +185,59 @@ export default class extends React.Component {
 
             - Enterprise's time has come. And we're going to talk it through.
           */}
-        <Slide>
+        <Slide
+          notes={notes(
+            "Browsers are getting faster and better all the time",
+            "Standards and technologies are exploding everywhere"
+          )}>
           <Heading size={2}>
             The web is <em>massively</em> moving to the <em>frontend</em>
           </Heading>
-          {/*
-            - Browsers are getting faster and better all the time.
-            - Standards and technologies are exploding everywhere.
-            */}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "Waiting for page refreshes are a thing of the past",
+            "Single Page Applications deliver quick, slick experiences"
+          )}>
           <Heading size={2}>
             Users want <em>rich</em> and <em>seamless</em> experiences
           </Heading>
-          {/*
-            - Waiting for page refreshes are a thing of the past.
-            - Single Page Applications deliver quick, slick experiences.
-            */}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "Modern JavaScript is flexible and fast to develop"
+          )}>
           <Heading size={2}>
             Product owners want <em>fast</em> and <em>nimble</em> apps
           </Heading>
-          {/*
-            - JavaScript is easy to iterate and meld to requirements.
-            */}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "JavaScript is not really optional anymore in modern web apps"
+          )}>
           <Heading size={2}>
             Browser apps are now <em>business critical</em>
           </Heading>
-          {/*
-            - The number of websites anywhere that you can turn off JS is decreasing rapidly.
-            */}
         </Slide>
         <Slide>
           <Heading size={2}>
             And, yes, even for the <em>enterprise</em>
           </Heading>
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "JavaScript has won",
+            "And we are destined for a web application world of..."
+          )}>
           <Heading size={2}>
             ... which means
           </Heading>
-          {/*
-            - JavaScript has won.
-            - And we are destined for a web application world of...
-            */}
         </Slide>
-        <Slide bgColor="tertiary">
+        <Slide bgColor="tertiary"
+          notes={notes(
+            "Each of these trends are <b>scary</b>",
+            "... and present great <b>opportunity</b>"
+          )}>
           <Heading bold fit caps textColor="lightestGray">
             Lots of JavaScript
           </Heading>
@@ -243,21 +247,15 @@ export default class extends React.Component {
           <Heading bold fit caps textColor="lightestGray">
             Written by large teams
           </Heading>
-          {/*
-            - Each one of these points should scare you.
-            - ... and present great opportunity.
-            */}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "The full scope of massive frontend web apps is <b>huge</b>",
+            "We're going to need to focus this talk on some key points"
+          )}>
           <Heading bold fit caps>
             Our Goals?
           </Heading>
-          {/*
-            - The topic of managing a frontend build is **huge**.
-            - We're going to have to focus to fit this talk into the time and
-              be actually useful.
-            - So, our focus is...
-            */}
         </Slide>
         <Slide>
           <Text>
