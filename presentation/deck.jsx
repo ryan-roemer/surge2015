@@ -6,7 +6,7 @@ import React from "react/addons";
 // Appear, BlockQuote, Cite, CodePane, Deck, Fill,
 // Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
 import {
-  Deck, CodePane, Heading, Image, Link, Slide, Text, Layout, List, ListItem, Fill
+  Deck, CodePane, Heading, Image, Link, Slide, Text, Layout, List, ListItem, Fill, Appear
 } from "spectacle/src/spectacle";
 
 // Images
@@ -217,52 +217,21 @@ export default class extends React.Component {
             "Each of these trends are <b>scary</b>",
             "... and present great <b>opportunity</b>"
           )}>
-          <Heading bold fit caps textColor="lightestGray">
-            Lots of JavaScript
-          </Heading>
-          <Heading bold fit caps textColor="primary">
-            In the browser
-          </Heading>
-          <Heading bold fit caps textColor="lightestGray">
-            Written by large teams
-          </Heading>
-        </Slide>
-        <Slide
-          notes={notes(
-            "The full scope of massive frontend web apps is <b>huge</b>",
-            "We're going to need to focus this talk on some key points"
-          )}>
-          <Heading bold fit caps>
-            Our Goals?
-          </Heading>
-        </Slide>
-        <Slide>
-          <Text>
-            (1) Understand the
-          </Text>
-          <Text>
-            <Point>challenges</Point> & <Point>pitfalls</Point>
-          </Text>
-        </Slide>
-        <Slide>
-          <Text>
-            (2) Identify some key
-          </Text>
-          <Text>
-            <Point>issues</Point> & <Point>solutions</Point>
-          </Text>
-        </Slide>
-        <Slide>
-          <Text>
-            (3) Increase frontend
-          </Text>
-          <Text>
-            wrangling <Point>confidence</Point>
-          </Text>
-          {/*
-            - Our main goal here is giving a little more direction to the folks
-              on the hook for growing frontend builds.
-            */}
+          <Appear fid="1">
+            <Heading bold fit caps textColor="lightestGray">
+              Lots of JavaScript
+            </Heading>
+          </Appear>
+          <Appear fid="2">
+            <Heading bold fit caps textColor="primary">
+              In the browser
+            </Heading>
+          </Appear>
+          <Appear fid="3">
+            <Heading bold fit caps textColor="lightestGray">
+              Written by large teams
+            </Heading>
+          </Appear>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -275,7 +244,11 @@ export default class extends React.Component {
                 - Large amount of JavaScript code
                 - Large frontend development teams
           */}
-        <Slide>
+        <Slide
+          notes={notes(
+            "The full scope of massive frontend web apps is <b>huge</b>",
+            "We're going to need to focus this talk on some key points"
+          )}>
           <Heading size={4} textColor="secondary">
             Let{"'"}s dig into some large frontends at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
@@ -290,22 +263,24 @@ export default class extends React.Component {
             - walmart.com
             */}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "3472 page views / second for Thanksgiving - Cyber Monday",
+            "Cyber Monday 2014 orders surpassed <em>all previous records</em>"
+          )}>
           <Heading size={3}>
             The Numbers
           </Heading>
           <List>
             <ListItem>
               <Link href={links.wmFy2014}><Point>$10 billion
-              </Point></Link> in sales for FY 2014 (30% increase)
+              </Point></Link> FY 2014,{" "}
               {/*
                 - "Each operating segment strengthened its e-commerce platforms, and customers
                    responded, driving annual Global eCommerce sales, including acquisitions, above
                    the $10-billion mark, a 30 percent increase."
                */}
-            </ListItem>
-            <ListItem>
-              <Link href={links.wmFy2014}><Point>$13 billion</Point></Link> estimate for FY 2015
+              <Link href={links.wmFy2014}><Point>$13 billion</Point></Link> FY 2015 (est)
               {/*
                 - "In fiscal 2015, we expect Global eCommerce gross merchandise value, which
                    includes digital sales of Walmart goods and third-party sales through our sites,
@@ -316,9 +291,6 @@ export default class extends React.Component {
               <Link href={links.tcThanksgiving2014}><Point>1.5
               billion</Point> page views</Link> for Thanksgiving - Cyber Monday 2014
             </ListItem>
-            <ListItem>
-              Cyber Monday 2014 orders surpassed <em>all previous records</em>
-            </ListItem>
           </List>
           {/*
             - 70% mobile for Thanksgiving - Cyber Monday 2014
@@ -327,34 +299,12 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            The Applications
-          </Heading>
-          <List>
-            <ListItem>
-              Most pages have <Point>multiple</Point> entry points (apps)
-            </ListItem>
-            <ListItem>
-              Handful of <Point>Single Page Applications</Point> (SPAs)
-            </ListItem>
-            <ListItem>
-              Shifting from <Point>"old"</Point> to <Point>"new"</Point> JS world
-            </ListItem>
-            <ListItem>
-              <Point>Java</Point> (<em>old</em>) & <Point>Node.js</Point> (<em>new</em>) backends
-            </ListItem>
-          </List>
-        </Slide>
-        <Slide>
-          <Heading size={3}>
             The Code
           </Heading>
           <List>
             <ListItem>
-              <Point>50+</Point> JS "entry points", ranging
-              from <Point>1K - 145K</Point>
+              <Point>50+</Point> JS applications (<em>1K - 145K</em> in size)
             </ListItem>
-            <ListItem>Shared <Point>300K</Point> common library</ListItem>
-            <ListItem>Additional external & internal JS apps</ListItem>
             <ListItem>
               <Point>650K</Point> lines, <Point>2500</Point> files of JavaScript source
             </ListItem>
@@ -393,8 +343,7 @@ export default class extends React.Component {
             <ListItem>A <Point>2+</Point> year website rewrite</ListItem>
             <ListItem><Point>50+</Point> core frontend engineers</ListItem>
             <ListItem><Point>14</Point> vertical teams / <Point>"tracks"</Point></ListItem>
-            <ListItem>Multiple developing & integrating organizations</ListItem>
-            <ListItem>Meta (<code>JS,CSS,Java</code>) teams</ListItem>
+            <ListItem>... and many <Point>external</Point> teams / partners</ListItem>
           </List>
         </Slide>
 
@@ -402,6 +351,7 @@ export default class extends React.Component {
           * Ryan & Meta JS
           * ---------------------------------------------------------------
           */}
+        {/* TODO: IMAGE - "ant farm?" */}
         <Slide bgColor="secondary">
           {/*
             - As I help wrangle some of this, I'd like to take you on a ...
@@ -414,6 +364,7 @@ export default class extends React.Component {
            the Trenches
           </Heading>
         </Slide>
+        {/* TODO: IMAGE - "ant farm?" (see above) */}
         <Slide bgColor="secondary">
           <Link href="http://formidablelabs.com">
             <Image width="100%" src={images.logoRed}/>
@@ -425,15 +376,16 @@ export default class extends React.Component {
             - One of our largest clients.
             */}
         </Slide>
-        <Slide bgColor="secondary">
-          <Heading fit caps textColor="lighterGray">
-            Wrangling Adventures
+        <Slide>
+          <Heading size={4}>
+            My <em>wrangling adventures</em>
           </Heading>
-          <List textColor="primary">
-            <ListItem><Point>JavaScript lead</Point> for site / development teams</ListItem>
-            <ListItem>Lead <Point>“Meta JS”</Point> team of 5-8 developers</ListItem>
-            <ListItem>Part of new core web team</ListItem>
-          </List>
+          <Heading size={4}>
+            as the <em>JavaScript lead</em> for
+          </Heading>
+          <Heading size={4}>
+            the website & dev teams
+          </Heading>
           {/*
             - TODO: Maybe an image of my face? Or a twitter handle?
 
@@ -466,7 +418,7 @@ export default class extends React.Component {
             ... with a focus on
           </Heading>
           <Heading size={4}>
-            four <em>roles</em> / <em>ideas</em>
+            four <em>personas</em>
           </Heading>
           {/**/}
         </Slide>
@@ -554,6 +506,7 @@ export default class extends React.Component {
             </ListItem>
           </List>
         </Slide>
+        {/* TODO: Add wild west background image */}
         <Slide bgColor="tertiary">
           <Heading bold fit caps textColor="lightestGray">
             The Fundamental Challenge:
@@ -670,29 +623,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            Homepage: Scripts
-          </Heading>
-          {/*eslint-disable max-len*/}
-          <CodePane
-            lang="html"
-            source={strip(`
-              <script async="" src="//i5.walmartimages.com/dfw/4ff9c6c9-1217/k2-_ce6b2cd5-7246-488c-9811-0f03b44ffd05.v325.js"/>
-              <script src="//fonts.walmart.com/fqp0lia.js" type="text/javascript"/>
-              <script><![CDATA[var TBRewriteHostAltWeight = 10.000000;]]></script><script src="//a14.wal.co/capabilities.min.js"/>
-              <script async="" src="//i5.walmartimages.com/dfw/4ff9c6c9-2c86/k2-_1cf91030-5b66-42d4-88af-42da1d47cf61.v314.js"/>
-              <script src="//www.google.com/adsense/search/ads.js"/>
-              <script src="//i5.walmartimages.com/dfw/63fd9f59-dd5c/k2-_136e85ec-4952-4931-a69f-d808d78a8d47.v1.js"/>
-              <script src="//i5.walmartimages.com/dfw/63fd9f59-3c31/k2-_60b82d0b-f55d-49f9-a027-6ee71de83b4b.v1.js"/>
-              <script src="//a14.wal.co/cdn-test.min.js"/>
-            `)}
-            margin="20px auto"
-            style={{fontSize: "1.5em"}}
-          />
-          {/*eslint-enable max-len*/}
-        </Slide>
-        <Slide>
-          <Heading size={3}>
-            Homepage: Scripts
+            Homepage: On Page
           </Heading>
           <Layout>
             <Fill>
@@ -725,7 +656,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            Homepage: Entry Points
+            Homepage: Lazy
           </Heading>
           <CodePane
             lang="javascript"
@@ -745,7 +676,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            Homepage: Entry Points
+            Homepage: Lazy
           </Heading>
           <List>
             <ListItem>Asynchronously loaded</ListItem>
@@ -1094,7 +1025,7 @@ export default class extends React.Component {
               Set <Point>conventions</Point> & <Point>best practices</Point>
             </ListItem>
             <ListItem>
-              Lead <Point>Code reviews</Point> for consistency / DRY
+              Lead <Point>code reviews</Point> for consistency / DRY
             </ListItem>
             <ListItem>
               Develop common <Point>utilites</Point> & the <Point>deployment</Point> infrastructure
@@ -1512,7 +1443,7 @@ export default class extends React.Component {
           </Text>
           <Text>
             <Link href="http://www.webpagetest.org/">
-              http://www.webpagetest.org
+              www.webpagetest.org
             </Link>
           </Text>
         </Slide>
