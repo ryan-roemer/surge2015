@@ -17,6 +17,15 @@ const images = {
   polygons: require("../assets/img/bg/formidable/formidangles-dark.svg"),
   logoRed: require("../assets/img/logo/formidable-red.svg"),
   logoBlack: require("../assets/img/logo/formidable-black.svg"),
+  logojQuery: require("../assets/img/logo/jquery.svg"),
+  logoBackbone: require("../assets/img/logo/backbone.svg"),
+  logoUnderscore: require("../assets/img/logo/underscore.png"),
+  logoRollbar: require("../assets/img/logo/rollbar.svg"),
+  logoLoggly: require("../assets/img/logo/loggly.svg"),
+  logoSentry: require("../assets/img/logo/sentry.svg"),
+  logoAirbrake: require("../assets/img/logo/airbrake.svg"),
+  logoReact: require("../assets/img/logo/react.svg"),
+  logoWebpack: require("../assets/img/logo/webpack.svg"),
   wmHomepage: require("../assets/img/wml/screen-homepage.png"),
   wmItem: require("../assets/img/wml/screen-item-ipad.png"),
   wmReport: require("../assets/img/wml/report-homepage.png"),
@@ -253,15 +262,15 @@ export default class extends React.Component {
             Let{"'"}s dig into some large frontends at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
           </Heading>
-          {/**/}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "Today's talk will focus on <code>walmart.com</code>",
+            "Specifically, I'm going to talk about the <b>desktop/tablet</b> site"
+          )}>
           <Link href="http://walmart.com">
             <Image src={images.wmItem} width="80%"/>
           </Link>
-          {/*
-            - walmart.com
-            */}
         </Slide>
         <Slide
           notes={notes(
@@ -297,13 +306,17 @@ export default class extends React.Component {
             - 3472 page views / second estimate from 1.5 billion 2014 number.
             */}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "Have more than 50 JavaScript apps across the site",
+            "<em>1K - 145K</em> in size"
+          )}>
           <Heading size={3}>
             The Code
           </Heading>
           <List>
             <ListItem>
-              <Point>50+</Point> JS applications (<em>1K - 145K</em> in size)
+              <Point>50+</Point> JS applications
             </ListItem>
             <ListItem>
               <Point>650K</Point> lines, <Point>2500</Point> files of JavaScript source
@@ -334,6 +347,30 @@ export default class extends React.Component {
 
               298431   1312631  builds/tracks/lib.min.js
             */}
+        </Slide>
+        <Slide>
+          <Heading size={3}>
+            The Technologies
+          </Heading>
+          <Layout>
+            <Fill>
+              <Link href="https://jquery.com/">
+                <Image src={images.logojQuery} width="40%" />
+              </Link>
+            </Fill>
+          </Layout>
+          <Layout style={{marginTop: "2em"}}>
+            <Fill>
+              <Link href="http://backbonejs.org/">
+                <Image src={images.logoBackbone} width="90%" />
+              </Link>
+            </Fill>
+            <Fill>
+              <Link href="http://underscorejs.org/">
+                <Image src={images.logoUnderscore} width="90%" />
+              </Link>
+            </Fill>
+          </Layout>
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -1593,20 +1630,34 @@ export default class extends React.Component {
           <Heading size={3}>
             Providers
           </Heading>
-          <List>
-            <ListItem>
-              <Link href="https://rollbar.com/">Rollbar</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="https://www.loggly.com/docs/javascript/">Loggly</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="https://getsentry.com/welcome/">Sentry</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="https://airbrake.io/">Airbrake</Link>
-            </ListItem>
-          </List>
+          <Layout>
+            <Fill>
+              <Link href="https://rollbar.com/">
+                <Text>Rollbar</Text>
+                <Image src={images.logoRollbar} width="35%" />
+              </Link>
+            </Fill>
+            <Fill>
+              <Link href="https://www.loggly.com/docs/javascript/">
+                <Text>Loggly</Text>
+                <Image src={images.logoLoggly} width="35%" />
+              </Link>
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Link href="https://getsentry.com/welcome/">
+                <Text>Sentry</Text>
+                <Image src={images.logoSentry} width="35%" />
+              </Link>
+            </Fill>
+            <Fill>
+              <Link href="https://airbrake.io/">
+                <Text>Airbrake</Text>
+                <Image src={images.logoAirbrake} width="35%" />
+              </Link>
+            </Fill>
+          </Layout>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1720,10 +1771,16 @@ export default class extends React.Component {
             Some parting thoughts on the <em>future</em>
           </Heading>
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "Uncomfortable, but necessary",
+            "A 2 year old site is already 'legacy'",
+            "<b>STORY</b>: React: server-side render, efficient DOM"
+          )}>
           <Text>
             Embrace <Point>change</Point>
           </Text>
+          <Image src={images.logoReact} />
           {/*
             - TIP: Embrace change, even if uncomfortable.
                 - Most of the code in a huge application will be aging / legacy
@@ -1733,13 +1790,18 @@ export default class extends React.Component {
                 - STORY: React: server-side render, efficient DOM
             */}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "<b>STORY</b>: Targeting <b>components</b> & <b>small repos</b>",
+            "<b>STORY</b>: Moving to webpack"
+          )}>
           <Text>
             Reevaluate & refactor your
           </Text>
           <Text>
             <Point>infrastructure</Point> & <Point>organization</Point>
           </Text>
+          <Image src={images.logoWebpack} />
           {/*
             - TIP: Reevaluate / refactor infrastructure & organization
 
