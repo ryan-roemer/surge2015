@@ -839,53 +839,28 @@ export default class extends React.Component {
             </ListItem>
           </List>
         </Slide>
-        <Slide>
-          <Heading size={4}>
-            Production vs. Development
-          </Heading>
-          <List>
-            <ListItem>
-              The real target is <Point>CDN</Point> deployment
-            </ListItem>
-            <ListItem>
-              But <Point>developer</Point> <em>productivity</em>, <em>speed</em>,
-              & <em>happiness</em> are critical.
-            </ListItem>
-            <ListItem>
-              Optimize for <Point>both</Point>
-            </ListItem>
-          </List>
-          {/*
-            - The build supports: (1) production, (2) dev, and (3) test.
-            - All are critically important to do (1) correctly and (2) fast.
-            */}
+        <Slide
+          notes={notes(
+            "Developers hate waiting for dev changes & test runs",
+            "Prod deploys should be fast to keep you agile",
+            "<b>STORY</b>: Keep dev. builds in-memory",
+            "<b>STORY</b>: Move CDN tool to pure JS (b/c Java was slow)"
+          )}>
+          <Text>
+            Keep prod & dev builds <Point>blazingly fast</Point>
+          </Text>
         </Slide>
-        <Slide>
-          <Heading size={4}>
-            Prod vs. Dev - Goals
-          </Heading>
-          <List>
-            <ListItem>
-              Make <Point>development</Point> resemble production wherever possible
-            </ListItem>
-            <ListItem>
-              Differences <Point>will</Point> be the source of bugs
-            </ListItem>
-            <ListItem>
-              Keep both prod & dev workflows <Point>blazingly fast</Point>
-            </ListItem>
-          </List>
-          {/*
-            - STORY: Dev == Prod: PCI compliance, have CDN mode available in dev.
-            - STORY: Difference Bugs: Asset helper and 404'ing `/static/` assets.
-            - Optimize speed for:
-                - STORY: Development: Fast, partial in memory workflows.
-                - STORY: Production: Moving Java CDN tool to pure JS
-
-            - TIP: Developers hate waiting for dev changes and test runs.
-                   Quality slips if not really, really fast.
-            - TIP: Prod deploys should be fast to keep you agile.
-            */}
+        <Slide
+          notes={notes(
+            "<b>STORY</b>: Differences <b>will</b> cause bugs. (Assets for Thanksgiving)",
+            "<b>STORY</b>: PCI compliance hashing architecture"
+          )}>
+          <Text>
+            Wherever possible, make <em>development</em>
+          </Text>
+          <Text>
+            <Point>identical</Point> to <em>production</em>
+          </Text>
         </Slide>
         <Slide>
           <Heading size={3} textColor="red">
