@@ -319,6 +319,7 @@ export default class extends React.Component {
         </Slide>
         <Slide
           notes={notes(
+            "Sales figures for Global eCommerce division",
             "3472 page views / second for Thanksgiving - Cyber Monday",
             "Cyber Monday 2014 orders surpassed <em>all previous records</em>"
           )}>
@@ -346,10 +347,6 @@ export default class extends React.Component {
               billion</Point> page views</Link> for Thanksgiving - Cyber Monday 2014
             </ListItem>
           </List>
-          {/*
-            - 70% mobile for Thanksgiving - Cyber Monday 2014
-            - 3472 page views / second estimate from 1.5 billion 2014 number.
-            */}
         </Slide>
         <Slide
           notes={notes(
@@ -458,37 +455,32 @@ export default class extends React.Component {
             - One of our largest clients.
             */}
         </Slide>
-        <Slide>
-          <Heading size={4}>
+        <Slide
+          notes={notes(
+            "Started at the beginning of the redesign",
+            "Authored the base parts of the frontend infrastructure"
+          )}>
+          <LonelyHeading size={4}>
             My <em>wrangling adventures</em>
-          </Heading>
-          <Heading size={4}>
+          </LonelyHeading>
+          <LonelyHeading size={4}>
             as the <em>JavaScript lead</em> for
-          </Heading>
-          <Heading size={4}>
+          </LonelyHeading>
+          <LonelyHeading size={4}>
             the website & dev teams
-          </Heading>
-          {/*
-            - TODO: Maybe an image of my face? Or a twitter handle?
-
-            - Started with the project near the beginning of the redesign.
-            - Authored most parts of the frontend infrastructure.
-            - Point person on all things JS-related wrt production, other teams, etc.
-            - ... and here are some of my experiences helping support and ship the website.
-            */}
+          </LonelyHeading>
         </Slide>
-        <Slide>
-          {/*
-            - So many moving parts, details and complexities.
-            - I'm going to focus on just a few of things we've found critical
-              to keeping our large scale applications up and running.
-            */}
-          <Heading size={4}>
+        <Slide
+          notes={notes(
+            "So many moving parts, details and complexities.",
+            "Focus on a handful of critical issues to keeping the site up & running"
+          )}>
+          <LonelyHeading size={4}>
             A few battle-tested
-          </Heading>
-          <Heading size={4}>
+          </LonelyHeading>
+          <LonelyHeading size={4}>
             <em>tips</em> from the <em>field</em>...
-          </Heading>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -496,13 +488,12 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         <Slide>
-          <Heading size={4}>
+          <LonelyHeading size={4}>
             ... with a focus on
-          </Heading>
-          <Heading size={4}>
+          </LonelyHeading>
+          <LonelyHeading size={4}>
             four <em>personas</em>
-          </Heading>
-          {/**/}
+          </LonelyHeading>
         </Slide>
         <Slide bgColor="primary">
           {/* TODO: Full square layout. */}
