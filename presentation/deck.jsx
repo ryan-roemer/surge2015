@@ -30,6 +30,7 @@ const images = {
   wmItem: require("../assets/img/wml/screen-item-ipad.png"),
   wmReport: require("../assets/img/wml/report-homepage.png"),
   wmScripts: require("../assets/img/wml/scripts-homepage.png"),
+  bgRailroadBridge: require("../assets/img/bg/slides/unsplash-railroad-bridge.jpg"),
   bgTypewriterParts: require("../assets/img/bg/slides/unsplash-typewriter-parts.jpg")
 };
 
@@ -765,7 +766,7 @@ export default class extends React.Component {
           * Architects - A "Real" Build
           * ---------------------------------------------------------------
           */}
-        <Slide bgImage={images.bgTypewriterParts}>
+        <Slide bgImage={images.bgRailroadBridge}>
           <Heading fit caps textColor="primary">
             <BlackBox>
               A "Real" Build
@@ -931,9 +932,11 @@ export default class extends React.Component {
                   - LESSON: Original decision to nest JS deeply in Java has been painful.
 
           */}
-        <Slide>
-          <Heading fit caps>
-            Code Organization
+        <Slide bgImage={images.bgTypewriterParts}>
+          <Heading fit caps textColor="primary">
+            <BlackBox>
+              Code Organization
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide>
