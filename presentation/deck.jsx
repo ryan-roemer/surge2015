@@ -60,6 +60,25 @@ class CustomDeck extends Deck {
   }
 }
 
+// Non-bolded heading.
+const getLonelyHeadingStyles = function () {
+  /*eslint-disable no-invalid-this*/
+  const styles = Heading.Mixin.getStyles.call(this);
+  styles.fontWeight = "normal";
+  return styles;
+};
+
+class LonelyHeading extends Heading {
+  constructor(props) {
+    super(props);
+    this.getStyles = getLonelyHeadingStyles;
+  }
+}
+
+LonelyHeading.Mixin = {
+  getStyles: getLonelyHeadingStyles
+};
+
 // A meaningful "point" in text.
 class Point extends React.Component {
   render() {
@@ -204,48 +223,48 @@ export default class extends React.Component {
             "Browsers are getting faster and better all the time",
             "Standards and technologies are exploding everywhere"
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             The web is <em>massively</em> moving to the <em>frontend</em>
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Waiting for page refreshes are a thing of the past",
             "Single Page Applications deliver quick, slick experiences"
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             Users want <em>rich</em> and <em>seamless</em> experiences
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Modern JavaScript is flexible and fast to develop"
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             Product owners want <em>fast</em> and <em>nimble</em> apps
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "JavaScript is not really optional anymore in modern web apps"
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             Browser apps are now <em>business critical</em>
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             And, yes, even for the <em>enterprise</em>
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "JavaScript has won",
             "And we are destined for a web application world of..."
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             ... which means
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide bgColor="tertiary"
           notes={notes(
@@ -284,10 +303,10 @@ export default class extends React.Component {
             "The full scope of massive frontend web apps is <b>huge</b>",
             "We're going to need to focus this talk on some key points"
           )}>
-          <Heading size={4} textColor="secondary">
+          <LonelyHeading size={4}>
             Let{"'"}s dig into some large frontends at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
@@ -1850,9 +1869,12 @@ export default class extends React.Component {
                    style={{marginTop: "1em", marginBottom: "0.75em"}}>
             Thanks!
           </Heading>
-          <Link href="http://formidablelabs.com">
-            <Image width="40%" src={images.logoRed} />
-          </Link>
+          <Text style={{display: "inline-block", marginTop: "1.0em", fontSize: "2.5em"}}>
+            <Link href="http://surge2015.formidablelabs.com"
+                  textColor="lighterGray">
+              surge2015.formidablelabs.com
+            </Link>
+          </Text>
         </Slide>
       </CustomDeck>
     );
