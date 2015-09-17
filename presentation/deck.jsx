@@ -15,6 +15,7 @@ import preloader from "spectacle/src/utils/preloader";
 
 const images = {
   polygons: require("../assets/img/bg/formidable/formidangles-dark.svg"),
+  polygonsGray: require("../assets/img/bg/formidable/formidangles-gray.svg"),
   logoFormidable: require("../assets/img/logo/formidable.svg"),
   logojQuery: require("../assets/img/logo/jquery.svg"),
   logoBackbone: require("../assets/img/logo/backbone.svg"),
@@ -246,7 +247,7 @@ export default class extends React.Component {
             ... which means
           </Heading>
         </Slide>
-        <Slide bgColor="tertiary"
+        <Slide bgColor="tertiary" bgImage={images.polygonsGray}
           notes={notes(
             "Each of these trends are <b>scary</b>",
             "... and present great <b>opportunity</b>"
@@ -544,7 +545,7 @@ export default class extends React.Component {
               - TIP: Organize your code.
 
           */}
-        <Slide bgColor="tertiary">
+        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Architects
           </Heading>
@@ -569,7 +570,7 @@ export default class extends React.Component {
           </List>
         </Slide>
         {/* TODO: Add wild west background image */}
-        <Slide bgColor="tertiary">
+        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading bold fit caps textColor="lightestGray">
             The Fundamental Challenge:
           </Heading>
@@ -630,7 +631,7 @@ export default class extends React.Component {
             - Our structure is an example of how basic pages work (and how
               complicated that can be).
           */}
-        <Slide bgColor="tertiary">
+        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             The Homepage
           </Heading>
@@ -983,7 +984,7 @@ export default class extends React.Component {
                 - Frontend dev's unfamiliar with large apps, code quality, etc.
 
           */}
-        <Slide bgColor="tertiary">
+        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Guides
           </Heading>
@@ -1239,7 +1240,7 @@ export default class extends React.Component {
                 - Sometimes the meta team, sometimes exec / PM leadership
 
           */}
-        <Slide bgColor="tertiary">
+        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Gatekeepers
           </Heading>
@@ -1537,7 +1538,7 @@ export default class extends React.Component {
                   very, very scared
 
           */}
-        <Slide bgColor="tertiary">
+        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Lifeguards
           </Heading>
