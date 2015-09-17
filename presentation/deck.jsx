@@ -15,8 +15,7 @@ import preloader from "spectacle/src/utils/preloader";
 
 const images = {
   polygons: require("../assets/img/bg/formidable/formidangles-dark.svg"),
-  logoRed: require("../assets/img/logo/formidable-red.svg"),
-  logoBlack: require("../assets/img/logo/formidable-black.svg"),
+  logoFormidable: require("../assets/img/logo/formidable.svg"),
   logojQuery: require("../assets/img/logo/jquery.svg"),
   logoBackbone: require("../assets/img/logo/backbone.svg"),
   logoUnderscore: require("../assets/img/logo/underscore.png"),
@@ -430,7 +429,7 @@ export default class extends React.Component {
         {/* TODO: IMAGE - "ant farm?" (see above) */}
         <Slide bgColor="secondary">
           <Link href="http://formidablelabs.com">
-            <Image width="100%" src={images.logoRed}/>
+            <Image width="100%" src={images.logoFormidable}/>
           </Link>
           {/*
             - I work for Formidable Labs.
@@ -1851,7 +1850,7 @@ export default class extends React.Component {
             Thanks!
           </Heading>
           <Link href="http://formidablelabs.com">
-            <Image width="40%" src={images.logoRed} />
+            <Image width="40%" src={images.logoFormidable} />
           </Link>
         </Slide>
       </CustomDeck>
