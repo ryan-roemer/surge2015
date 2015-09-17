@@ -30,6 +30,7 @@ const images = {
   wmItem: require("../assets/img/wml/screen-item-ipad.png"),
   wmReport: require("../assets/img/wml/report-homepage.png"),
   wmScripts: require("../assets/img/wml/scripts-homepage.png"),
+  bgPattern: require("../assets/img/bg/slides/pattern-fancypants.jpg"),
   bgRailroadBridge: require("../assets/img/bg/slides/unsplash-railroad-bridge.jpg"),
   bgTypewriterParts: require("../assets/img/bg/slides/unsplash-typewriter-parts.jpg")
 };
@@ -282,17 +283,17 @@ export default class extends React.Component {
         <Slide
           notes={notes(
             "The full scope of massive frontend web apps is <b>huge</b>",
-            "We're going to need to focus this talk on some key points"
+            "We’re going to need to focus this talk on some key points"
           )}>
           <Heading size={4} textColor="secondary">
-            Let{"'"}s dig into some large frontends at a <em>high-traffic
+            Let{"’"}s dig into some large frontends at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
           </Heading>
         </Slide>
         <Slide
           notes={notes(
-            "Today's talk will focus on <code>walmart.com</code>",
-            "Specifically, I'm going to talk about the <b>desktop/tablet</b> site"
+            "Today’s talk will focus on <code>walmart.com</code>",
+            "Specifically, I’m going to talk about the <b>desktop/tablet</b> site"
           )}>
           <Link href="http://walmart.com">
             <Image src={images.wmItem} width="80%"/>
@@ -415,7 +416,7 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         {/* TODO: IMAGE - "ant farm?" */}
-        <Slide bgColor="secondary">
+        <Slide bgColor="secondary" bgImage={images.bgPattern}>
           {/*
             - As I help wrangle some of this, I'd like to take you on a ...
             - (Tour through the trenches)
@@ -428,7 +429,7 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         {/* TODO: IMAGE - "ant farm?" (see above) */}
-        <Slide bgColor="secondary">
+        <Slide>
           <Link href="http://formidablelabs.com">
             <Image width="100%" src={images.logoFormidable}/>
           </Link>
