@@ -29,7 +29,8 @@ const images = {
   wmHomepage: require("../assets/img/wml/screen-homepage.png"),
   wmItem: require("../assets/img/wml/screen-item-ipad.png"),
   wmReport: require("../assets/img/wml/report-homepage.png"),
-  wmScripts: require("../assets/img/wml/scripts-homepage.png")
+  wmScripts: require("../assets/img/wml/scripts-homepage.png"),
+  bgTypewriterParts: require("../assets/img/bg/slides/unsplash-typewriter-parts.jpg")
 };
 
 preloader([images.city]);
@@ -70,6 +71,30 @@ class Point extends React.Component {
 }
 
 Point.propTypes = {
+  children: React.PropTypes.node
+};
+
+// Blackbox for white over images
+class BlackBox extends React.Component {
+  render() {
+    const bgDarken = typeof this.props.bgDarken !== "undefined" ? this.props.bgDarken : 0.75;
+    const styles = {
+      background: `rgba(0, 0, 0, ${bgDarken})`,
+      borderRadius: "0.2em",
+      padding: "0.0em 0.2em",
+      margin: "0"
+    };
+
+    return (
+      <span style={styles}>
+        {this.props.children}
+      </span>
+    );
+  }
+}
+
+BlackBox.propTypes = {
+  bgDarken: React.PropTypes.number,
   children: React.PropTypes.node
 };
 
@@ -740,9 +765,11 @@ export default class extends React.Component {
           * Architects - A "Real" Build
           * ---------------------------------------------------------------
           */}
-        <Slide>
-          <Heading fit caps>
-            A "Real" Build
+        <Slide bgImage={images.bgTypewriterParts}>
+          <Heading fit caps textColor="primary">
+            <BlackBox>
+              A "Real" Build
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide>
