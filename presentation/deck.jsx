@@ -486,32 +486,44 @@ export default class extends React.Component {
           </Heading>
           {/**/}
         </Slide>
-        <Slide bgColor="primary">
+        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
           {/* TODO: Full square layout. */}
           {/* TODO: Background images? */}
           {/* TODO: Icons? */}
           {/* TODO: Put in taglines for each one? (or presenter notes?) */}
           <Layout>
-            <Fill>
-              <Heading size={4} caps textColor="secondary">
+            <Fill style={{borderRight: "1px solid #525050", borderBottom: "2px solid #525050"}}>
+              <Heading size={4} caps textColor="primary">
                 Architects
               </Heading>
+              <Heading size={3} textColor="lightestGray" style={{margin: "0 auto 1em"}}>
+                <i className="fa fa-building-o"></i>
+              </Heading>
             </Fill>
-            <Fill>
-              <Heading size={4} caps textColor="secondary">
+            <Fill style={{borderLeft: "1px solid #525050", borderBottom: "2px solid #525050"}}>
+              <Heading size={4} caps textColor="primary">
                 Guides
+              </Heading>
+              <Heading size={3} textColor="lightestGray" style={{margin: "0 auto 1em"}}>
+                  <i className="fa fa-map-o"></i>
               </Heading>
             </Fill>
           </Layout>
           <Layout>
-            <Fill>
-              <Heading size={4} caps textColor="secondary">
+            <Fill style={{borderRight: "1px solid #525050"}}>
+              <Heading size={4} caps textColor="primary">
                 Gatekeepers
               </Heading>
+              <Heading size={3} textColor="lightestGray" style={{margin: "0 auto 1em"}}>
+                <i className="fa fa-shield"></i>
+              </Heading>
             </Fill>
-            <Fill>
-              <Heading size={4} caps textColor="secondary">
+            <Fill style={{borderLeft: "1px solid #525050"}}>
+              <Heading size={4} caps textColor="primary">
                 Lifeguards
+              </Heading>
+              <Heading size={3} textColor="lightestGray" style={{margin: "0 auto 1em"}}>
+                <i className="fa fa-life-ring"></i>
               </Heading>
             </Fill>
           </Layout>
