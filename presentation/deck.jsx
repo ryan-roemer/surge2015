@@ -1690,19 +1690,48 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Give developers <Point>life lines</Point>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             when things go <Point>wrong</Point>
-          </Text>
+          </LonelyHeading>
+        </Slide>
+        <Slide>
+          <Heading size={4}>You ship this:</Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              !function(){var e="Hello Surge!",a=$("<h1 />");
+              a.text(e),$("body").append(a)}();
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2.0em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={4}>Your devs want this:</Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              (function () {
+                var message = "Hello Surge!";
+                var $heading = $("<h1 />");
+
+                $heading.text(message);
+
+                $("body").append($heading);
+              }());
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2.0em"}}
+          />
         </Slide>
         <Slide
           notes={notes(
-            "Only request when dev console is open",
-            "Completely inactive for normal users"
+            "Great for debugging, but <b>full source</b>"
           )}>
-          <Text>Source Maps</Text>
+          <Heading size={4}>Source Maps</Heading>
           <CodePane
             lang="javascript"
             source={strip(`
@@ -1711,18 +1740,21 @@ export default class extends React.Component {
               //# sourceMappingURL=http://dev.walmart.com:9873/js-dist-frontend/core-bundle.js.map
             `)}
             margin="20px auto"
-            style={{fontSize: "1.5em"}}
+            style={{fontSize: "2.0em"}}
           />
         </Slide>
         <Slide>
-          <Text>
-            Upload source maps in <Point>deployment</Point>
-          </Text>
+          <LonelyHeading>
+            <Point>Publish</Point> in VPN on deployment
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
-            Host within VPN for developer <Point>emergencies</Point>
-          </Text>
+          <LonelyHeading>
+            Hidden from <Point>end users</Point>
+          </LonelyHeading>
+          <LonelyHeading>
+            Available to <Point>developers</Point>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
