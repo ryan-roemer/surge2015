@@ -746,7 +746,7 @@ export default class extends React.Component {
               });
             `)}
             margin="20px auto"
-            style={{fontSize: "1.5em"}}
+            style={{fontSize: "2em"}}
           />
         </Slide>
         <Slide>
@@ -1420,7 +1420,8 @@ export default class extends React.Component {
           <CodePane
             lang="javascript"
             source={strip(`
-              var HOPEFULLY_ENOUGH_TIME = 2000; // I'm guessing...
+              // I'm guessing...
+              var HOPEFULLY_ENOUGH_TIME = 2000;
 
               // Wait until ready for next step.
               setTimeout(function () {
@@ -1428,7 +1429,7 @@ export default class extends React.Component {
               }, HOPEFULLY_ENOUGH_TIME);
             `)}
             margin="20px auto"
-            style={{fontSize: "1.5em"}}
+            style={{fontSize: "2em"}}
           />
         </Slide>
         <Slide>
