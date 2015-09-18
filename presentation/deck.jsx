@@ -1084,7 +1084,7 @@ export default class extends React.Component {
               Lead <Point>code reviews</Point> for consistency / DRY
             </ListItem>
             <ListItem>
-              Develop common <Point>utilites</Point> & the <Point>deployment</Point> infrastructure
+              Develop common <Point>utilities</Point> & the <Point>deployment</Point> infrastructure
             </ListItem>
           </List>
         </Slide>
@@ -1396,7 +1396,7 @@ export default class extends React.Component {
             "<b>Architect</b> protection as well"
           )}>
           <Text>
-            <Point>Protect</Point> youself wherever possible
+            <Point>Protect</Point> yourself wherever possible
           </Text>
         </Slide>
         <Slide
