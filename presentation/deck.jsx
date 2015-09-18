@@ -860,21 +860,21 @@ export default class extends React.Component {
             "<b>STORY</b>: Keep dev. builds in-memory",
             "<b>STORY</b>: Move CDN tool to pure JS (b/c Java was slow)"
           )}>
-          <Text>
+          <LonelyHeading>
             Keep prod & dev builds <Point>blazingly fast</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY</b>: Differences <b>will</b> cause bugs. (Assets for Thanksgiving)",
             "<b>STORY</b>: PCI compliance hashing architecture"
           )}>
-          <Text>
+          <LonelyHeading>
             Wherever possible, make <em>development</em>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>identical</Point> to <em>production</em>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
           <Heading size={3} textColor="red">
@@ -929,9 +929,12 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Plan your <Point>repository structure</Point>
-          </Text>
+          </LonelyHeading>
+          <LonelyHeading>
+            <Point>1</Point> &rarr; <Point>14</Point> &rarr; <Point>many</Point> repos
+          </LonelyHeading>
           {/*
             - You are going to have an enormous amount of code. It's important to structure
               properly and plan it **up front**.
@@ -950,9 +953,9 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Have a bias for <Point>small</Point> & <Point>flexible</Point>
-          </Text>
+          </LonelyHeading>
           {/*
             - STORY: Heading towards many, many small repositories
                 - Per component
@@ -963,21 +966,6 @@ export default class extends React.Component {
 
             - BAD: Updating / maintaining infrastructure across repositories
             - BAD: Our transition is going to be painful and long.
-            */}
-        </Slide>
-        <Slide>
-          <Text>
-            Decide when to support
-          </Text>
-          <Text>
-            <Point>unconventional</Point> code organization
-          </Text>
-          {/*
-            - STORY: Track JavaScript lives in deeply nested Java paths for the
-              benefit of Java IDEs.
-                - GOOD: Java developers that rely heavily on IDEs like it.
-                - BAD: Dramatically increased the build complexity.
-                - BAD: Not consistent across projects.
             */}
         </Slide>
 
@@ -1060,14 +1048,14 @@ export default class extends React.Component {
           notes={notes(
             "Here's the real problem..."
           )}>
-          <Text>Code from <Point>multiple teams</Point></Text>
-          <Text>all combined on <Point>one page</Point></Text>
+          <LonelyHeading>Code from <Point>multiple teams</Point></LonelyHeading>
+          <LonelyHeading>all combined on <Point>one page</Point></LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY - DRY</b>: Had 3 different image carousels emerging"
           )}>
-          <Text>These folks represent the <Point>whole page</Point></Text>
+          <LonelyHeading>These folks represent the <Point>whole page</Point></LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
@@ -1169,25 +1157,25 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Continually write <Point>living</Point> documentation,
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>close to the code</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Take a <Point>"hands on approach"</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Invest in <Point>rising developers</Point> &
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             spread knowledge <Point>back to teams</Point>
-          </Text>
+          </LonelyHeading>
           {/*
             - STORY: Had to write a lot of test skeletons and jump in branches
               until track leads / devs finally got off the ground, then was
@@ -1223,23 +1211,23 @@ export default class extends React.Component {
             "Caught <b>so many bugs</b> in track/meta reviews",
             "<b>STORY</b>: Bad timing on category id going to prod"
           )}>
-          <Text>
+          <LonelyHeading>
             All code gets <Point>substantive</Point> &
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>meta</Point> review
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY</b>: `Event.prototype.stopPropagation` breaking code"
           )}>
-          <Text>
+          <LonelyHeading>
             Including all <Point>third party</Point> &
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>internal to the org</Point> vendor code
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1328,27 +1316,27 @@ export default class extends React.Component {
           notes={notes(
             "The low-hanging fruit, easiest quality checks to do"
           )}>
-          <Text>
+          <LonelyHeading>
             <Point>Static checking</Point> (eslint, jshint, jscs, etc.)
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Easy to write and run",
             "Brittle over time"
           )}>
-          <Text>
+          <LonelyHeading>
             Clientside <Point>unit</Point> tests
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Complement to unit tests",
             "Slow to run, but the 'real deal'"
           )}>
-          <Text>
+          <LonelyHeading>
             <Point>Integration</Point> / <Point>E2E</Point> tests
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
@@ -1356,17 +1344,17 @@ export default class extends React.Component {
             "Devs 'buy' exceptions with test tickets",
             "Goal is really just 'execute once'"
           )}>
-          <Text>
+          <LonelyHeading>
             <Point>Code coverage</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Continuous integration _is_ 'the gate'"
           )}>
-          <Text>
+          <LonelyHeading>
             <Point>Continuous integration</Point> (CI)
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1386,18 +1374,18 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Learn / identify your biggest <Point>risk areas</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Previous protections: code review, tests, etc.",
             "<b>Architect</b> protection as well"
           )}>
-          <Text>
+          <LonelyHeading>
             <Point>Protect</Point> yourself wherever possible
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
@@ -1405,20 +1393,20 @@ export default class extends React.Component {
             "<b>STORY</b>: Custom HTML, deadlines, quality, no review",
             "<b>Protect</b>: iframe, different domains, etc."
           )}>
-          <Text>
+          <LonelyHeading>
             Architecture risks:
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>Injected HTML/CSS/JS</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Code pattern risks:
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>Defer & pray</Point>
-          </Text>
+          </LonelyHeading>
           <CodePane
             lang="javascript"
             source={strip(`
@@ -1435,12 +1423,12 @@ export default class extends React.Component {
           />
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Deployment / process risks:
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>"Hotfeatures"</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1470,70 +1458,70 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Frontend code must be <Point>small</Point> & <Point>fast</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY</b>: We tried doing this 2 years in. Really tough."
           )}>
-          <Text>
+          <LonelyHeading>
             Teams will be <Point>"feature-driven"</Point>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             unless performance is <Point>enforced</Point> & <Point>required</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Patrick Meenan's Surge talk on Web App perf"
           )}>
-          <Text>
+          <LonelyHeading>
             Enforce with <Point>audits</Point>
-          </Text>
+          </LonelyHeading>
           <hr style={{width: "75%"}} />
-          <Text>
+          <LonelyHeading>
             <Link href="http://surge.omniti.com/2015?patrick-meenan">
               "Web App Performance Measurement, Monitoring and Resiliency"
             </Link>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Link href="http://www.webpagetest.org/">
               www.webpagetest.org
             </Link>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Performance work should be on sprints"
           )}>
-          <Text>
+          <LonelyHeading>
             Enforce with <Point>process</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Ideally have CI checks for performance"
           )}>
-          <Text>
+          <LonelyHeading>
             Enforce with <Point>automation</Point>
-          </Text>
+          </LonelyHeading>
           <hr style={{width: "75%"}} />
-          <Text>
+          <LonelyHeading>
             <Link href="http://2015.cascadiajs.com/speakers/parashuram-n">
               "Automating Web Performance Measurement"
             </Link>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Our build is complex enough, we had to build reporting tools",
             "<b>STORY</b>: Devs have hard time with deps in lib.js"
           )}>
-          <Text>
+          <LonelyHeading>
             Build your own <Point>tools</Point> where necessary
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1612,39 +1600,31 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Frontend code executes <Point>in the wild</Point>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             on a variety of <Point>browsers</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             You need to <Point>know</Point>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             when things go <Point>wrong</Point>
-          </Text>
-        </Slide>
-        <Slide>
-          <Text>
-            Tune for <Point>development</Point>,
-          </Text>
-          <Text>
-            <Point>staging</Point>, & <Point>production</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Hook into <b>chat channels</b> &amp; <b>alert systems</b>"
           )}>
-          <Text>
+          <LonelyHeading>
             Log <Point>errors</Point> & <Point>messages</Point> remotely
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             and <Point>monitor</Point> & <Point>alert</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -1829,9 +1809,9 @@ export default class extends React.Component {
             "A 2 year old site is already 'legacy'",
             "<b>STORY</b>: React: server-side render, efficient DOM"
           )}>
-          <Text>
+          <LonelyHeading>
             Embrace <Point>change</Point>
-          </Text>
+          </LonelyHeading>
           <Image src={images.logoReact} />
           {/*
             - TIP: Embrace change, even if uncomfortable.
@@ -1847,12 +1827,12 @@ export default class extends React.Component {
             "<b>STORY</b>: Targeting <b>components</b> & <b>small repos</b>",
             "<b>STORY</b>: Moving to webpack"
           )}>
-          <Text>
+          <LonelyHeading>
             Reevaluate & refactor your
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>infrastructure</Point> & <Point>organization</Point>
-          </Text>
+          </LonelyHeading>
           <Image src={images.logoWebpack} />
           {/*
             - TIP: Reevaluate / refactor infrastructure & organization
@@ -1868,9 +1848,9 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Have a <Point>transition strategy</Point>
-          </Text>
+          </LonelyHeading>
           {/*
             - TIP: Transition strategies.
                 - So important to support teams through transitions.
