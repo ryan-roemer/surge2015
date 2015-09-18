@@ -31,7 +31,10 @@ const images = {
   wmReport: require("../assets/img/wml/report-homepage.png"),
   wmScripts: require("../assets/img/wml/scripts-homepage.png"),
   bgRailroadBridge: require("../assets/img/bg/slides/unsplash-railroad-bridge.jpg"),
-  bgTypewriterParts: require("../assets/img/bg/slides/unsplash-typewriter-parts.jpg")
+  bgTypewriterParts: require("../assets/img/bg/slides/unsplash-typewriter-parts.jpg"),
+  bgCowboyPilot: require("../assets/img/bg/slides/newoldstock-x1a-cowboy-pilot.jpg"),
+  bgHorseWrangling: require("../assets/img/bg/slides/newoldstock-horse-wrangling.jpg"),
+  bgClassroom: require("../assets/img/bg/slides/newoldstock-classroom-desks.jpg")
 };
 
 preloader([images.city]);
@@ -315,7 +318,7 @@ export default class extends React.Component {
         <Slide
           notes={notes(
             "Today's talk will focus on <code>walmart.com</code>",
-            "Specifically, I'm going to talk about the <b>desktop/tablet</b> site"
+            "Specifically, the <b>desktop/tablet</b> site"
           )}>
           <Link href="http://walmart.com">
             <Image src={images.wmItem} width="80%"/>
@@ -570,7 +573,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            Architects & Architecture
+            Architects
           </Heading>
           <List>
             <ListItem>
@@ -581,8 +584,7 @@ export default class extends React.Component {
             </ListItem>
           </List>
         </Slide>
-        {/* TODO: Add wild west background image */}
-        <Slide bgColor="tertiary">
+        <Slide bgImage={images.bgCowboyPilot} bgDarken={0.35}>
           <Heading bold fit caps textColor="lightestGray">
             The Fundamental Challenge:
           </Heading>
@@ -599,16 +601,16 @@ export default class extends React.Component {
           </Heading>
           <List>
             <ListItem>
-              JS is easy to do <Point>very, very wrong</Point> and hard to manage
-            </ListItem>
-            <ListItem>
-              All JS interacts in <Point>one execution environment</Point>
+              Browser is a single <Point>execution environment</Point>
             </ListItem>
             <ListItem>
               Code <Point>size / duplication</Point> is critical
             </ListItem>
             <ListItem>
-              JS has a <Point>cowboy legacy</Point> that doesn{"'"}t play well in large apps
+              Hard to <Point>manage</Point>, easy to do <Point>wrong</Point>
+            </ListItem>
+            <ListItem>
+              "<Point>Cowboy</Point>" legacy vs. large scale organization
             </ListItem>
           </List>
           {/*
@@ -1161,8 +1163,8 @@ export default class extends React.Component {
                 - Invest in track leads to take over education.
 
           */}
-        <Slide>
-          <Heading fit caps>
+        <Slide bgImage={images.bgClassroom} bgDarken={0.25}>
+          <Heading fit caps textColor="primary">
             Education
           </Heading>
         </Slide>
