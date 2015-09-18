@@ -75,6 +75,10 @@ class LonelyHeading extends Heading {
   }
 }
 
+LonelyHeading.defaultProps = {
+  size: 4
+};
+
 LonelyHeading.Mixin = {
   getStyles: getLonelyHeadingStyles
 };
@@ -303,7 +307,7 @@ export default class extends React.Component {
             "The full scope of massive frontend web apps is <b>huge</b>",
             "We're going to need to focus this talk on some key points"
           )}>
-          <LonelyHeading size={4}>
+          <LonelyHeading>
             Let{"'"}s dig into some large frontends at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
           </LonelyHeading>
@@ -444,29 +448,28 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         {/* TODO: IMAGE - "ant farm?" (see above) */}
-        <Slide bgColor="secondary">
+        <Slide bgColor="secondary"
+          notes={notes(
+            "A software development consultancy in Seattle, WA",
+            "Help teams from startups to Fortune 500 companies",
+            "One of our largest clients"
+          )}>
           <Link href="http://formidablelabs.com">
             <Image width="100%" src={images.logoRed}/>
           </Link>
-          {/*
-            - I work for Formidable Labs.
-            - A software development consultancy in Seattle, WA.
-            - Help teams from startups to Fortune 500 companies.
-            - One of our largest clients.
-            */}
         </Slide>
         <Slide
           notes={notes(
             "Started at the beginning of the redesign",
             "Authored the base parts of the frontend infrastructure"
           )}>
-          <LonelyHeading size={4}>
+          <LonelyHeading>
             My <em>wrangling adventures</em>
           </LonelyHeading>
-          <LonelyHeading size={4}>
+          <LonelyHeading>
             as the <em>JavaScript lead</em> for
           </LonelyHeading>
-          <LonelyHeading size={4}>
+          <LonelyHeading>
             the website & dev teams
           </LonelyHeading>
         </Slide>
@@ -475,10 +478,10 @@ export default class extends React.Component {
             "So many moving parts, details and complexities.",
             "Focus on a handful of critical issues to keeping the site up & running"
           )}>
-          <LonelyHeading size={4}>
+          <LonelyHeading>
             A few battle-tested
           </LonelyHeading>
-          <LonelyHeading size={4}>
+          <LonelyHeading>
             <em>tips</em> from the <em>field</em>...
           </LonelyHeading>
         </Slide>
@@ -488,10 +491,10 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         <Slide>
-          <LonelyHeading size={4}>
+          <LonelyHeading>
             ... with a focus on
           </LonelyHeading>
-          <LonelyHeading size={4}>
+          <LonelyHeading>
             four <em>personas</em>
           </LonelyHeading>
         </Slide>
@@ -561,10 +564,9 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={4} textColor="secondary">
+          <LonelyHeading>
             Plan & build a <em>strong foundation</em>
-          </Heading>
-          {/**/}
+          </LonelyHeading>
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -618,15 +620,15 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Let{"'"}s look at the
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             architectural <Point>complexities</Point>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             of just <Point>one page</Point>...
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
