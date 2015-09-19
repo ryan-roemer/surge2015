@@ -34,7 +34,9 @@ const images = {
   bgTypewriterParts: require("../assets/img/bg/slides/unsplash-typewriter-parts.jpg"),
   bgCowboyPilot: require("../assets/img/bg/slides/newoldstock-x1a-cowboy-pilot.jpg"),
   bgHorseWrangling: require("../assets/img/bg/slides/newoldstock-horse-wrangling.jpg"),
-  bgClassroom: require("../assets/img/bg/slides/newoldstock-classroom-desks.jpg")
+  bgClassroom: require("../assets/img/bg/slides/newoldstock-classroom-desks.jpg"),
+  bgLionTamer: require("../assets/img/bg/slides/newoldstock-lion-tamer.jpg"),
+  bgHerdingBuffalo: require("../assets/img/bg/slides/newoldstock-herding-buffalo.jpg")
 };
 
 preloader([images.city]);
@@ -1039,8 +1041,8 @@ export default class extends React.Component {
           * Guides - The Meta Team
           * ---------------------------------------------------------------
           */}
-        <Slide>
-          <Heading fit caps>
+        <Slide bgImage={images.bgHerdingBuffalo} bgDarken={0.30}>
+          <Heading fit caps textColor="primary">
             The Meta Team
           </Heading>
         </Slide>
@@ -1317,7 +1319,10 @@ export default class extends React.Component {
             "The low-hanging fruit, easiest quality checks to do"
           )}>
           <LonelyHeading>
-            <Point>Static checking</Point> (eslint, jshint, jscs, etc.)
+            <Point>Static checking</Point>
+          </LonelyHeading>
+          <LonelyHeading>
+            (eslint, jshint, jscs, etc.)
           </LonelyHeading>
         </Slide>
         <Slide
@@ -1368,8 +1373,8 @@ export default class extends React.Component {
                     - Solutions: iFrames, different domains
 
           */}
-        <Slide>
-          <Heading fit caps>
+        <Slide bgImage={images.bgLionTamer} bgDarken={0.30}>
+          <Heading fit caps textColor="primary">
             Minimize Risk
           </Heading>
         </Slide>
