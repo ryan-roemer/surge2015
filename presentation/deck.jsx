@@ -191,7 +191,7 @@ export default class extends React.Component {
         {/* ---------------------------------------------------------------
           * Title
           * --------------------------------------------------------------- */}
-        <Slide bgImage={images.polygons}>
+        <Slide id="title" bgImage={images.polygons}>
           <Text bold fit caps textColor="primary" textFont="primary">
             Wrangling
           </Text>
@@ -232,7 +232,7 @@ export default class extends React.Component {
 
             - Enterprise's time has come. And we're going to talk it through.
           */}
-        <Slide
+        <Slide id="intro"
           notes={notes(
             "Browsers are getting faster and better all the time",
             "Standards and technologies are exploding everywhere"
@@ -312,7 +312,7 @@ export default class extends React.Component {
                 - Large amount of JavaScript code
                 - Large frontend development teams
           */}
-        <Slide
+        <Slide id="ecommerce"
           notes={notes(
             "The full scope of massive frontend web apps is <b>huge</b>",
             "We're going to need to focus this talk on some key points"
@@ -445,7 +445,7 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         {/* TODO: IMAGE - "ant farm?" */}
-        <Slide bgColor="secondary">
+        <Slide id="wrangling" bgColor="secondary">
           {/*
             - As I help wrangle some of this, I'd like to take you on a ...
             - (Tour through the trenches)
@@ -508,7 +508,7 @@ export default class extends React.Component {
             four <em>personas</em>
           </LonelyHeading>
         </Slide>
-        <Slide bgColor="primary">
+        <Slide id="personas" bgColor="primary">
           {/* TODO: Full square layout. */}
           {/* TODO: Background images? */}
           {/* TODO: Icons? */}
@@ -568,7 +568,7 @@ export default class extends React.Component {
               - TIP: Organize your code.
 
           */}
-        <Slide bgColor="tertiary">
+        <Slide id="architects" bgColor="tertiary">
           <Heading fit caps textColor="primary">
             Architects
           </Heading>
@@ -652,7 +652,7 @@ export default class extends React.Component {
             - Our structure is an example of how basic pages work (and how
               complicated that can be).
           */}
-        <Slide bgColor="tertiary">
+        <Slide id="homepage" bgColor="tertiary">
           <Heading fit caps textColor="primary">
             The Homepage
           </Heading>
@@ -787,7 +787,7 @@ export default class extends React.Component {
           * Architects - A "Real" Build
           * ---------------------------------------------------------------
           */}
-        <Slide bgImage={images.bgRailroadBridge}>
+        <Slide id="build" bgImage={images.bgRailroadBridge}>
           <Heading fit caps textColor="primary">
             <BlackBox>
               A "Real" Build
@@ -928,7 +928,7 @@ export default class extends React.Component {
                   - LESSON: Original decision to nest JS deeply in Java has been painful.
 
           */}
-        <Slide bgImage={images.bgTypewriterParts}>
+        <Slide id="org" bgImage={images.bgTypewriterParts}>
           <Heading fit caps textColor="primary">
             <BlackBox>
               Code Organization
@@ -993,7 +993,7 @@ export default class extends React.Component {
                 - Frontend dev's unfamiliar with large apps, code quality, etc.
 
           */}
-        <Slide bgColor="tertiary">
+        <Slide id="guides" bgColor="tertiary">
           <Heading fit caps textColor="primary">
             Guides
           </Heading>
@@ -1046,7 +1046,7 @@ export default class extends React.Component {
           * Guides - The Meta Team
           * ---------------------------------------------------------------
           */}
-        <Slide bgImage={images.bgHerdingBuffalo} bgDarken={0.30}>
+        <Slide id="meta" bgImage={images.bgHerdingBuffalo} bgDarken={0.30}>
           <Heading fit caps textColor="primary">
             The Meta Team
           </Heading>
@@ -1145,7 +1145,7 @@ export default class extends React.Component {
         </Slide>
 
         {/* ---------------------------------------------------------------
-          * Guides - Educate
+          * Guides - Education
           * ---------------------------------------------------------------
 
             - TIP: Education
@@ -1158,7 +1158,7 @@ export default class extends React.Component {
                 - Invest in track leads to take over education.
 
           */}
-        <Slide bgImage={images.bgClassroom} bgDarken={0.25}>
+        <Slide id="education" bgImage={images.bgClassroom} bgDarken={0.25}>
           <Heading fit caps textColor="primary">
             Education
           </Heading>
@@ -1208,7 +1208,7 @@ export default class extends React.Component {
                 - STORY: `Event.prototype.setPropagation` fiasco
 
           */}
-        <Slide bgImage={images.bgDraftsmen}>
+        <Slide id="review" bgImage={images.bgDraftsmen}>
           <Heading fit caps textColor="primary">
             <BlackBox bgDarken={0.4}>
               Code Review
@@ -1251,7 +1251,7 @@ export default class extends React.Component {
                 - Sometimes the meta team, sometimes exec / PM leadership
 
           */}
-        <Slide bgColor="tertiary">
+        <Slide id="gatekeepers" bgColor="tertiary">
           <Heading fit caps textColor="primary">
             Gatekeepers
           </Heading>
@@ -1316,7 +1316,7 @@ export default class extends React.Component {
                 - And do this ASAP
 
           */}
-        <Slide bgImage={images.bgGears}>
+        <Slide id="automate-quality" bgImage={images.bgGears}>
           <Heading fit caps textColor="primary">
             <BlackBox bgDarken={0.5}>
               Automate Quality
@@ -1382,7 +1382,7 @@ export default class extends React.Component {
                     - Solutions: iFrames, different domains
 
           */}
-        <Slide bgImage={images.bgLionTamer} bgDarken={0.30}>
+        <Slide id="risk" bgImage={images.bgLionTamer} bgDarken={0.30}>
           <Heading fit caps textColor="primary">
             Minimize Risk
           </Heading>
@@ -1466,7 +1466,7 @@ export default class extends React.Component {
                   really, really painful.
 
           */}
-        <Slide bgImage={images.bgMotorbike} bgDarken={0.50}>
+        <Slide id="performance" bgImage={images.bgMotorbike} bgDarken={0.50}>
           <Heading fit caps textColor="primary">
             Require Performance
           </Heading>
@@ -1555,7 +1555,7 @@ export default class extends React.Component {
                   very, very scared
 
           */}
-        <Slide bgColor="tertiary">
+        <Slide id="lifeguards" bgColor="tertiary">
           <Heading fit caps textColor="primary">
             Lifeguards
           </Heading>
@@ -1608,7 +1608,7 @@ export default class extends React.Component {
             - TIP: Monitoring: Observe spikes and idiosyncrasies.
 
           */}
-        <Slide bgImage={images.bgCaution} bgDarken={0.3}>
+        <Slide id="logging" bgImage={images.bgCaution} bgDarken={0.3}>
           <Heading fit caps textColor="primary">
             <BlackBox bgDarken={0.3}>
               Logging & Monitoring
@@ -1688,7 +1688,7 @@ export default class extends React.Component {
           * Lifeguards - Debugging, Source Maps
           * ---------------------------------------------------------------
           */}
-        <Slide>
+        <Slide id="debugging">
           <Heading fit caps>
             Debugging Support
           </Heading>
@@ -1765,8 +1765,7 @@ export default class extends React.Component {
           * Summary
           * ---------------------------------------------------------------
           */}
-
-        <Slide>
+        <Slide id="summary">
           <Heading size={3}>
             All together now
           </Heading>
@@ -1822,7 +1821,7 @@ export default class extends React.Component {
             - ... so without further ado, let's close with...
 
           */}
-        <Slide>
+        <Slide id="future">
           <Heading size={2}>
             Some parting thoughts on the <em>future</em>
           </Heading>
@@ -1896,7 +1895,7 @@ export default class extends React.Component {
         {/* ---------------------------------------------------------------
           * Thanks
           * --------------------------------------------------------------- */}
-        <Slide bgColor="secondary" bgImage={images.polygons}>
+        <Slide id="thanks" bgColor="secondary" bgImage={images.polygons}>
           <Heading bold fit caps textColor="primary"
                    style={{marginTop: "1em", marginBottom: "0.75em"}}>
             Thanks!
