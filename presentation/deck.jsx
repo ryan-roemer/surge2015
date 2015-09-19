@@ -37,7 +37,8 @@ const images = {
   bgClassroom: require("../assets/img/bg/slides/newoldstock-classroom-desks.jpg"),
   bgLionTamer: require("../assets/img/bg/slides/newoldstock-lion-tamer.jpg"),
   bgHerdingBuffalo: require("../assets/img/bg/slides/newoldstock-herding-buffalo.jpg"),
-  bgDraftsmen: require("../assets/img/bg/slides/newoldstock-draftsmen.jpg")
+  bgDraftsmen: require("../assets/img/bg/slides/newoldstock-draftsmen.jpg"),
+  bgGears: require("../assets/img/bg/slides/stocksnap-gears.jpg")
 };
 
 preloader([images.city]);
@@ -1312,9 +1313,11 @@ export default class extends React.Component {
                 - And do this ASAP
 
           */}
-        <Slide>
-          <Heading fit caps>
-            Quality Automation
+        <Slide bgImage={images.bgGears}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.5}>
+              Automate Quality
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide
