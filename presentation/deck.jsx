@@ -36,7 +36,8 @@ const images = {
   bgHorseWrangling: require("../assets/img/bg/slides/newoldstock-horse-wrangling.jpg"),
   bgClassroom: require("../assets/img/bg/slides/newoldstock-classroom-desks.jpg"),
   bgLionTamer: require("../assets/img/bg/slides/newoldstock-lion-tamer.jpg"),
-  bgHerdingBuffalo: require("../assets/img/bg/slides/newoldstock-herding-buffalo.jpg")
+  bgHerdingBuffalo: require("../assets/img/bg/slides/newoldstock-herding-buffalo.jpg"),
+  bgDraftsmen: require("../assets/img/bg/slides/newoldstock-draftsmen.jpg")
 };
 
 preloader([images.city]);
@@ -1203,9 +1204,11 @@ export default class extends React.Component {
                 - STORY: `Event.prototype.setPropagation` fiasco
 
           */}
-        <Slide>
-          <Heading fit caps>
-            Code Review
+        <Slide bgImage={images.bgDraftsmen}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.4}>
+              Code Review
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide
