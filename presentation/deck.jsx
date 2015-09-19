@@ -39,7 +39,9 @@ const images = {
   bgHerdingBuffalo: require("../assets/img/bg/slides/newoldstock-herding-buffalo.jpg"),
   bgDraftsmen: require("../assets/img/bg/slides/newoldstock-draftsmen.jpg"),
   bgGears: require("../assets/img/bg/slides/stocksnap-gears.jpg"),
-  bgSpeedometer: require("../assets/img/bg/slides/pexels-speedometer.jpg")
+  // bgSpeedometer: require("../assets/img/bg/slides/pexels-speedometer.jpg"),
+  bgMotorbike: require("../assets/img/bg/slides/pexels-motorbike.jpg"),
+  bgCaution: require("../assets/img/bg/slides/pexels-caution-sign.jpg")
 };
 
 preloader([images.city]);
@@ -1464,11 +1466,9 @@ export default class extends React.Component {
                   really, really painful.
 
           */}
-        <Slide bgImage={images.bgSpeedometer}>
+        <Slide bgImage={images.bgMotorbike} bgDarken={0.50}>
           <Heading fit caps textColor="primary">
-            <BlackBox bgDarken={0.75}>
-              Require Performance
-            </BlackBox>
+            Require Performance
           </Heading>
         </Slide>
         <Slide>
@@ -1608,9 +1608,11 @@ export default class extends React.Component {
             - TIP: Monitoring: Observe spikes and idiosyncrasies.
 
           */}
-        <Slide>
-          <Heading fit caps>
-            Logging & Monitoring
+        <Slide bgImage={images.bgCaution} bgDarken={0.3}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.3}>
+              Logging & Monitoring
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide>
