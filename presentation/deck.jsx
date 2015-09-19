@@ -38,7 +38,8 @@ const images = {
   bgLionTamer: require("../assets/img/bg/slides/newoldstock-lion-tamer.jpg"),
   bgHerdingBuffalo: require("../assets/img/bg/slides/newoldstock-herding-buffalo.jpg"),
   bgDraftsmen: require("../assets/img/bg/slides/newoldstock-draftsmen.jpg"),
-  bgGears: require("../assets/img/bg/slides/stocksnap-gears.jpg")
+  bgGears: require("../assets/img/bg/slides/stocksnap-gears.jpg"),
+  bgSpeedometer: require("../assets/img/bg/slides/pexels-speedometer.jpg")
 };
 
 preloader([images.city]);
@@ -1463,9 +1464,11 @@ export default class extends React.Component {
                   really, really painful.
 
           */}
-        <Slide>
-          <Heading fit caps>
-            Require Performance
+        <Slide bgImage={images.bgSpeedometer}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.75}>
+              Require Performance
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide>
@@ -1612,29 +1615,37 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <LonelyHeading>
-            Frontend code executes <Point>in the wild</Point>
+            Your code <em>executes</em> & <Point>fails</Point>
           </LonelyHeading>
           <LonelyHeading>
             on a variety of <Point>browsers</Point>
           </LonelyHeading>
-        </Slide>
-        <Slide>
           <LonelyHeading>
-            You need to <Point>know</Point>
-          </LonelyHeading>
-          <LonelyHeading>
-            when things go <Point>wrong</Point>
+            out <em>in the wild</em>
           </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
-            "Hook into <b>chat channels</b> &amp; <b>alert systems</b>"
+            "Yes, log on the frontend"
           )}>
           <LonelyHeading>
-            Log <Point>errors</Point> & <Point>messages</Point> remotely
+            <Point>Log</Point> & <Point>capture</Point> everything
+          </LonelyHeading>
+        </Slide>
+        <Slide>
+          <LonelyHeading>
+            Get <Point>errors</Point> & <Point>messages</Point>
           </LonelyHeading>
           <LonelyHeading>
-            and <Point>monitor</Point> & <Point>alert</Point>
+            to a <Point>remote store</Point>
+          </LonelyHeading>
+        </Slide>
+        <Slide>
+          <LonelyHeading>
+            And then <Point>aggregate</Point>,
+          </LonelyHeading>
+          <LonelyHeading>
+            <Point>report</Point>, & <Point>alert</Point>
           </LonelyHeading>
         </Slide>
         <Slide>
