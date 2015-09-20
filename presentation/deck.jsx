@@ -561,12 +561,6 @@ export default class extends React.Component {
                     - Code must be small and avoid duplication
                     - The technology ecosystem changes at a ridiculous rate
 
-              - CASE STUDY: The homepage is really complicated.
-
-              - TIP: You need a real "build" now.
-
-              - TIP: Organize your code.
-
           */}
         <Slide id="architects" bgColor="tertiary">
           <Heading fit caps textColor="primary">
@@ -620,13 +614,6 @@ export default class extends React.Component {
               "<Point>Cowboy</Point>" legacy vs. large scale organization
             </ListItem>
           </List>
-          {/*
-            - JS is flexible to a fault.
-            - Developers and library monkey patch internals
-            - The code ecosystem evolves at a ludicrously fast rate
-            - We're dealing with the historical warts of the language
-            - And a touch transition period to language evolutions like ES6 and ES7
-            */}
         </Slide>
         <Slide>
           <LonelyHeading>
@@ -657,14 +644,14 @@ export default class extends React.Component {
             The Homepage
           </Heading>
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "This is the homepage",
+            "Let's look at what goes into the <b>desktop</b> site"
+          )}>
           <Link href="http://walmart.com">
             <Image src={images.wmHomepage} width="80%"/>
           </Link>
-          {/*
-            - This is the homepage.
-            - Let's look at what goes into it.
-            */}
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -726,17 +713,6 @@ export default class extends React.Component {
               </List>
             </Fill>
           </Layout>
-          {/*
-            - 28 various scripts on the page in HTML
-            - More can be loaded by JS
-            - 2 website core: config-map, core-bundle.
-            - 2 from CDN infrastructure
-            - 2 internal ads integration
-            - 2 Google ads
-            - 1 fonts
-            - 1 polyfill
-            - 18 inline script tags.
-            */}
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -768,11 +744,6 @@ export default class extends React.Component {
             <ListItem><Point>4</Point> primary entry points</ListItem>
             <ListItem><Point>2</Point> deferred entry points</ListItem>
           </List>
-          {/*
-            - 6 entry points (2 deferred).
-            - 1 shared library
-            - Caching analysis (for portion of shared library used)
-            */}
         </Slide>
         <Slide>
           <Heading fit caps>
@@ -1829,21 +1800,13 @@ export default class extends React.Component {
         <Slide
           notes={notes(
             "Uncomfortable, but necessary",
-            "A 2 year old site is already 'legacy'",
+            "<b>STORY</b>: A 2 year old site is already 'legacy'",
             "<b>STORY</b>: React: server-side render, efficient DOM"
           )}>
           <LonelyHeading>
             Embrace <Point>change</Point>
           </LonelyHeading>
           <Image src={images.logoReact} />
-          {/*
-            - TIP: Embrace change, even if uncomfortable.
-                - Most of the code in a huge application will be aging / legacy
-                  by the time you actually ship it.
-                - Keep up with the times, and re-examine what you should be doing.
-                    - And especially for JavaScript.
-                - STORY: React: server-side render, efficient DOM
-            */}
         </Slide>
         <Slide
           notes={notes(
@@ -1857,33 +1820,20 @@ export default class extends React.Component {
             <Point>infrastructure</Point> & <Point>organization</Point>
           </LonelyHeading>
           <Image src={images.logoWebpack} />
-          {/*
-            - TIP: Reevaluate / refactor infrastructure & organization
-
-            - TIP: Many, many small repositories
-                - Components
-                - Apps
-                - Infrastructure
-
-            - TIP: Lessen the direct role of Meta teams
-                - Opt for "guidance"
-                - And autonomy for tracks sooner.
-            */}
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "Forcing a <b>full stop</b> doesn't work."
+          )}>
           <LonelyHeading>
             Have a <Point>transition strategy</Point>
           </LonelyHeading>
-          {/*
-            - TIP: Transition strategies.
-                - So important to support teams through transitions.
-            */}
         </Slide>
-        <Slide bgColor="secondary" bgImage={images.polygons}>
-          {/*
-            - ... and that's about it.
-            - So here's wishing you...
-            */}
+        <Slide bgImage={images.polygons} bgColor="secondary"
+          notes={notes(
+            "... and that's about it",
+            "So here's wishing you..."
+          )}>
           <Heading bold fit caps textColor="primary">
             Happy
           </Heading>
