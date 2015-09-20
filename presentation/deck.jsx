@@ -112,6 +112,7 @@ Point.propTypes = {
 // Blackbox for white over images
 class BlackBox extends React.Component {
   render() {
+    const Tag = this.props.tag || "span";
     const bgDarken = typeof this.props.bgDarken !== "undefined" ? this.props.bgDarken : 0.75;
     const styles = {
       background: `rgba(0, 0, 0, ${bgDarken})`,
@@ -121,14 +122,15 @@ class BlackBox extends React.Component {
     };
 
     return (
-      <span style={styles}>
+      <Tag style={styles}>
         {this.props.children}
-      </span>
+      </Tag>
     );
   }
 }
 
 BlackBox.propTypes = {
+  tag: React.PropTypes.string,
   bgDarken: React.PropTypes.number,
   children: React.PropTypes.node
 };
@@ -445,28 +447,27 @@ export default class extends React.Component {
           * Ryan & Meta JS
           * ---------------------------------------------------------------
           */}
-        {/* TODO: IMAGE - "ant farm?" */}
-        <Slide id="wrangling" bgColor="secondary">
-          {/*
-            - As I help wrangle some of this, I'd like to take you on a ...
-            - (Tour through the trenches)
-            */}
+        <Slide id="wrangling" bgImage={images.bgHorseWrangling} bgDarken={0.4}
+          notes={notes(
+            "As I help wrangle some of this, I'd like to take you on a ..."
+          )}>
           <Heading fit caps textColor="primary">
             A Tour Through
           </Heading>
-          <Heading fit caps textColor="tertiary">
+          <Heading fit caps textColor="lightestGray">
            the Trenches
           </Heading>
         </Slide>
-        {/* TODO: IMAGE - "ant farm?" (see above) */}
-        <Slide bgColor="secondary"
+        <Slide bgImage={images.bgHorseWrangling} bgDarken={0.4}
           notes={notes(
             "A software development consultancy in Seattle, WA",
             "Help teams from startups to Fortune 500 companies",
             "One of our largest clients"
           )}>
           <Link href="http://formidablelabs.com">
-            <Image width="100%" src={images.logoRed}/>
+            <BlackBox tag="div">
+              <Image width="100%" src={images.logoRed}/>
+            </BlackBox>
           </Link>
         </Slide>
         <Slide
