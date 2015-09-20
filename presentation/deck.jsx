@@ -41,7 +41,8 @@ const images = {
   bgGears: require("../assets/img/bg/slides/stocksnap-gears.jpg"),
   // bgSpeedometer: require("../assets/img/bg/slides/pexels-speedometer.jpg"),
   bgMotorbike: require("../assets/img/bg/slides/pexels-motorbike.jpg"),
-  bgCaution: require("../assets/img/bg/slides/pexels-caution-sign.jpg")
+  bgCaution: require("../assets/img/bg/slides/pexels-caution-sign.jpg"),
+  bgAstronautEarth: require("../assets/img/bg/slides/newoldstock-astronaut-earth.jpg")
 };
 
 preloader([images.city]);
@@ -1659,9 +1660,11 @@ export default class extends React.Component {
           * Lifeguards - Debugging, Source Maps
           * ---------------------------------------------------------------
           */}
-        <Slide id="debugging">
-          <Heading fit caps>
-            Debugging Support
+        <Slide id="debugging" bgImage={images.bgAstronautEarth} bgDarken={0.25}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.35}>
+              Debugging Support
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide>
