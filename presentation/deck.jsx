@@ -45,7 +45,8 @@ const images = {
   bgAstronautEarth: require("../assets/img/bg/slides/newoldstock-astronaut-earth.jpg")
 };
 
-preloader([images.city]);
+// Preload all images
+preloader(Object.keys(images));
 
 // Components
 // ----------
