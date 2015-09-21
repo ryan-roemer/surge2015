@@ -600,7 +600,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={4} textColor="red">
-            Architecture & JS Challenges
+            Architecture Challenges
           </Heading>
           <List>
             <ListItem>
@@ -850,7 +850,7 @@ export default class extends React.Component {
             "<b>STORY</b>: PCI compliance hashing architecture"
           )}>
           <LonelyHeading>
-            Wherever possible, make <em>development</em>
+            Make <em>development</em>
           </LonelyHeading>
           <LonelyHeading>
             <Point>identical</Point> to <em>production</em>
