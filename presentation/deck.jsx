@@ -32,10 +32,22 @@ const images = {
   wmScripts: require("../assets/img/wml/scripts-homepage.png"),
   bgPattern: require("../assets/img/bg/slides/pattern-fancypants.jpg"),
   bgRailroadBridge: require("../assets/img/bg/slides/unsplash-railroad-bridge.jpg"),
-  bgTypewriterParts: require("../assets/img/bg/slides/unsplash-typewriter-parts.jpg")
+  bgTypewriterParts: require("../assets/img/bg/slides/unsplash-typewriter-parts.jpg"),
+  bgCowboyPilot: require("../assets/img/bg/slides/newoldstock-x1a-cowboy-pilot.jpg"),
+  bgHorseWrangling: require("../assets/img/bg/slides/newoldstock-horse-wrangling.jpg"),
+  bgClassroom: require("../assets/img/bg/slides/newoldstock-classroom-desks.jpg"),
+  bgLionTamer: require("../assets/img/bg/slides/newoldstock-lion-tamer.jpg"),
+  bgHerdingBuffalo: require("../assets/img/bg/slides/newoldstock-herding-buffalo.jpg"),
+  bgDraftsmen: require("../assets/img/bg/slides/newoldstock-draftsmen.jpg"),
+  bgGears: require("../assets/img/bg/slides/stocksnap-gears.jpg"),
+  // bgSpeedometer: require("../assets/img/bg/slides/pexels-speedometer.jpg"),
+  bgMotorbike: require("../assets/img/bg/slides/pexels-motorbike.jpg"),
+  bgCaution: require("../assets/img/bg/slides/pexels-caution-sign.jpg"),
+  bgAstronautEarth: require("../assets/img/bg/slides/newoldstock-astronaut-earth.jpg")
 };
 
-preloader([images.city]);
+// Preload all images
+preloader(Object.keys(images));
 
 // Components
 // ----------
@@ -61,6 +73,29 @@ class CustomDeck extends Deck {
   }
 }
 
+// Non-bolded heading.
+const getLonelyHeadingStyles = function () {
+  /*eslint-disable no-invalid-this*/
+  const styles = Heading.Mixin.getStyles.call(this);
+  styles.fontWeight = "normal";
+  return styles;
+};
+
+class LonelyHeading extends Heading {
+  constructor(props) {
+    super(props);
+    this.getStyles = getLonelyHeadingStyles;
+  }
+}
+
+LonelyHeading.defaultProps = {
+  size: 4
+};
+
+LonelyHeading.Mixin = {
+  getStyles: getLonelyHeadingStyles
+};
+
 // A meaningful "point" in text.
 class Point extends React.Component {
   render() {
@@ -79,24 +114,28 @@ Point.propTypes = {
 // Blackbox for white over images
 class BlackBox extends React.Component {
   render() {
+    const Tag = this.props.tag || "span";
     const bgDarken = typeof this.props.bgDarken !== "undefined" ? this.props.bgDarken : 0.75;
+    const bgRgb = typeof this.props.bgRgb !== "undefined" ? this.props.bgRgb : [0, 0, 0];
     const styles = {
-      background: `rgba(0, 0, 0, ${bgDarken})`,
+      background: `rgba(${bgRgb.join(",")}, ${bgDarken})`,
       borderRadius: "0.2em",
       padding: "0.0em 0.2em",
       margin: "0"
     };
 
     return (
-      <span style={styles}>
+      <Tag style={styles}>
         {this.props.children}
-      </span>
+      </Tag>
     );
   }
 }
 
 BlackBox.propTypes = {
+  tag: React.PropTypes.string,
   bgDarken: React.PropTypes.number,
+  bgRgb: React.PropTypes.array,
   children: React.PropTypes.node
 };
 
@@ -159,7 +198,7 @@ export default class extends React.Component {
         {/* ---------------------------------------------------------------
           * Title
           * --------------------------------------------------------------- */}
-        <Slide bgImage={images.polygons}>
+        <Slide id="title" bgImage={images.polygons}>
           <Text bold fit caps textColor="primary" textFont="primary">
             Wrangling
           </Text>
@@ -200,53 +239,53 @@ export default class extends React.Component {
 
             - Enterprise's time has come. And we're going to talk it through.
           */}
-        <Slide
+        <Slide id="intro"
           notes={notes(
             "Browsers are getting faster and better all the time",
             "Standards and technologies are exploding everywhere"
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             The web is <em>massively</em> moving to the <em>frontend</em>
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Waiting for page refreshes are a thing of the past",
             "Single Page Applications deliver quick, slick experiences"
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             Users want <em>rich</em> and <em>seamless</em> experiences
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Modern JavaScript is flexible and fast to develop"
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             Product owners want <em>fast</em> and <em>nimble</em> apps
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "JavaScript is not really optional anymore in modern web apps"
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             Browser apps are now <em>business critical</em>
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             And, yes, even for the <em>enterprise</em>
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "JavaScript has won",
             "And we are destined for a web application world of..."
           )}>
-          <Heading size={2}>
+          <LonelyHeading size={2}>
             ... which means
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide bgColor="tertiary" bgImage={images.polygonsGray}
           notes={notes(
@@ -280,15 +319,15 @@ export default class extends React.Component {
                 - Large amount of JavaScript code
                 - Large frontend development teams
           */}
-        <Slide
+        <Slide id="ecommerce"
           notes={notes(
             "The full scope of massive frontend web apps is <b>huge</b>",
             "We’re going to need to focus this talk on some key points"
           )}>
-          <Heading size={4} textColor="secondary">
+          <LonelyHeading textColor="secondary">
             Let{"’"}s dig into some large frontends at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
-          </Heading>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
@@ -301,6 +340,7 @@ export default class extends React.Component {
         </Slide>
         <Slide
           notes={notes(
+            "Sales figures for Global eCommerce division",
             "3472 page views / second for Thanksgiving - Cyber Monday",
             "Cyber Monday 2014 orders surpassed <em>all previous records</em>"
           )}>
@@ -328,10 +368,6 @@ export default class extends React.Component {
               billion</Point> page views</Link> for Thanksgiving - Cyber Monday 2014
             </ListItem>
           </List>
-          {/*
-            - 70% mobile for Thanksgiving - Cyber Monday 2014
-            - 3472 page views / second estimate from 1.5 billion 2014 number.
-            */}
         </Slide>
         <Slide
           notes={notes(
@@ -415,62 +451,56 @@ export default class extends React.Component {
           * Ryan & Meta JS
           * ---------------------------------------------------------------
           */}
-        {/* TODO: IMAGE - "ant farm?" */}
-        <Slide bgColor="secondary" bgImage={images.bgPattern}>
-          {/*
-            - As I help wrangle some of this, I'd like to take you on a ...
-            - (Tour through the trenches)
-            */}
+        <Slide id="wrangling" bgImage={images.bgHorseWrangling} bgDarken={0.4}
+          notes={notes(
+            "As I help wrangle some of this, I'd like to take you on a ..."
+          )}>
           <Heading fit caps textColor="primary">
             A Tour Through
           </Heading>
-          <Heading fit caps textColor="tertiary">
+          <Heading fit caps textColor="lightestGray">
            the Trenches
           </Heading>
         </Slide>
-        {/* TODO: IMAGE - "ant farm?" (see above) */}
-        <Slide>
+        <Slide bgImage={images.bgHorseWrangling} bgDarken={0.4}
+          transition={[]}
+          notes={notes(
+            "A software development consultancy in Seattle, WA",
+            "Help teams from startups to Fortune 500 companies",
+            "One of our largest clients"
+          )}>
           <Link href="http://formidablelabs.com">
-            <Image width="100%" src={images.logoFormidable}/>
+            <BlackBox tag="div" bgRgb={[255, 255, 255]} bgDarken={0.8}>
+              <Image width="100%" src={images.logoFormidable}/>
+            </BlackBox>
           </Link>
-          {/*
-            - I work for Formidable Labs.
-            - A software development consultancy in Seattle, WA.
-            - Help teams from startups to Fortune 500 companies.
-            - One of our largest clients.
-            */}
         </Slide>
-        <Slide>
-          <Heading size={4}>
+        <Slide
+          notes={notes(
+            "Started at the beginning of the redesign",
+            "Authored the base parts of the frontend infrastructure"
+          )}>
+          <LonelyHeading>
             My <em>wrangling adventures</em>
-          </Heading>
-          <Heading size={4}>
+          </LonelyHeading>
+          <LonelyHeading>
             as the <em>JavaScript lead</em> for
-          </Heading>
-          <Heading size={4}>
+          </LonelyHeading>
+          <LonelyHeading>
             the website & dev teams
-          </Heading>
-          {/*
-            - TODO: Maybe an image of my face? Or a twitter handle?
-
-            - Started with the project near the beginning of the redesign.
-            - Authored most parts of the frontend infrastructure.
-            - Point person on all things JS-related wrt production, other teams, etc.
-            - ... and here are some of my experiences helping support and ship the website.
-            */}
+          </LonelyHeading>
         </Slide>
-        <Slide>
-          {/*
-            - So many moving parts, details and complexities.
-            - I'm going to focus on just a few of things we've found critical
-              to keeping our large scale applications up and running.
-            */}
-          <Heading size={4}>
+        <Slide
+          notes={notes(
+            "So many moving parts, details and complexities.",
+            "Focus on a handful of critical issues to keeping the site up & running"
+          )}>
+          <LonelyHeading>
             A few battle-tested
-          </Heading>
-          <Heading size={4}>
+          </LonelyHeading>
+          <LonelyHeading>
             <em>tips</em> from the <em>field</em>...
-          </Heading>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -478,15 +508,14 @@ export default class extends React.Component {
           * ---------------------------------------------------------------
           */}
         <Slide>
-          <Heading size={4}>
+          <LonelyHeading>
             ... with a focus on
-          </Heading>
-          <Heading size={4}>
+          </LonelyHeading>
+          <LonelyHeading>
             four <em>personas</em>
-          </Heading>
-          {/**/}
+          </LonelyHeading>
         </Slide>
-        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
+        <Slide id="personas" bgColor="tertiary" bgImage={images.polygonsGray}>
           {/* TODO: Full square layout. */}
           {/* TODO: Background images? */}
           {/* TODO: Icons? */}
@@ -551,27 +580,20 @@ export default class extends React.Component {
                     - Code must be small and avoid duplication
                     - The technology ecosystem changes at a ridiculous rate
 
-              - CASE STUDY: The homepage is really complicated.
-
-              - TIP: You need a real "build" now.
-
-              - TIP: Organize your code.
-
           */}
-        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
+        <Slide id="architects" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Architects
           </Heading>
         </Slide>
         <Slide>
-          <Heading size={4} textColor="secondary">
+          <LonelyHeading>
             Plan & build a <em>strong foundation</em>
-          </Heading>
-          {/**/}
+          </LonelyHeading>
         </Slide>
         <Slide>
           <Heading size={3}>
-            Architects & Architecture
+            Architects
           </Heading>
           <List>
             <ListItem>
@@ -582,8 +604,7 @@ export default class extends React.Component {
             </ListItem>
           </List>
         </Slide>
-        {/* TODO: Add wild west background image */}
-        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
+        <Slide bgImage={images.bgCowboyPilot} bgDarken={0.35}>
           <Heading bold fit caps textColor="lightestGray">
             The Fundamental Challenge:
           </Heading>
@@ -596,40 +617,33 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={4} textColor="red">
-            Architecture & JS Challenges
+            Architecture Challenges
           </Heading>
           <List>
             <ListItem>
-              JS is easy to do <Point>very, very wrong</Point> and hard to manage
-            </ListItem>
-            <ListItem>
-              All JS interacts in <Point>one execution environment</Point>
+              Browser is a single <Point>execution environment</Point>
             </ListItem>
             <ListItem>
               Code <Point>size / duplication</Point> is critical
             </ListItem>
             <ListItem>
-              JS has a <Point>cowboy legacy</Point> that doesn{"'"}t play well in large apps
+              Hard to <Point>manage</Point>, easy to do <Point>wrong</Point>
+            </ListItem>
+            <ListItem>
+              "<Point>Cowboy</Point>" legacy vs. large scale organization
             </ListItem>
           </List>
-          {/*
-            - JS is flexible to a fault.
-            - Developers and library monkey patch internals
-            - The code ecosystem evolves at a ludicrously fast rate
-            - We're dealing with the historical warts of the language
-            - And a touch transition period to language evolutions like ES6 and ES7
-            */}
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Let{"'"}s look at the
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             architectural <Point>complexities</Point>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             of just <Point>one page</Point>...
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -644,19 +658,19 @@ export default class extends React.Component {
             - Our structure is an example of how basic pages work (and how
               complicated that can be).
           */}
-        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
+        <Slide id="homepage" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             The Homepage
           </Heading>
         </Slide>
-        <Slide>
+        <Slide
+          notes={notes(
+            "This is the homepage",
+            "Let's look at what goes into the <b>desktop</b> site"
+          )}>
           <Link href="http://walmart.com">
             <Image src={images.wmHomepage} width="80%"/>
           </Link>
-          {/*
-            - This is the homepage.
-            - Let's look at what goes into it.
-            */}
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -718,17 +732,6 @@ export default class extends React.Component {
               </List>
             </Fill>
           </Layout>
-          {/*
-            - 28 various scripts on the page in HTML
-            - More can be loaded by JS
-            - 2 website core: config-map, core-bundle.
-            - 2 from CDN infrastructure
-            - 2 internal ads integration
-            - 2 Google ads
-            - 1 fonts
-            - 1 polyfill
-            - 18 inline script tags.
-            */}
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -747,7 +750,7 @@ export default class extends React.Component {
               });
             `)}
             margin="20px auto"
-            style={{fontSize: "1.5em"}}
+            style={{fontSize: "2em"}}
           />
         </Slide>
         <Slide>
@@ -760,11 +763,6 @@ export default class extends React.Component {
             <ListItem><Point>4</Point> primary entry points</ListItem>
             <ListItem><Point>2</Point> deferred entry points</ListItem>
           </List>
-          {/*
-            - 6 entry points (2 deferred).
-            - 1 shared library
-            - Caching analysis (for portion of shared library used)
-            */}
         </Slide>
         <Slide>
           <Heading fit caps>
@@ -779,7 +777,7 @@ export default class extends React.Component {
           * Architects - A "Real" Build
           * ---------------------------------------------------------------
           */}
-        <Slide bgImage={images.bgRailroadBridge}>
+        <Slide id="build" bgImage={images.bgRailroadBridge}>
           <Heading fit caps textColor="primary">
             <BlackBox>
               A "Real" Build
@@ -859,21 +857,21 @@ export default class extends React.Component {
             "<b>STORY</b>: Keep dev. builds in-memory",
             "<b>STORY</b>: Move CDN tool to pure JS (b/c Java was slow)"
           )}>
-          <Text>
+          <LonelyHeading>
             Keep prod & dev builds <Point>blazingly fast</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY</b>: Differences <b>will</b> cause bugs. (Assets for Thanksgiving)",
             "<b>STORY</b>: PCI compliance hashing architecture"
           )}>
-          <Text>
-            Wherever possible, make <em>development</em>
-          </Text>
-          <Text>
+          <LonelyHeading>
+            Make <em>development</em>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>identical</Point> to <em>production</em>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
           <Heading size={3} textColor="red">
@@ -920,7 +918,7 @@ export default class extends React.Component {
                   - LESSON: Original decision to nest JS deeply in Java has been painful.
 
           */}
-        <Slide bgImage={images.bgTypewriterParts}>
+        <Slide id="org" bgImage={images.bgTypewriterParts}>
           <Heading fit caps textColor="primary">
             <BlackBox>
               Code Organization
@@ -928,9 +926,12 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Plan your <Point>repository structure</Point>
-          </Text>
+          </LonelyHeading>
+          <LonelyHeading>
+            <Point>1</Point> &rarr; <Point>14</Point> &rarr; <Point>many</Point> repos
+          </LonelyHeading>
           {/*
             - You are going to have an enormous amount of code. It's important to structure
               properly and plan it **up front**.
@@ -949,9 +950,9 @@ export default class extends React.Component {
             */}
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Have a bias for <Point>small</Point> & <Point>flexible</Point>
-          </Text>
+          </LonelyHeading>
           {/*
             - STORY: Heading towards many, many small repositories
                 - Per component
@@ -962,21 +963,6 @@ export default class extends React.Component {
 
             - BAD: Updating / maintaining infrastructure across repositories
             - BAD: Our transition is going to be painful and long.
-            */}
-        </Slide>
-        <Slide>
-          <Text>
-            Decide when to support
-          </Text>
-          <Text>
-            <Point>unconventional</Point> code organization
-          </Text>
-          {/*
-            - STORY: Track JavaScript lives in deeply nested Java paths for the
-              benefit of Java IDEs.
-                - GOOD: Java developers that rely heavily on IDEs like it.
-                - BAD: Dramatically increased the build complexity.
-                - BAD: Not consistent across projects.
             */}
         </Slide>
 
@@ -997,7 +983,7 @@ export default class extends React.Component {
                 - Frontend dev's unfamiliar with large apps, code quality, etc.
 
           */}
-        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
+        <Slide id="guides" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Guides
           </Heading>
@@ -1050,8 +1036,8 @@ export default class extends React.Component {
           * Guides - The Meta Team
           * ---------------------------------------------------------------
           */}
-        <Slide>
-          <Heading fit caps>
+        <Slide id="meta" bgImage={images.bgHerdingBuffalo} bgDarken={0.30}>
+          <Heading fit caps textColor="primary">
             The Meta Team
           </Heading>
         </Slide>
@@ -1059,14 +1045,14 @@ export default class extends React.Component {
           notes={notes(
             "Here's the real problem..."
           )}>
-          <Text>Code from <Point>multiple teams</Point></Text>
-          <Text>all combined on <Point>one page</Point></Text>
+          <LonelyHeading>Code from <Point>multiple teams</Point></LonelyHeading>
+          <LonelyHeading>all combined on <Point>one page</Point></LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY - DRY</b>: Had 3 different image carousels emerging"
           )}>
-          <Text>These folks represent the <Point>whole page</Point></Text>
+          <LonelyHeading>These folks represent the <Point>whole page</Point></LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
@@ -1083,7 +1069,7 @@ export default class extends React.Component {
               Lead <Point>code reviews</Point> for consistency / DRY
             </ListItem>
             <ListItem>
-              Develop common <Point>utilites</Point> & the <Point>deployment</Point> infrastructure
+              Develop common <Point>utilities</Point> & the <Point>deployment</Point> infrastructure
             </ListItem>
           </List>
         </Slide>
@@ -1149,7 +1135,7 @@ export default class extends React.Component {
         </Slide>
 
         {/* ---------------------------------------------------------------
-          * Guides - Educate
+          * Guides - Education
           * ---------------------------------------------------------------
 
             - TIP: Education
@@ -1162,31 +1148,31 @@ export default class extends React.Component {
                 - Invest in track leads to take over education.
 
           */}
-        <Slide>
-          <Heading fit caps>
+        <Slide id="education" bgImage={images.bgClassroom} bgDarken={0.25}>
+          <Heading fit caps textColor="primary">
             Education
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Continually write <Point>living</Point> documentation,
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>close to the code</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Take a <Point>"hands on approach"</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Invest in <Point>rising developers</Point> &
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             spread knowledge <Point>back to teams</Point>
-          </Text>
+          </LonelyHeading>
           {/*
             - STORY: Had to write a lot of test skeletons and jump in branches
               until track leads / devs finally got off the ground, then was
@@ -1212,9 +1198,11 @@ export default class extends React.Component {
                 - STORY: `Event.prototype.setPropagation` fiasco
 
           */}
-        <Slide>
-          <Heading fit caps>
-            Code Review
+        <Slide id="review" bgImage={images.bgDraftsmen}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.4}>
+              Code Review
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide
@@ -1222,23 +1210,23 @@ export default class extends React.Component {
             "Caught <b>so many bugs</b> in track/meta reviews",
             "<b>STORY</b>: Bad timing on category id going to prod"
           )}>
-          <Text>
+          <LonelyHeading>
             All code gets <Point>substantive</Point> &
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>meta</Point> review
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY</b>: `Event.prototype.stopPropagation` breaking code"
           )}>
-          <Text>
+          <LonelyHeading>
             Including all <Point>third party</Point> &
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>internal to the org</Point> vendor code
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1253,7 +1241,7 @@ export default class extends React.Component {
                 - Sometimes the meta team, sometimes exec / PM leadership
 
           */}
-        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
+        <Slide id="gatekeepers" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Gatekeepers
           </Heading>
@@ -1318,36 +1306,41 @@ export default class extends React.Component {
                 - And do this ASAP
 
           */}
-        <Slide>
-          <Heading fit caps>
-            Quality Automation
+        <Slide id="automate-quality" bgImage={images.bgGears}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.5}>
+              Automate Quality
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide
           notes={notes(
             "The low-hanging fruit, easiest quality checks to do"
           )}>
-          <Text>
-            <Point>Static checking</Point> (eslint, jshint, jscs, etc.)
-          </Text>
+          <LonelyHeading>
+            <Point>Static checking</Point>
+          </LonelyHeading>
+          <LonelyHeading>
+            (eslint, jshint, jscs, etc.)
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Easy to write and run",
             "Brittle over time"
           )}>
-          <Text>
+          <LonelyHeading>
             Clientside <Point>unit</Point> tests
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Complement to unit tests",
             "Slow to run, but the 'real deal'"
           )}>
-          <Text>
+          <LonelyHeading>
             <Point>Integration</Point> / <Point>E2E</Point> tests
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
@@ -1355,17 +1348,17 @@ export default class extends React.Component {
             "Devs 'buy' exceptions with test tickets",
             "Goal is really just 'execute once'"
           )}>
-          <Text>
+          <LonelyHeading>
             <Point>Code coverage</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Continuous integration _is_ 'the gate'"
           )}>
-          <Text>
+          <LonelyHeading>
             <Point>Continuous integration</Point> (CI)
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1379,24 +1372,24 @@ export default class extends React.Component {
                     - Solutions: iFrames, different domains
 
           */}
-        <Slide>
-          <Heading fit caps>
+        <Slide id="risk" bgImage={images.bgLionTamer} bgDarken={0.30}>
+          <Heading fit caps textColor="primary">
             Minimize Risk
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Learn / identify your biggest <Point>risk areas</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Previous protections: code review, tests, etc.",
             "<b>Architect</b> protection as well"
           )}>
-          <Text>
-            <Point>Protect</Point> youself wherever possible
-          </Text>
+          <LonelyHeading>
+            <Point>Protect</Point> yourself wherever possible
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
@@ -1404,24 +1397,25 @@ export default class extends React.Component {
             "<b>STORY</b>: Custom HTML, deadlines, quality, no review",
             "<b>Protect</b>: iframe, different domains, etc."
           )}>
-          <Text>
+          <LonelyHeading>
             Architecture risks:
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>Injected HTML/CSS/JS</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Code pattern risks:
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>Defer & pray</Point>
-          </Text>
+          </LonelyHeading>
           <CodePane
             lang="javascript"
             source={strip(`
-              var HOPEFULLY_ENOUGH_TIME = 2000; // I'm guessing...
+              // I'm guessing...
+              var HOPEFULLY_ENOUGH_TIME = 2000;
 
               // Wait until ready for next step.
               setTimeout(function () {
@@ -1429,16 +1423,16 @@ export default class extends React.Component {
               }, HOPEFULLY_ENOUGH_TIME);
             `)}
             margin="20px auto"
-            style={{fontSize: "1.5em"}}
+            style={{fontSize: "2em"}}
           />
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Deployment / process risks:
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>"Hotfeatures"</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1462,76 +1456,76 @@ export default class extends React.Component {
                   really, really painful.
 
           */}
-        <Slide>
-          <Heading fit caps>
+        <Slide id="performance" bgImage={images.bgMotorbike} bgDarken={0.50}>
+          <Heading fit caps textColor="primary">
             Require Performance
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Frontend code must be <Point>small</Point> & <Point>fast</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY</b>: We tried doing this 2 years in. Really tough."
           )}>
-          <Text>
-            Teams will be <Point>"feature-driven"</Point>
-          </Text>
-          <Text>
+          <LonelyHeading>
+            Teams are <Point>"feature-driven"</Point>
+          </LonelyHeading>
+          <LonelyHeading>
             unless performance is <Point>enforced</Point> & <Point>required</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Patrick Meenan's Surge talk on Web App perf"
           )}>
-          <Text>
+          <LonelyHeading>
             Enforce with <Point>audits</Point>
-          </Text>
+          </LonelyHeading>
           <hr style={{width: "75%"}} />
-          <Text>
+          <LonelyHeading>
             <Link href="http://surge.omniti.com/2015?patrick-meenan">
               "Web App Performance Measurement, Monitoring and Resiliency"
             </Link>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Link href="http://www.webpagetest.org/">
               www.webpagetest.org
             </Link>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Performance work should be on sprints"
           )}>
-          <Text>
+          <LonelyHeading>
             Enforce with <Point>process</Point>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Ideally have CI checks for performance"
           )}>
-          <Text>
+          <LonelyHeading>
             Enforce with <Point>automation</Point>
-          </Text>
+          </LonelyHeading>
           <hr style={{width: "75%"}} />
-          <Text>
+          <LonelyHeading>
             <Link href="http://2015.cascadiajs.com/speakers/parashuram-n">
               "Automating Web Performance Measurement"
             </Link>
-          </Text>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
             "Our build is complex enough, we had to build reporting tools",
             "<b>STORY</b>: Devs have hard time with deps in lib.js"
           )}>
-          <Text>
+          <LonelyHeading>
             Build your own <Point>tools</Point> where necessary
-          </Text>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
@@ -1551,7 +1545,7 @@ export default class extends React.Component {
                   very, very scared
 
           */}
-        <Slide bgColor="tertiary" bgImage={images.polygonsGray}>
+        <Slide id="lifeguards" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Lifeguards
           </Heading>
@@ -1604,45 +1598,47 @@ export default class extends React.Component {
             - TIP: Monitoring: Observe spikes and idiosyncrasies.
 
           */}
-        <Slide>
-          <Heading fit caps>
-            Logging & Monitoring
+        <Slide id="logging" bgImage={images.bgCaution} bgDarken={0.3}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.3}>
+              Logging & Monitoring
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide>
-          <Text>
-            Frontend code executes <Point>in the wild</Point>
-          </Text>
-          <Text>
+          <LonelyHeading>
+            Your code <em>executes</em> & <Point>fails</Point>
+          </LonelyHeading>
+          <LonelyHeading>
             on a variety of <Point>browsers</Point>
-          </Text>
-        </Slide>
-        <Slide>
-          <Text>
-            You need to <Point>know</Point>
-          </Text>
-          <Text>
-            when things go <Point>wrong</Point>
-          </Text>
-        </Slide>
-        <Slide>
-          <Text>
-            Tune for <Point>development</Point>,
-          </Text>
-          <Text>
-            <Point>staging</Point>, & <Point>production</Point>
-          </Text>
+          </LonelyHeading>
+          <LonelyHeading>
+            out <em>in the wild</em>
+          </LonelyHeading>
         </Slide>
         <Slide
           notes={notes(
-            "Hook into <b>chat channels</b> &amp; <b>alert systems</b>"
+            "Yes, log on the frontend"
           )}>
-          <Text>
-            Log <Point>errors</Point> & <Point>messages</Point> remotely
-          </Text>
-          <Text>
-            and <Point>monitor</Point> & <Point>alert</Point>
-          </Text>
+          <LonelyHeading>
+            <Point>Log</Point> & <Point>capture</Point> everything
+          </LonelyHeading>
+        </Slide>
+        <Slide>
+          <LonelyHeading>
+            Get <Point>errors</Point> & <Point>messages</Point>
+          </LonelyHeading>
+          <LonelyHeading>
+            to a <Point>remote store</Point>
+          </LonelyHeading>
+        </Slide>
+        <Slide>
+          <LonelyHeading>
+            And then <Point>aggregate</Point>,
+          </LonelyHeading>
+          <LonelyHeading>
+            <Point>report</Point>, & <Point>alert</Point>
+          </LonelyHeading>
         </Slide>
         <Slide>
           <Heading size={3}>
@@ -1682,25 +1678,56 @@ export default class extends React.Component {
           * Lifeguards - Debugging, Source Maps
           * ---------------------------------------------------------------
           */}
-        <Slide>
-          <Heading fit caps>
-            Debugging Support
+        <Slide id="debugging" bgImage={images.bgAstronautEarth} bgDarken={0.25}>
+          <Heading fit caps textColor="primary">
+            <BlackBox bgDarken={0.35}>
+              Debugging Support
+            </BlackBox>
           </Heading>
         </Slide>
         <Slide>
-          <Text>
+          <LonelyHeading>
             Give developers <Point>life lines</Point>
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             when things go <Point>wrong</Point>
-          </Text>
+          </LonelyHeading>
+        </Slide>
+        <Slide>
+          <Heading size={4}>You ship this:</Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              !function(){var e="Hello Surge!",a=$("<h1 />");
+              a.text(e),$("body").append(a)}();
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2.0em"}}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={4}>Your devs want this:</Heading>
+          <CodePane
+            lang="javascript"
+            source={strip(`
+              (function () {
+                var message = "Hello Surge!";
+                var $heading = $("<h1 />");
+
+                $heading.text(message);
+
+                $("body").append($heading);
+              }());
+            `)}
+            margin="20px auto"
+            style={{fontSize: "2.0em"}}
+          />
         </Slide>
         <Slide
           notes={notes(
-            "Only request when dev console is open",
-            "Completely inactive for normal users"
+            "Great for debugging, but <b>full source</b>"
           )}>
-          <Text>Source Maps</Text>
+          <Heading size={4}>Source Maps</Heading>
           <CodePane
             lang="javascript"
             source={strip(`
@@ -1709,26 +1736,28 @@ export default class extends React.Component {
               //# sourceMappingURL=http://dev.walmart.com:9873/js-dist-frontend/core-bundle.js.map
             `)}
             margin="20px auto"
-            style={{fontSize: "1.5em"}}
+            style={{fontSize: "2.0em"}}
           />
         </Slide>
         <Slide>
-          <Text>
-            Upload source maps in <Point>deployment</Point>
-          </Text>
+          <LonelyHeading>
+            <Point>Publish</Point> in VPN on deployment
+          </LonelyHeading>
         </Slide>
         <Slide>
-          <Text>
-            Host within VPN for developer <Point>emergencies</Point>
-          </Text>
+          <LonelyHeading>
+            Hidden from <Point>end users</Point>
+          </LonelyHeading>
+          <LonelyHeading>
+            Available to <Point>developers</Point>
+          </LonelyHeading>
         </Slide>
 
         {/* ---------------------------------------------------------------
           * Summary
           * ---------------------------------------------------------------
           */}
-
-        <Slide>
+        <Slide id="summary">
           <Heading size={3}>
             All together now
           </Heading>
@@ -1784,7 +1813,7 @@ export default class extends React.Component {
             - ... so without further ado, let's close with...
 
           */}
-        <Slide>
+        <Slide id="future">
           <Heading size={2}>
             Some parting thoughts on the <em>future</em>
           </Heading>
@@ -1792,61 +1821,40 @@ export default class extends React.Component {
         <Slide
           notes={notes(
             "Uncomfortable, but necessary",
-            "A 2 year old site is already 'legacy'",
+            "<b>STORY</b>: A 2 year old site is already 'legacy'",
             "<b>STORY</b>: React: server-side render, efficient DOM"
           )}>
-          <Text>
+          <LonelyHeading>
             Embrace <Point>change</Point>
-          </Text>
+          </LonelyHeading>
           <Image src={images.logoReact} />
-          {/*
-            - TIP: Embrace change, even if uncomfortable.
-                - Most of the code in a huge application will be aging / legacy
-                  by the time you actually ship it.
-                - Keep up with the times, and re-examine what you should be doing.
-                    - And especially for JavaScript.
-                - STORY: React: server-side render, efficient DOM
-            */}
         </Slide>
         <Slide
           notes={notes(
             "<b>STORY</b>: Targeting <b>components</b> & <b>small repos</b>",
             "<b>STORY</b>: Moving to webpack"
           )}>
-          <Text>
+          <LonelyHeading>
             Reevaluate & refactor your
-          </Text>
-          <Text>
+          </LonelyHeading>
+          <LonelyHeading>
             <Point>infrastructure</Point> & <Point>organization</Point>
-          </Text>
+          </LonelyHeading>
           <Image src={images.logoWebpack} />
-          {/*
-            - TIP: Reevaluate / refactor infrastructure & organization
-
-            - TIP: Many, many small repositories
-                - Components
-                - Apps
-                - Infrastructure
-
-            - TIP: Lessen the direct role of Meta teams
-                - Opt for "guidance"
-                - And autonomy for tracks sooner.
-            */}
         </Slide>
-        <Slide>
-          <Text>
+        <Slide
+          notes={notes(
+            "Forcing a <b>full stop</b> doesn't work."
+          )}>
+          <LonelyHeading>
             Have a <Point>transition strategy</Point>
-          </Text>
-          {/*
-            - TIP: Transition strategies.
-                - So important to support teams through transitions.
-            */}
+          </LonelyHeading>
         </Slide>
-        <Slide bgColor="secondary" bgImage={images.polygons}>
-          {/*
-            - ... and that's about it.
-            - So here's wishing you...
-            */}
+        <Slide bgImage={images.polygons} bgColor="secondary"
+          notes={notes(
+            "... and that's about it",
+            "So here's wishing you..."
+          )}>
           <Heading bold fit caps textColor="primary">
             Happy
           </Heading>
@@ -1858,14 +1866,17 @@ export default class extends React.Component {
         {/* ---------------------------------------------------------------
           * Thanks
           * --------------------------------------------------------------- */}
-        <Slide bgColor="secondary" bgImage={images.polygons}>
+        <Slide id="thanks" bgColor="secondary" bgImage={images.polygons}>
           <Heading bold fit caps textColor="primary"
                    style={{marginTop: "1em", marginBottom: "0.75em"}}>
             Thanks!
           </Heading>
-          <Link href="http://formidablelabs.com">
-            <Image width="40%" src={images.logoFormidable} />
-          </Link>
+          <Text style={{display: "inline-block", marginTop: "1.0em", fontSize: "2.5em"}}>
+            <Link href="http://surge2015.formidablelabs.com"
+                  textColor="lighterGray">
+              surge2015.formidablelabs.com
+            </Link>
+          </Text>
         </Slide>
       </CustomDeck>
     );
