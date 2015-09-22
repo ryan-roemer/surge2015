@@ -463,7 +463,6 @@ export default class extends React.Component {
           </Heading>
         </Slide>
         <Slide bgImage={images.bgHorseWrangling} bgDarken={0.4}
-          transition={[]}
           notes={notes(
             "A software development consultancy in Seattle, WA",
             "Help teams from startups to Fortune 500 companies",
