@@ -515,10 +515,6 @@ export default class extends React.Component {
           </LonelyHeading>
         </Slide>
         <Slide id="personas" bgColor="tertiary" bgImage={images.polygonsGray}>
-          {/* TODO: Full square layout. */}
-          {/* TODO: Background images? */}
-          {/* TODO: Icons? */}
-          {/* TODO: Put in taglines for each one? (or presenter notes?) */}
           <Layout>
             <Fill style={{borderRight: "1px solid #525050", borderBottom: "2px solid #525050"}}>
               <Heading size={4} caps textColor="primary">
@@ -583,6 +579,9 @@ export default class extends React.Component {
         <Slide id="architects" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Architects
+          </Heading>
+          <Heading textColor="primary" style={{marginTop: "0.2em", fontSize: "12em"}}>
+            <i className="fa fa-building-o"></i>
           </Heading>
         </Slide>
         <Slide>
@@ -661,6 +660,9 @@ export default class extends React.Component {
           <Heading fit caps textColor="primary">
             The Homepage
           </Heading>
+          <Heading textColor="primary" style={{marginTop: "0.2em", fontSize: "12em"}}>
+            <i className="fa fa-home"></i>
+          </Heading>
         </Slide>
         <Slide
           notes={notes(
@@ -686,7 +688,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            Homepage: JS
+            <i className="fa fa-home"></i> JavaScript
           </Heading>
           <Layout>
             <Fill>
@@ -712,7 +714,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            Homepage: On Page
+            <i className="fa fa-home"></i> On Page
           </Heading>
           <Layout>
             <Fill>
@@ -734,7 +736,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            Homepage: Lazy
+            <i className="fa fa-home"></i> Lazy (Code)
           </Heading>
           <CodePane
             lang="javascript"
@@ -754,7 +756,7 @@ export default class extends React.Component {
         </Slide>
         <Slide>
           <Heading size={3}>
-            Homepage: Lazy
+            <i className="fa fa-home"></i> Lazy (App)
           </Heading>
           <List>
             <ListItem>Asynchronously loaded</ListItem>
@@ -985,6 +987,9 @@ export default class extends React.Component {
         <Slide id="guides" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Guides
+          </Heading>
+          <Heading textColor="primary" style={{marginTop: "0.2em", fontSize: "12em"}}>
+            <i className="fa fa-map-o"></i>
           </Heading>
         </Slide>
         <Slide>
@@ -1243,6 +1248,9 @@ export default class extends React.Component {
         <Slide id="gatekeepers" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Gatekeepers
+          </Heading>
+          <Heading textColor="primary" style={{marginTop: "0.2em", fontSize: "12em"}}>
+            <i className="fa fa-shield"></i>
           </Heading>
         </Slide>
         <Slide>
@@ -1547,6 +1555,9 @@ export default class extends React.Component {
         <Slide id="lifeguards" bgColor="tertiary" bgImage={images.polygonsGray}>
           <Heading fit caps textColor="primary">
             Lifeguards
+          </Heading>
+          <Heading textColor="primary" style={{marginTop: "0.2em", fontSize: "12em"}}>
+            <i className="fa fa-life-ring"></i>
           </Heading>
         </Slide>
         <Slide>
@@ -1870,7 +1881,8 @@ export default class extends React.Component {
                    style={{marginTop: "1em", marginBottom: "0.75em"}}>
             Thanks!
           </Heading>
-          <Text style={{display: "inline-block", marginTop: "1.0em", fontSize: "2.5em"}}>
+          <hr style={{width: "75%", margin: "2.0em auto"}} />
+          <Text style={{display: "inline-block", fontSize: "3.5em"}}>
             <Link href="http://surge2015.formidablelabs.com"
                   textColor="lighterGray">
               surge2015.formidablelabs.com
