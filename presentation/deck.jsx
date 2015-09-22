@@ -47,7 +47,7 @@ const images = {
 };
 
 // Preload all images
-preloader(Object.keys(images));
+preloader(Object.keys(images).map((key) => images[key]));
 
 // Components
 // ----------
