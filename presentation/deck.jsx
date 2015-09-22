@@ -40,11 +40,11 @@ const images = {
   bgHerdingBuffalo: require("../assets/img/bg/slides/newoldstock-herding-buffalo.jpg"),
   bgDraftsmen: require("../assets/img/bg/slides/newoldstock-draftsmen.jpg"),
   bgGears: require("../assets/img/bg/slides/stocksnap-gears.jpg"),
-  // bgSpeedometer: require("../assets/img/bg/slides/pexels-speedometer.jpg"),
   bgMotorbike: require("../assets/img/bg/slides/pexels-motorbike.jpg"),
   bgCaution: require("../assets/img/bg/slides/pexels-caution-sign.jpg"),
   bgAstronautEarth: require("../assets/img/bg/slides/newoldstock-astronaut-earth.jpg"),
-  bgBurn: require("../assets/img/bg/slides/littlevisuals-burn.jpg")
+  bgBurn: require("../assets/img/bg/slides/littlevisuals-burn.jpg"),
+  bgFenceLocks: require("../assets/img/bg/slides/unsplash-fence-locks.jpg")
 };
 
 // Preload all images
@@ -1397,14 +1397,16 @@ export default class extends React.Component {
             Learn / identify your biggest <Point>risk areas</Point>
           </LonelyHeading>
         </Slide>
-        <Slide
+        <Slide bgImage={images.bgFenceLocks} bgDarken={0.3}
           notes={notes(
             "Previous protections: code review, tests, etc.",
             "<b>Architect</b> protection as well"
           )}>
-          <LonelyHeading>
-            <Point>Protect</Point> yourself wherever possible
-          </LonelyHeading>
+          <BlackBox tag="div" bgDarken={0.5} style={{padding: "1.0em 0.2em"}}>
+            <LonelyHeading textColor="primary">
+              <Point>Protect</Point> yourself wherever possible
+            </LonelyHeading>
+          </BlackBox>
         </Slide>
         <Slide
           notes={notes(
@@ -1777,9 +1779,9 @@ export default class extends React.Component {
           * Summary
           * ---------------------------------------------------------------
           */}
-        <Slide id="summary">
-          <Heading size={3}>
-            All together now
+        <Slide id="summary" bgImage={images.polygons} textColor="primary">
+          <Heading size={3} textColor="lighterGray">
+            All Together Now
           </Heading>
           <Layout>
             <Fill>
