@@ -25,8 +25,9 @@ webpackConfig.module.loaders[0] = {
     path.join(__dirname, "themes"),
 
     // Have to build spectacle as well.
+    path.join(__dirname, "node_modules/spectacle/presentation"),
     path.join(__dirname, "node_modules/spectacle/src"),
-    path.join(__dirname, "node_modules/spectacle/presentation")
+    path.join(__dirname, "node_modules/spectacle/themes")
   ],
   loaders: [
     "babel-loader?stage=1"
