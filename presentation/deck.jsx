@@ -43,7 +43,8 @@ const images = {
   // bgSpeedometer: require("../assets/img/bg/slides/pexels-speedometer.jpg"),
   bgMotorbike: require("../assets/img/bg/slides/pexels-motorbike.jpg"),
   bgCaution: require("../assets/img/bg/slides/pexels-caution-sign.jpg"),
-  bgAstronautEarth: require("../assets/img/bg/slides/newoldstock-astronaut-earth.jpg")
+  bgAstronautEarth: require("../assets/img/bg/slides/newoldstock-astronaut-earth.jpg"),
+  bgBurn: require("../assets/img/bg/slides/littlevisuals-burn.jpg")
 };
 
 // Preload all images
@@ -114,15 +115,13 @@ Point.propTypes = {
 // Blackbox for white over images
 class BlackBox extends React.Component {
   render() {
-    const Tag = this.props.tag || "span";
-    const bgDarken = typeof this.props.bgDarken !== "undefined" ? this.props.bgDarken : 0.75;
-    const bgRgb = typeof this.props.bgRgb !== "undefined" ? this.props.bgRgb : [0, 0, 0];
-    const styles = {
-      background: `rgba(${bgRgb.join(",")}, ${bgDarken})`,
+    const Tag = this.props.tag;
+    const styles = Object.assign({
+      background: `rgba(${this.props.bgRgb.join(",")}, ${this.props.bgDarken})`,
       borderRadius: "0.2em",
       padding: "0.0em 0.2em",
       margin: "0"
-    };
+    }, this.props.style);
 
     return (
       <Tag style={styles}>
@@ -132,11 +131,19 @@ class BlackBox extends React.Component {
   }
 }
 
+BlackBox.defaultProps = {
+  tag: "span",
+  bgDarken: 0.75,
+  bgRgb: [0, 0, 0],
+  style: {}
+};
+
 BlackBox.propTypes = {
-  tag: React.PropTypes.string,
   bgDarken: React.PropTypes.number,
   bgRgb: React.PropTypes.array,
-  children: React.PropTypes.node
+  children: React.PropTypes.node,
+  style: React.PropTypes.object,
+  tag: React.PropTypes.string
 };
 
 // Links
@@ -1616,16 +1623,18 @@ export default class extends React.Component {
             </BlackBox>
           </Heading>
         </Slide>
-        <Slide>
-          <LonelyHeading>
-            Your code <em>executes</em> & <Point>fails</Point>
-          </LonelyHeading>
-          <LonelyHeading>
-            on a variety of <Point>browsers</Point>
-          </LonelyHeading>
-          <LonelyHeading>
-            out <em>in the wild</em>
-          </LonelyHeading>
+        <Slide bgImage={images.bgBurn} bgDarken={0.3}>
+          <BlackBox tag="div" bgDarken={0.5} style={{padding: "1.0em 0.2em"}}>
+            <LonelyHeading textColor="primary">
+              Your code runs & <Point>fails</Point>
+            </LonelyHeading>
+            <LonelyHeading textColor="primary">
+              on a variety of <Point>browsers</Point>
+            </LonelyHeading>
+            <LonelyHeading textColor="primary">
+              out in the wild
+            </LonelyHeading>
+          </BlackBox>
         </Slide>
         <Slide
           notes={notes(
