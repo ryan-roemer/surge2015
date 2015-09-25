@@ -326,11 +326,7 @@ export default class extends React.Component {
                 - Large amount of JavaScript code
                 - Large frontend development teams
           */}
-        <Slide id="ecommerce"
-          notes={notes(
-            "The full scope of massive frontend web apps is <b>huge</b>",
-            "We’re going to need to focus this talk on some key points"
-          )}>
+        <Slide id="ecommerce">
           <LonelyHeading textColor="secondary">
             Let{"’"}s dig into some large frontends at a <em>high-traffic
             </em>, <em>top-five</em> e-commerce site
